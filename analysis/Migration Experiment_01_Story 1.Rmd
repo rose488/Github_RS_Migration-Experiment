@@ -269,30 +269,11 @@ warblers    <- my_filter(df = myebird_EXP, group_keep = c("Warblers"))  %>%
 
 warblers_sp <- warblers %>% distinct(Species) %>% pull(Species) %>% as.character()
 
-warblers_uncommon_sp <- c("Common Yellowthroat", "Cape May Warbler","Magnolia Warbler", "Bay-breasted Warbler", "Blackburnian Warbler", "Northern Yellow Warbler", "Chestnut-sided Warbler", "Canada Warbler", "Black-throated Blue Warbler")
-
-warblers_common_sp <- my_filter(warblers, drop = warblers_uncommon_sp) %>% distinct(Species) %>% pull(Species)
-
-warblers_common <- my_filter(df= warblers, keep =  warblers_common_sp) 
-
-######### REVIEW THIS CONCEPTUALLY (draw it out) BEFORE DELETING
-# Table version of heat map! 
-# Species column 1 (species = first rows) -> Each Date its own column (Widened by Date)
-# Values under each date == population
-# Passing only one timepoint bc population is duplicated
-warblers_heatmap_to_table <- warblers %>% 
-  select(Date, Population, Species) %>%
-  pivot_wider(names_from = Date, values_from = Population)
-#write_csv(warblers_heatmap_to_table, here("data", "warblers_heatmap_to_table.csv"))
-
 ```
-
 
 
 ##  II. D. Favorite Species - Datasets and Tags
 ### II.D.1. Favorite Species - Large List
-
-- starting with all species, not just migrants
 
 ```{r}
 favorites <- my_filter(myebird_EXP, drop = c("Mourning Dove", "Turkey Vulture", "Northern Mockingbird", "American Goldfinch", "Brown-headed Cowbird", "Common Grackle", "Northern Cardinal", "European Starling", "American Robin"), group_drop = c("Cormorants", "Corvids"))
@@ -406,6 +387,9 @@ richness_long <- richness_by_day %>%
 ##  IV. A. GGPLOT THEMES and Other Prep
 
 ```{r, Themes}
+# Where to save graphs
+fig_dir        <- "figures"
+
 # Heatmap for overall population by day-- no faceting by timepoint!
 # for larger species counts (duplicated x axis)
 heatmap_theme <- list(
@@ -467,8 +451,8 @@ warbler_colors <- c(
 
 ```{r}
 # Graph representing the experiment dates
-myebird_EXP %>%
-ggplot(aes(x=Date, y = Start.Time.Bin)) +
+p_dates <- myebird_EXP %>%
+  ggplot(aes(x=Date, y = Start.Time.Bin)) +
   geom_point(size = 4) +
   theme(axis.text.x = element_text(angle=45, size = 10, hjust=1),
           panel.grid.minor = element_blank()) +
@@ -476,9 +460,10 @@ ggplot(aes(x=Date, y = Start.Time.Bin)) +
                date_labels = "%m-%d")+
   labs(title = "Distribution of Paired, Complete Checklists Across Dates")
 
- ggsave(file.path(fig_dir, sprintf("%s_day%02d.png", gsub(" ", "", wave_name), d)),
-             p, width = 11, height = 7, dpi = 150)
+p_dates
 
+ggsave(file.path(fig_dir, "Experiment Dates.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
 ```
 
 ##  IV. D. Birdcast Migration Data
@@ -570,6 +555,9 @@ birdcast %>% filter(Day.of.May >=3 & Day.of.May <=29) %>%
 
 p_birdcast
 
+ggsave(file.path(fig_dir, "Radar-Measured Nightly Migration.png"),
+             p_birdcast, width = 11, height = 7, dpi = 150)
+
 ```
 
 ##  IV. E. Observations: Heatmaps and Ridgeplots
@@ -597,6 +585,10 @@ myebird_EXP_grouped %>%
   theme(axis.text.x.bottom = element_text(size=8, angle = 40, vjust = 0.6),
         axis.text.x.top = element_text(size=8, angle = 40, vjust = 0.4),
         axis.text.y = element_text(size = 8, vjust = 0.3))
+
+ggsave(file.path(fig_dir, "Heatmap of All Species Observed.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
+
 ```
 
 
@@ -616,7 +608,8 @@ ggplot(aes(x=Month.Day, y = Species, fill = Population))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
   axis.text.x.top = element_text(margin = margin(b=4), hjust = 0))
 
-  
+ggsave(file.path(fig_dir, "Heatmap of Warblers Observed.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
 ```
 
 #### IV.E.5.ii  Warbler Ridges
@@ -633,7 +626,7 @@ p_warbs_ridges<- my_filter(warblers) %>%
                                                expand = expansion(mult = c(0.03,0.03)),
                                                limits = c(3,29)) +
                             labs(title = "\nWarbler Sightings",
-                            subtitle = "(Colors correspond to actual bird colorings, \nwill change to be more readable later)",
+                            subtitle = "(Colors correspond to actual bird colorings)",
                               x="Observation Day")+
                             theme(legend.position = "none",
                             plot.title = element_text(hjust = 0.5),
@@ -645,42 +638,22 @@ p_warbs_ridges<- my_filter(warblers) %>%
                             
 p_birdcast / p_warbs_ridges + plot_layout(heights = c(1,6))
 
-# Common warblers
-p_warbs_common_ridges <- my_filter(warblers_common, drop = "Pine Warbler") %>%
-                            ggplot(aes(x=Day, y = Species, height = Population, fill = Species))+
-                            geom_ridgeline(scale = 0.2) +
-                            scale_fill_manual(values = warbler_colors) +
-                            band_peaks +
-                            theme_minimal() +
-                            scale_x_continuous(breaks = obs_dates, 
-                                               expand = expansion(mult = c(0.03,0.03)),
-                                               limits = c(3,29)) +
-                            theme(legend.position = "none",
-                                  panel.grid.major.x = element_line(color = "gray50", linewidth = 0.3),
-                                  axis.ticks.minor.x = element_blank(),
-                                  panel.grid.minor.x = element_blank(),
-                                  axis.ticks.major.y = element_blank()) +
-                            labs(title = "",
-                              x="Observation Day")
-#p_warbs_common_ridges
-
-#p_birdcast / p_warbs_common_ridges + plot_layout(heights = c(1,6))
-
 ```
 
 #### IV.E.5.iii Warbler DISCRETE Bar Graphs (technically more accurate than ridges)
 
+```{r, fig.width=8, fig.height=6}
+# ALL WARBLERS
 
-```{r, fig.width=7, fig.height=5}
 # STAGGERED BARS -- Use geom_rect so it can be merged like the ridgelines
 
 # Give each species a numeric baseline position ####
-warblers_common <- warblers_common %>%
+warblers <- warblers %>%
     mutate(Species.Num = as.numeric(factor(Species)))
 
 # GRAPHING
 # Plot the Data ####
-p_warbs_common_bars <- warblers_common %>%
+p_warbs_bars <- warblers %>%
     ggplot(aes(x = Day, y = Species.Num)) +
     geom_rect(aes(xmin = Day - 0.4, xmax = Day + 0.4,
                   ymin = Species.Num, ymax = Species.Num + Population * 0.15,
@@ -697,18 +670,17 @@ p_warbs_common_bars <- warblers_common %>%
       breaks = obs_dates,
       expand = expansion(mult= c(0.03,0.03))) +
     scale_y_continuous(
-      breaks = sort(unique(warblers_common$Species.Num)),
-      labels = levels(factor(warblers_common$Species)),
+      breaks = sort(unique(warblers$Species.Num)),
+      labels = levels(factor(warblers$Species)),
       expand = expansion(mult = c(0,0))) +
   # Use coord_cart instead of scale_y_cont(limits = ) so that geom_rect doesn't drop any bars if they go off the chart!
-    coord_cartesian(ylim = c(1,10.7))+    
+    coord_cartesian(ylim = c(1,18.7))+    
     theme(legend.position = "none",
          # panel.grid.major = seq(1,31,7),
           panel.grid.minor = element_blank())
 
-p_birdcast / p_warbs_common_bars + plot_layout(heights= c(1,4))
+p_birdcast / p_warbs_bars + plot_layout(heights= c(1,6))
 ```
-
 
 
 ###  IV.D.6.    18 Favorites: Ridges; Ridges+ Birdcast Merged PLot
@@ -775,7 +747,7 @@ p_birdcast_large / p_good_patterns_ridges_large + plot_layout(heights = c(1,6))
 ##  IV. F. 3-panel figures
 
 
-### IV. F.2. Download Expected Species Data (Abundance from)
+### IV. F.1. Download Expected Species Data (Abundance from)
 
 ```{r}
 # ---- CALL MAP_DFR TO DOWNLOAD SPECIES DATA-- all 18 species ----
@@ -796,7 +768,7 @@ if (file.exists(exp_path)) {
 
 ```
 
-
+### IV. F.2. Single Species 3-Panel Figures
 ```{r}
 #-------- 3-GRAPH/SPECIES; MANY SPECIES: BIRDCAST, EXPECTED=ABUNDANCE, ACTUAL OBSERVED  ---------
 
@@ -844,7 +816,7 @@ all_figs[["Pine Warbler"]]                   # view one
 #all_figs
 ```
 
-
+### IV. F.3. 18 Favorite Species, Observed Counts
 ```{r}
 # CLAUDE
 
@@ -908,6 +880,7 @@ ggplot(obs_counts, aes(x = yday, y = Population)) +
         panel.spacing.x = unit(0.5, "lines"))
 ```
 
+### IV. F.4. 18 Favorite Species, Observed vs Expected
 
 ```{r}
 # CLAUDE
