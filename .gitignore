@@ -1,0 +1,14 @@
+# ============================================================
+# NEVER COMMIT THESE — real eBird Submission IDs / personal data
+# ============================================================
+analysis/data/PRIVATE_id_key/
+analysis/data/raw/myebirdraw_LTH.csv
+
+# ============================================================
+# macOS / R project housekeeping
+# ============================================================
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+*.Rapp.history

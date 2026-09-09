@@ -1,0 +1,970 @@
+"Submission.ID","Common.Name","Scientific.Name","Taxonomic.Order","Count","State.Province","Location","Date","Time","Protocol","Duration..Min.","All.Obs.Reported","Distance.Traveled..km.","Area.Covered..ha.","Number.of.Observers","Breeding.Code","ML.Catalog.Numbers"
+"CHK-0006","Canada Goose","Branta canadensis",342,"2","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0018","Wood Duck","Aix sponsa",455,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0014","Wild Turkey","Meleagris gallopavo",1274,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0020","Wild Turkey","Meleagris gallopavo",1274,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0003","Mourning Dove","Zenaida macroura",2412,"1","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0009","Mourning Dove","Zenaida macroura",2412,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0011","Mourning Dove","Zenaida macroura",2412,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0013","Mourning Dove","Zenaida macroura",2412,"2","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Mourning Dove","Zenaida macroura",2412,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0019","Mourning Dove","Zenaida macroura",2412,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Mourning Dove","Zenaida macroura",2412,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Mourning Dove","Zenaida macroura",2412,"2","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Mourning Dove","Zenaida macroura",2412,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Mourning Dove","Zenaida macroura",2412,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0038","Mourning Dove","Zenaida macroura",2412,"4","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Mourning Dove","Zenaida macroura",2412,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0014","Chimney Swift","Chaetura pelagica",3896,"2","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Chimney Swift","Chaetura pelagica",3896,"4","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Chimney Swift","Chaetura pelagica",3896,"4","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0019","Chimney Swift","Chaetura pelagica",3896,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Chimney Swift","Chaetura pelagica",3896,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","Chimney Swift","Chaetura pelagica",3896,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Chimney Swift","Chaetura pelagica",3896,"3","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Chimney Swift","Chaetura pelagica",3896,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Chimney Swift","Chaetura pelagica",3896,"6","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Chimney Swift","Chaetura pelagica",3896,"11","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Chimney Swift","Chaetura pelagica",3896,"2","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Chimney Swift","Chaetura pelagica",3896,"4","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Chimney Swift","Chaetura pelagica",3896,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Chimney Swift","Chaetura pelagica",3896,"17","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Chimney Swift","Chaetura pelagica",3896,"4","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Chimney Swift","Chaetura pelagica",3896,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Chimney Swift","Chaetura pelagica",3896,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Chimney Swift","Chaetura pelagica",3896,"6","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Chimney Swift","Chaetura pelagica",3896,"7","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0039","Chimney Swift","Chaetura pelagica",3896,"5","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Chimney Swift","Chaetura pelagica",3896,"1","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0032","Ruby-throated Hummingbird","Archilochus colubris",4802,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Ruby-throated Hummingbird","Archilochus colubris",4802,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Ruby-throated Hummingbird","Archilochus colubris",4802,"1","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Ruby-throated Hummingbird","Archilochus colubris",4802,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Ruby-throated Hummingbird","Archilochus colubris",4802,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Ruby-throated Hummingbird","Archilochus colubris",4802,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Ruby-throated Hummingbird","Archilochus colubris",4802,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0014","gull sp.","Larinae sp.",6619,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0011","Double-crested Cormorant","Nannopterum auritum",7424,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0018","Great Blue Heron","Ardea herodias",7753,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0037","Turkey Vulture","Cathartes aura",7815,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0007","Cooper's Hawk","Astur cooperii",8278,"1","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0014","Cooper's Hawk","Astur cooperii",8278,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0021","Cooper's Hawk","Astur cooperii",8278,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Cooper's Hawk","Astur cooperii",8278,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0024","Cooper's Hawk","Astur cooperii",8278,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0040","Cooper's Hawk","Astur cooperii",8278,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0001","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0002","Red-tailed Hawk","Buteo jamaicensis",8506,"3","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0005","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0007","Red-tailed Hawk","Buteo jamaicensis",8506,"2","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","Red-tailed Hawk","Buteo jamaicensis",8506,"2","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0010","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0014","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0018","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0023","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0028","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0030","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0033","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0038","Red-tailed Hawk","Buteo jamaicensis",8506,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0005","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0006","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Red-bellied Woodpecker","Melanerpes carolinus",11199,"1","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0011","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Red-bellied Woodpecker","Melanerpes carolinus",11199,"4","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Red-bellied Woodpecker","Melanerpes carolinus",11199,"5","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Red-bellied Woodpecker","Melanerpes carolinus",11199,"4","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Red-bellied Woodpecker","Melanerpes carolinus",11199,"4","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Red-bellied Woodpecker","Melanerpes carolinus",11199,"5","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Red-bellied Woodpecker","Melanerpes carolinus",11199,"5","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Red-bellied Woodpecker","Melanerpes carolinus",11199,"4","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Red-bellied Woodpecker","Melanerpes carolinus",11199,"2","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Red-bellied Woodpecker","Melanerpes carolinus",11199,"3","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0001","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0002","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0003","Downy Woodpecker","Dryobates pubescens",11400,"3","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0004","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","Downy Woodpecker","Dryobates pubescens",11400,"5","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"S Singing Bird",NA
+"CHK-0007","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","Downy Woodpecker","Dryobates pubescens",11400,"5","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Downy Woodpecker","Dryobates pubescens",11400,"6","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Downy Woodpecker","Dryobates pubescens",11400,"3","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0010","Downy Woodpecker","Dryobates pubescens",11400,"3","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","Downy Woodpecker","Dryobates pubescens",11400,"3","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Downy Woodpecker","Dryobates pubescens",11400,"4","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Downy Woodpecker","Dryobates pubescens",11400,"3","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Downy Woodpecker","Dryobates pubescens",11400,"5","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Downy Woodpecker","Dryobates pubescens",11400,"4","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Downy Woodpecker","Dryobates pubescens",11400,"3","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Downy Woodpecker","Dryobates pubescens",11400,"3","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Downy Woodpecker","Dryobates pubescens",11400,"4","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Downy Woodpecker","Dryobates pubescens",11400,"5","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Downy Woodpecker","Dryobates pubescens",11400,"4","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Downy Woodpecker","Dryobates pubescens",11400,"4","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Downy Woodpecker","Dryobates pubescens",11400,"4","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Downy Woodpecker","Dryobates pubescens",11400,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Downy Woodpecker","Dryobates pubescens",11400,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0006","Hairy Woodpecker","Leuconotopicus villosus",11427,"1","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0013","Hairy Woodpecker","Leuconotopicus villosus",11427,"2","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0015","Hairy Woodpecker","Leuconotopicus villosus",11427,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0018","Hairy Woodpecker","Leuconotopicus villosus",11427,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","Hairy Woodpecker","Leuconotopicus villosus",11427,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0026","Hairy Woodpecker","Leuconotopicus villosus",11427,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0035","Hairy Woodpecker","Leuconotopicus villosus",11427,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0001","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0003","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0005","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"S Singing Bird",NA
+"CHK-0007","Northern Flicker","Colaptes auratus",11900,"2","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","Northern Flicker","Colaptes auratus",11900,"4","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Northern Flicker","Colaptes auratus",11900,"2","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0012","Northern Flicker","Colaptes auratus",11900,"2","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Northern Flicker","Colaptes auratus",11900,"2","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0019","Northern Flicker","Colaptes auratus",11900,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Northern Flicker","Colaptes auratus",11900,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Northern Flicker","Colaptes auratus",11900,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0004","Northern Flicker (Yellow-shafted)","Colaptes auratus auratus/luteus",11903,"2","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0017","Northern Flicker (Yellow-shafted)","Colaptes auratus auratus/luteus",11903,"2","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0017","Eastern Wood-Pewee","Contopus virens",16924,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Eastern Wood-Pewee","Contopus virens",16924,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Eastern Wood-Pewee","Contopus virens",16924,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Eastern Wood-Pewee","Contopus virens",16924,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0025","Eastern Wood-Pewee","Contopus virens",16924,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Eastern Wood-Pewee","Contopus virens",16924,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Eastern Wood-Pewee","Contopus virens",16924,"4","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Eastern Wood-Pewee","Contopus virens",16924,"4","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Eastern Wood-Pewee","Contopus virens",16924,"3","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Eastern Wood-Pewee","Contopus virens",16924,"5","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Eastern Wood-Pewee","Contopus virens",16924,"5","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Eastern Wood-Pewee","Contopus virens",16924,"2","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Eastern Wood-Pewee","Contopus virens",16924,"4","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Eastern Wood-Pewee","Contopus virens",16924,"3","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Eastern Wood-Pewee","Contopus virens",16924,"4","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Eastern Wood-Pewee","Contopus virens",16924,"4","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Eastern Wood-Pewee","Contopus virens",16924,"5","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Eastern Wood-Pewee","Contopus virens",16924,"3","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Eastern Wood-Pewee","Contopus virens",16924,"4","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Eastern Wood-Pewee","Contopus virens",16924,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0015","Empidonax sp.","Empidonax sp.",16997,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0001","Eastern Phoebe","Sayornis phoebe",17007,"2","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0003","Eastern Phoebe","Sayornis phoebe",17007,"3","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0004","Eastern Phoebe","Sayornis phoebe",17007,"2","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","Eastern Phoebe","Sayornis phoebe",17007,"3","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"S Singing Bird",NA
+"CHK-0008","Eastern Phoebe","Sayornis phoebe",17007,"1","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0011","Eastern Phoebe","Sayornis phoebe",17007,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0015","Eastern Phoebe","Sayornis phoebe",17007,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0017","Eastern Phoebe","Sayornis phoebe",17007,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0018","Eastern Phoebe","Sayornis phoebe",17007,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0026","Eastern Phoebe","Sayornis phoebe",17007,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0038","Eastern Phoebe","Sayornis phoebe",17007,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0011","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0013","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0018","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Great Crested Flycatcher","Myiarchus crinitus",17334,"3","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Great Crested Flycatcher","Myiarchus crinitus",17334,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0040","Great Crested Flycatcher","Myiarchus crinitus",17334,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0041","Eastern Kingbird","Tyrannus tyrannus",17472,"1","US-MA","Local Park","2026-06-03","11:14 AM","eBird - Casual Observation",NA,0,NA,NA,1,"",NA
+"CHK-0014","Blue-headed Vireo","Vireo solitarius",19226,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0014","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Eastern Warbling Vireo","Vireo gilvus",19245,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Eastern Warbling Vireo","Vireo gilvus",19245,"3","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Eastern Warbling Vireo","Vireo gilvus",19245,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Eastern Warbling Vireo","Vireo gilvus",19245,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Eastern Warbling Vireo","Vireo gilvus",19245,"3","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Eastern Warbling Vireo","Vireo gilvus",19245,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Eastern Warbling Vireo","Vireo gilvus",19245,"1","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Eastern Warbling Vireo","Vireo gilvus",19245,"2","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Eastern Warbling Vireo","Vireo gilvus",19245,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0040","Eastern Warbling Vireo","Vireo gilvus",19245,"1","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0025","Red-eyed Vireo","Vireo olivaceus",19267,"3","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Red-eyed Vireo","Vireo olivaceus",19267,"5","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Red-eyed Vireo","Vireo olivaceus",19267,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Red-eyed Vireo","Vireo olivaceus",19267,"4","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Red-eyed Vireo","Vireo olivaceus",19267,"2","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Red-eyed Vireo","Vireo olivaceus",19267,"2","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Red-eyed Vireo","Vireo olivaceus",19267,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Red-eyed Vireo","Vireo olivaceus",19267,"5","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Red-eyed Vireo","Vireo olivaceus",19267,"2","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Red-eyed Vireo","Vireo olivaceus",19267,"2","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Red-eyed Vireo","Vireo olivaceus",19267,"4","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Red-eyed Vireo","Vireo olivaceus",19267,"3","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Red-eyed Vireo","Vireo olivaceus",19267,"4","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Red-eyed Vireo","Vireo olivaceus",19267,"4","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Red-eyed Vireo","Vireo olivaceus",19267,"6","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Red-eyed Vireo","Vireo olivaceus",19267,"3","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0001","Blue Jay","Cyanocitta cristata",21294,"6","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0002","Blue Jay","Cyanocitta cristata",21294,"4","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0003","Blue Jay","Cyanocitta cristata",21294,"4","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0004","Blue Jay","Cyanocitta cristata",21294,"5","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","Blue Jay","Cyanocitta cristata",21294,"6","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0006","Blue Jay","Cyanocitta cristata",21294,"8","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Blue Jay","Cyanocitta cristata",21294,"8","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Blue Jay","Cyanocitta cristata",21294,"3","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0011","Blue Jay","Cyanocitta cristata",21294,"4","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Blue Jay","Cyanocitta cristata",21294,"2","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Blue Jay","Cyanocitta cristata",21294,"8","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Blue Jay","Cyanocitta cristata",21294,"8","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Blue Jay","Cyanocitta cristata",21294,"15","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Blue Jay","Cyanocitta cristata",21294,"12","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Blue Jay","Cyanocitta cristata",21294,"11","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Blue Jay","Cyanocitta cristata",21294,"9","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Blue Jay","Cyanocitta cristata",21294,"9","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Blue Jay","Cyanocitta cristata",21294,"12","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Blue Jay","Cyanocitta cristata",21294,"12","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Blue Jay","Cyanocitta cristata",21294,"5","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Blue Jay","Cyanocitta cristata",21294,"8","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Blue Jay","Cyanocitta cristata",21294,"10","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Blue Jay","Cyanocitta cristata",21294,"6","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Blue Jay","Cyanocitta cristata",21294,"4","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Blue Jay","Cyanocitta cristata",21294,"13","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Blue Jay","Cyanocitta cristata",21294,"8","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Blue Jay","Cyanocitta cristata",21294,"6","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Blue Jay","Cyanocitta cristata",21294,"14","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Blue Jay","Cyanocitta cristata",21294,"4","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Blue Jay","Cyanocitta cristata",21294,"10","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Blue Jay","Cyanocitta cristata",21294,"5","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Blue Jay","Cyanocitta cristata",21294,"3","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Blue Jay","Cyanocitta cristata",21294,"9","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Blue Jay","Cyanocitta cristata",21294,"7","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Blue Jay","Cyanocitta cristata",21294,"17","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0003","American Crow","Corvus brachyrhynchos",21557,"5","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0005","American Crow","Corvus brachyrhynchos",21557,"1","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0006","American Crow","Corvus brachyrhynchos",21557,"1","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","American Crow","Corvus brachyrhynchos",21557,"1","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0011","American Crow","Corvus brachyrhynchos",21557,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0013","American Crow","Corvus brachyrhynchos",21557,"1","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","American Crow","Corvus brachyrhynchos",21557,"3","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0019","American Crow","Corvus brachyrhynchos",21557,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0020","American Crow","Corvus brachyrhynchos",21557,"5","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","American Crow","Corvus brachyrhynchos",21557,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","American Crow","Corvus brachyrhynchos",21557,"3","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0037","American Crow","Corvus brachyrhynchos",21557,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0039","American Crow","Corvus brachyrhynchos",21557,"2","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0003","Common Raven","Corvus corax",21624,"2","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0009","Common Raven","Corvus corax",21624,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0014","Common Raven","Corvus corax",21624,"2","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0021","Common Raven","Corvus corax",21624,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0037","Common Raven","Corvus corax",21624,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0038","Common Raven","Corvus corax",21624,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0040","Common Raven","Corvus corax",21624,"1","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0001","Black-capped Chickadee","Poecile atricapillus",22065,"5","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0002","Black-capped Chickadee","Poecile atricapillus",22065,"5","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0003","Black-capped Chickadee","Poecile atricapillus",22065,"16","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0004","Black-capped Chickadee","Poecile atricapillus",22065,"9","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","Black-capped Chickadee","Poecile atricapillus",22065,"11","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0007","Black-capped Chickadee","Poecile atricapillus",22065,"6","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","Black-capped Chickadee","Poecile atricapillus",22065,"15","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Black-capped Chickadee","Poecile atricapillus",22065,"11","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Black-capped Chickadee","Poecile atricapillus",22065,"15","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"CN Carrying Nesting Material",NA
+"CHK-0010","Black-capped Chickadee","Poecile atricapillus",22065,"2","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","Black-capped Chickadee","Poecile atricapillus",22065,"5","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Black-capped Chickadee","Poecile atricapillus",22065,"6","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Black-capped Chickadee","Poecile atricapillus",22065,"19","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Black-capped Chickadee","Poecile atricapillus",22065,"15","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Black-capped Chickadee","Poecile atricapillus",22065,"4","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Black-capped Chickadee","Poecile atricapillus",22065,"10","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Black-capped Chickadee","Poecile atricapillus",22065,"4","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Black-capped Chickadee","Poecile atricapillus",22065,"8","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Black-capped Chickadee","Poecile atricapillus",22065,"11","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Black-capped Chickadee","Poecile atricapillus",22065,"11","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Black-capped Chickadee","Poecile atricapillus",22065,"4","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Black-capped Chickadee","Poecile atricapillus",22065,"13","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Black-capped Chickadee","Poecile atricapillus",22065,"5","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Black-capped Chickadee","Poecile atricapillus",22065,"9","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Black-capped Chickadee","Poecile atricapillus",22065,"6","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Black-capped Chickadee","Poecile atricapillus",22065,"5","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Black-capped Chickadee","Poecile atricapillus",22065,"9","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Black-capped Chickadee","Poecile atricapillus",22065,"10","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Black-capped Chickadee","Poecile atricapillus",22065,"3","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Black-capped Chickadee","Poecile atricapillus",22065,"6","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Black-capped Chickadee","Poecile atricapillus",22065,"5","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Black-capped Chickadee","Poecile atricapillus",22065,"7","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Black-capped Chickadee","Poecile atricapillus",22065,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Black-capped Chickadee","Poecile atricapillus",22065,"3","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Black-capped Chickadee","Poecile atricapillus",22065,"6","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Black-capped Chickadee","Poecile atricapillus",22065,"5","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Black-capped Chickadee","Poecile atricapillus",22065,"4","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0001","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0002","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0004","Tufted Titmouse","Baeolophus bicolor",22160,"2","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","Tufted Titmouse","Baeolophus bicolor",22160,"8","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0007","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","Tufted Titmouse","Baeolophus bicolor",22160,"5","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Tufted Titmouse","Baeolophus bicolor",22160,"2","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0010","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","Tufted Titmouse","Baeolophus bicolor",22160,"5","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Tufted Titmouse","Baeolophus bicolor",22160,"4","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Tufted Titmouse","Baeolophus bicolor",22160,"4","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Tufted Titmouse","Baeolophus bicolor",22160,"4","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Tufted Titmouse","Baeolophus bicolor",22160,"5","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Tufted Titmouse","Baeolophus bicolor",22160,"3","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Tufted Titmouse","Baeolophus bicolor",22160,"4","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Tufted Titmouse","Baeolophus bicolor",22160,"6","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Tufted Titmouse","Baeolophus bicolor",22160,"6","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Tufted Titmouse","Baeolophus bicolor",22160,"5","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Tufted Titmouse","Baeolophus bicolor",22160,"3","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Tufted Titmouse","Baeolophus bicolor",22160,"3","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Tufted Titmouse","Baeolophus bicolor",22160,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Tufted Titmouse","Baeolophus bicolor",22160,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Tufted Titmouse","Baeolophus bicolor",22160,"4","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0028","Tufted Titmouse","Baeolophus bicolor",22160,"3","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Tufted Titmouse","Baeolophus bicolor",22160,"6","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Tufted Titmouse","Baeolophus bicolor",22160,"3","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Tufted Titmouse","Baeolophus bicolor",22160,"3","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Tufted Titmouse","Baeolophus bicolor",22160,"3","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Tufted Titmouse","Baeolophus bicolor",22160,"4","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Tufted Titmouse","Baeolophus bicolor",22160,"5","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Tufted Titmouse","Baeolophus bicolor",22160,"1","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0037","Tree Swallow","Tachycineta bicolor",24064,"3","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0009","Ruby-crowned Kinglet","Corthylio calendula",26844,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"S Singing Bird",NA
+"CHK-0004","Golden-crowned Kinglet","Regulus satrapa",26848,"2","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0006","Golden-crowned Kinglet","Regulus satrapa",26848,"1","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0001","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0003","White-breasted Nuthatch","Sitta carolinensis",26889,"3","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0004","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0007","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"N Visiting Probable Nest Site",NA
+"CHK-0006","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0010","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","White-breasted Nuthatch","Sitta carolinensis",26889,"3","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","White-breasted Nuthatch","Sitta carolinensis",26889,"3","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0017","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","White-breasted Nuthatch","Sitta carolinensis",26889,"4","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0027","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0030","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0036","White-breasted Nuthatch","Sitta carolinensis",26889,"3","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","White-breasted Nuthatch","Sitta carolinensis",26889,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","White-breasted Nuthatch","Sitta carolinensis",26889,"2","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","White-breasted Nuthatch","Sitta carolinensis",26889,"3","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0016","White-breasted Nuthatch (Eastern)","Sitta carolinensis carolinensis",26890,"2","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0010","Red-breasted Nuthatch","Sitta canadensis",26937,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","Red-breasted Nuthatch","Sitta canadensis",26937,"1","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0016","Red-breasted Nuthatch","Sitta canadensis",26937,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0005","Brown Creeper","Certhia americana",27026,"1","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"S Singing Bird",NA
+"CHK-0007","Brown Creeper","Certhia americana",27026,"2","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"S Singing Bird",NA
+"CHK-0027","Brown Creeper","Certhia americana",27026,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0036","Brown Creeper","Certhia americana",27026,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0027","Blue-gray Gnatcatcher","Polioptila caerulea",27123,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0034","Blue-gray Gnatcatcher","Polioptila caerulea",27123,"2","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0037","Blue-gray Gnatcatcher","Polioptila caerulea",27123,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Blue-gray Gnatcatcher","Polioptila caerulea",27123,"3","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0015","Northern House Wren","Troglodytes aedon",27191,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Northern House Wren","Troglodytes aedon",27191,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Northern House Wren","Troglodytes aedon",27191,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Northern House Wren","Troglodytes aedon",27191,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Northern House Wren","Troglodytes aedon",27191,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Northern House Wren","Troglodytes aedon",27191,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Northern House Wren","Troglodytes aedon",27191,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0027","Northern House Wren","Troglodytes aedon",27191,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0008","Carolina Wren","Thryothorus ludovicianus",27348,"2","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0011","Carolina Wren","Thryothorus ludovicianus",27348,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Carolina Wren","Thryothorus ludovicianus",27348,"2","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Carolina Wren","Thryothorus ludovicianus",27348,"1","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Carolina Wren","Thryothorus ludovicianus",27348,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0017","Carolina Wren","Thryothorus ludovicianus",27348,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0021","Carolina Wren","Thryothorus ludovicianus",27348,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Carolina Wren","Thryothorus ludovicianus",27348,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0024","Carolina Wren","Thryothorus ludovicianus",27348,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0036","Carolina Wren","Thryothorus ludovicianus",27348,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0010","European Starling","Sturnus vulgaris",27813,"4","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","European Starling","Sturnus vulgaris",27813,"8","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","European Starling","Sturnus vulgaris",27813,"26","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","European Starling","Sturnus vulgaris",27813,"40","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","European Starling","Sturnus vulgaris",27813,"62","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","European Starling","Sturnus vulgaris",27813,"85","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","European Starling","Sturnus vulgaris",27813,"25","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","European Starling","Sturnus vulgaris",27813,"45","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","European Starling","Sturnus vulgaris",27813,"15","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","European Starling","Sturnus vulgaris",27813,"30","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","European Starling","Sturnus vulgaris",27813,"9","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","European Starling","Sturnus vulgaris",27813,"10","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0027","European Starling","Sturnus vulgaris",27813,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0001","Gray Catbird","Dumetella carolinensis",28000,"1","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0012","Gray Catbird","Dumetella carolinensis",28000,"1","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0015","Gray Catbird","Dumetella carolinensis",28000,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Gray Catbird","Dumetella carolinensis",28000,"2","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0019","Gray Catbird","Dumetella carolinensis",28000,"3","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0020","Gray Catbird","Dumetella carolinensis",28000,"2","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Gray Catbird","Dumetella carolinensis",28000,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Gray Catbird","Dumetella carolinensis",28000,"5","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0027","Gray Catbird","Dumetella carolinensis",28000,"4","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Gray Catbird","Dumetella carolinensis",28000,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Gray Catbird","Dumetella carolinensis",28000,"2","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0032","Gray Catbird","Dumetella carolinensis",28000,"4","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Gray Catbird","Dumetella carolinensis",28000,"5","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Gray Catbird","Dumetella carolinensis",28000,"2","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Gray Catbird","Dumetella carolinensis",28000,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Gray Catbird","Dumetella carolinensis",28000,"4","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Gray Catbird","Dumetella carolinensis",28000,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Gray Catbird","Dumetella carolinensis",28000,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Gray Catbird","Dumetella carolinensis",28000,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0040","Gray Catbird","Dumetella carolinensis",28000,"1","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0008","Northern Mockingbird","Mimus polyglottos",28114,"1","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0011","Northern Mockingbird","Mimus polyglottos",28114,"1","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0008","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0010","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0014","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0017","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0027","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0032","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0033","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0039","Eastern Bluebird","Sialia sialis",28126,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Eastern Bluebird","Sialia sialis",28126,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0029","Veery","Catharus fuscescens",28313,"1","US-MA","Local Park","2026-05-22","08:41 AM","eBird - Casual Observation",NA,0,NA,NA,1,"",NA
+"CHK-0022","Swainson's Thrush","Catharus ustulatus",28324,"1","US-MA","Local Park","2026-05-18","11:13 AM","eBird - Casual Observation",NA,0,NA,NA,1,"",NA
+"CHK-0038","Swainson's Thrush","Catharus ustulatus",28324,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0040","Swainson's Thrush","Catharus ustulatus",28324,"1","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0005","Hermit Thrush","Catharus guttatus",28333,"1","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0015","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0025","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Wood Thrush","Hylocichla mustelina",28347,"3","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Wood Thrush","Hylocichla mustelina",28347,"3","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Wood Thrush","Hylocichla mustelina",28347,"3","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Wood Thrush","Hylocichla mustelina",28347,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Wood Thrush","Hylocichla mustelina",28347,"4","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Wood Thrush","Hylocichla mustelina",28347,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0038","Wood Thrush","Hylocichla mustelina",28347,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0001","American Robin","Turdus migratorius",28633,"1","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0002","American Robin","Turdus migratorius",28633,"1","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0003","American Robin","Turdus migratorius",28633,"29","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0004","American Robin","Turdus migratorius",28633,"82","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","American Robin","Turdus migratorius",28633,"49","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0007","American Robin","Turdus migratorius",28633,"11","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","American Robin","Turdus migratorius",28633,"80","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","American Robin","Turdus migratorius",28633,"30","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","American Robin","Turdus migratorius",28633,"26","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0010","American Robin","Turdus migratorius",28633,"11","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","American Robin","Turdus migratorius",28633,"12","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","American Robin","Turdus migratorius",28633,"22","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","American Robin","Turdus migratorius",28633,"18","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","American Robin","Turdus migratorius",28633,"30","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","American Robin","Turdus migratorius",28633,"44","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","American Robin","Turdus migratorius",28633,"23","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","American Robin","Turdus migratorius",28633,"42","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","American Robin","Turdus migratorius",28633,"27","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","American Robin","Turdus migratorius",28633,"30","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","American Robin","Turdus migratorius",28633,"21","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","American Robin","Turdus migratorius",28633,"22","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","American Robin","Turdus migratorius",28633,"14","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","American Robin","Turdus migratorius",28633,"14","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","American Robin","Turdus migratorius",28633,"16","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","American Robin","Turdus migratorius",28633,"27","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","American Robin","Turdus migratorius",28633,"15","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","American Robin","Turdus migratorius",28633,"33","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0030","American Robin","Turdus migratorius",28633,"36","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","American Robin","Turdus migratorius",28633,"38","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","American Robin","Turdus migratorius",28633,"68","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","American Robin","Turdus migratorius",28633,"46","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","American Robin","Turdus migratorius",28633,"62","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","American Robin","Turdus migratorius",28633,"43","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","American Robin","Turdus migratorius",28633,"55","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","American Robin","Turdus migratorius",28633,"62","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","American Robin","Turdus migratorius",28633,"71","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0001","Cedar Waxwing","Bombycilla cedrorum",29888,"2","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0027","Cedar Waxwing","Bombycilla cedrorum",29888,"16","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Cedar Waxwing","Bombycilla cedrorum",29888,"19","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Cedar Waxwing","Bombycilla cedrorum",29888,"106","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Cedar Waxwing","Bombycilla cedrorum",29888,"31","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Cedar Waxwing","Bombycilla cedrorum",29888,"15","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Cedar Waxwing","Bombycilla cedrorum",29888,"3","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Cedar Waxwing","Bombycilla cedrorum",29888,"34","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Cedar Waxwing","Bombycilla cedrorum",29888,"21","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Cedar Waxwing","Bombycilla cedrorum",29888,"17","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Cedar Waxwing","Bombycilla cedrorum",29888,"18","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Cedar Waxwing","Bombycilla cedrorum",29888,"8","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Cedar Waxwing","Bombycilla cedrorum",29888,"32","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Cedar Waxwing","Bombycilla cedrorum",29888,"9","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Cedar Waxwing","Bombycilla cedrorum",29888,"4","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0002","House Sparrow","Passer domesticus",31534,"X","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0003","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0005","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0006","House Sparrow","Passer domesticus",31534,"6","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","House Sparrow","Passer domesticus",31534,"18","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0012","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","House Sparrow","Passer domesticus",31534,"12","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0020","House Sparrow","Passer domesticus",31534,"2","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0024","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0034","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","House Sparrow","Passer domesticus",31534,"6","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","House Sparrow","Passer domesticus",31534,"5","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","House Sparrow","Passer domesticus",31534,"10","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0008","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0012","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","House Finch","Haemorhous mexicanus",32310,"3","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","House Finch","Haemorhous mexicanus",32310,"2","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","House Finch","Haemorhous mexicanus",32310,"2","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","House Finch","Haemorhous mexicanus",32310,"3","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0020","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0027","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0024","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0032","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","House Finch","Haemorhous mexicanus",32310,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0001","American Goldfinch","Spinus tristis",32617,"2","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0002","American Goldfinch","Spinus tristis",32617,"1","US-MA","Local Park","2026-02-11","09:27 AM","eBird - Traveling Count",35,1,0.795,NA,1,"",NA
+"CHK-0003","American Goldfinch","Spinus tristis",32617,"1","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0004","American Goldfinch","Spinus tristis",32617,"2","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","American Goldfinch","Spinus tristis",32617,"2","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0007","American Goldfinch","Spinus tristis",32617,"1","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","American Goldfinch","Spinus tristis",32617,"6","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0010","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","American Goldfinch","Spinus tristis",32617,"9","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","American Goldfinch","Spinus tristis",32617,"6","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","American Goldfinch","Spinus tristis",32617,"9","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","American Goldfinch","Spinus tristis",32617,"5","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","American Goldfinch","Spinus tristis",32617,"6","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","American Goldfinch","Spinus tristis",32617,"7","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","American Goldfinch","Spinus tristis",32617,"10","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","American Goldfinch","Spinus tristis",32617,"15","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","American Goldfinch","Spinus tristis",32617,"10","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","American Goldfinch","Spinus tristis",32617,"7","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","American Goldfinch","Spinus tristis",32617,"6","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","American Goldfinch","Spinus tristis",32617,"11","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","American Goldfinch","Spinus tristis",32617,"10","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","American Goldfinch","Spinus tristis",32617,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","American Goldfinch","Spinus tristis",32617,"2","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","American Goldfinch","Spinus tristis",32617,"4","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","American Goldfinch","Spinus tristis",32617,"5","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","American Goldfinch","Spinus tristis",32617,"2","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","American Goldfinch","Spinus tristis",32617,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","American Goldfinch","Spinus tristis",32617,"2","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","American Goldfinch","Spinus tristis",32617,"5","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","American Goldfinch","Spinus tristis",32617,"4","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","American Goldfinch","Spinus tristis",32617,"3","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0004","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0008","Chipping Sparrow","Spizella passerina",32990,"4","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Chipping Sparrow","Spizella passerina",32990,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0010","Chipping Sparrow","Spizella passerina",32990,"2","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","Chipping Sparrow","Spizella passerina",32990,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0013","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Chipping Sparrow","Spizella passerina",32990,"2","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Chipping Sparrow","Spizella passerina",32990,"4","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0017","Chipping Sparrow","Spizella passerina",32990,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Chipping Sparrow","Spizella passerina",32990,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Chipping Sparrow","Spizella passerina",32990,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Chipping Sparrow","Spizella passerina",32990,"4","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Chipping Sparrow","Spizella passerina",32990,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Chipping Sparrow","Spizella passerina",32990,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Chipping Sparrow","Spizella passerina",32990,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Chipping Sparrow","Spizella passerina",32990,"3","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Chipping Sparrow","Spizella passerina",32990,"1","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Chipping Sparrow","Spizella passerina",32990,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0038","Chipping Sparrow","Spizella passerina",32990,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0040","Chipping Sparrow","Spizella passerina",32990,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0004","Dark-eyed Junco","Junco hyemalis",33124,"7","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","Dark-eyed Junco","Junco hyemalis",33124,"6","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"S Singing Bird",NA
+"CHK-0007","Dark-eyed Junco","Junco hyemalis",33124,"1","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0006","Dark-eyed Junco","Junco hyemalis",33124,"8","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Dark-eyed Junco","Junco hyemalis",33124,"1","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0006","White-throated Sparrow","Zonotrichia albicollis",33201,"2","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0009","White-throated Sparrow","Zonotrichia albicollis",33201,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0011","White-throated Sparrow","Zonotrichia albicollis",33201,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","White-throated Sparrow","Zonotrichia albicollis",33201,"1","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0021","White-throated Sparrow","Zonotrichia albicollis",33201,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0011","Savannah Sparrow","Passerculus sandwichensis",33244,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0014","Savannah Sparrow","Passerculus sandwichensis",33244,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0026","Savannah Sparrow","Passerculus sandwichensis",33244,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0004","Song Sparrow","Melospiza melodia",33277,"3","US-MA","Local Park","2026-04-04","01:52 PM","eBird - Traveling Count",56,1,1.782,NA,2,"",NA
+"CHK-0005","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"S Singing Bird",NA
+"CHK-0006","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"S Singing Bird",NA
+"CHK-0008","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0010","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0012","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0015","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0024","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0033","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Song Sparrow","Melospiza melodia",33277,"2","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0035","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Song Sparrow","Melospiza melodia",33277,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0026","Lincoln's Sparrow","Melospiza lincolnii",33310,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0010","Baltimore Oriole","Icterus galbula",33770,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0011","Baltimore Oriole","Icterus galbula",33770,"3","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Baltimore Oriole","Icterus galbula",33770,"4","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Baltimore Oriole","Icterus galbula",33770,"6","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Baltimore Oriole","Icterus galbula",33770,"3","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Baltimore Oriole","Icterus galbula",33770,"6","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Baltimore Oriole","Icterus galbula",33770,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Baltimore Oriole","Icterus galbula",33770,"6","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Baltimore Oriole","Icterus galbula",33770,"4","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Baltimore Oriole","Icterus galbula",33770,"6","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Baltimore Oriole","Icterus galbula",33770,"6","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Baltimore Oriole","Icterus galbula",33770,"3","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Baltimore Oriole","Icterus galbula",33770,"7","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Baltimore Oriole","Icterus galbula",33770,"6","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Baltimore Oriole","Icterus galbula",33770,"4","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Baltimore Oriole","Icterus galbula",33770,"4","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Baltimore Oriole","Icterus galbula",33770,"4","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Baltimore Oriole","Icterus galbula",33770,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Baltimore Oriole","Icterus galbula",33770,"5","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Baltimore Oriole","Icterus galbula",33770,"4","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0017","Red-winged Blackbird","Agelaius phoeniceus",33779,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0025","Red-winged Blackbird","Agelaius phoeniceus",33779,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0027","Red-winged Blackbird","Agelaius phoeniceus",33779,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0028","Red-winged Blackbird","Agelaius phoeniceus",33779,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Red-winged Blackbird","Agelaius phoeniceus",33779,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0033","Red-winged Blackbird","Agelaius phoeniceus",33779,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0037","Red-winged Blackbird","Agelaius phoeniceus",33779,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0003","Brown-headed Cowbird","Molothrus ater",33833,"6","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0006","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"",NA
+"CHK-0008","Brown-headed Cowbird","Molothrus ater",33833,"2","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0014","Brown-headed Cowbird","Molothrus ater",33833,"3","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0016","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0019","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0020","Brown-headed Cowbird","Molothrus ater",33833,"2","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0027","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Brown-headed Cowbird","Molothrus ater",33833,"2","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0037","Brown-headed Cowbird","Molothrus ater",33833,"1","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0038","Brown-headed Cowbird","Molothrus ater",33833,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0003","Common Grackle","Quiscalus quiscula",33853,"1","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0009","Common Grackle","Quiscalus quiscula",33853,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0014","Common Grackle","Quiscalus quiscula",33853,"7","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Common Grackle","Quiscalus quiscula",33853,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0017","Common Grackle","Quiscalus quiscula",33853,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0018","Common Grackle","Quiscalus quiscula",33853,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","Common Grackle","Quiscalus quiscula",33853,"3","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0027","Common Grackle","Quiscalus quiscula",33853,"5","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Common Grackle","Quiscalus quiscula",33853,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Common Grackle","Quiscalus quiscula",33853,"4","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Common Grackle","Quiscalus quiscula",33853,"4","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Common Grackle","Quiscalus quiscula",33853,"3","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Common Grackle","Quiscalus quiscula",33853,"3","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Common Grackle","Quiscalus quiscula",33853,"4","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Common Grackle","Quiscalus quiscula",33853,"6","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Common Grackle","Quiscalus quiscula",33853,"3","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Common Grackle","Quiscalus quiscula",33853,"7","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Common Grackle","Quiscalus quiscula",33853,"11","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Common Grackle","Quiscalus quiscula",33853,"13","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Common Grackle","Quiscalus quiscula",33853,"15","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Common Grackle","Quiscalus quiscula",33853,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0001","Ovenbird","Seiurus aurocapilla",33946,"1","US-MA","Local Park","2025-09-12","01:22 PM","eBird - Traveling Count",74,1,2.059,NA,1,"",NA
+"CHK-0015","Ovenbird","Seiurus aurocapilla",33946,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0019","Ovenbird","Seiurus aurocapilla",33946,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0020","Ovenbird","Seiurus aurocapilla",33946,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Ovenbird","Seiurus aurocapilla",33946,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0034","Ovenbird","Seiurus aurocapilla",33946,"1","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0035","Ovenbird","Seiurus aurocapilla",33946,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0011","Black-and-white Warbler","Mniotilta varia",33962,"1","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0013","Black-and-white Warbler","Mniotilta varia",33962,"1","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0015","Black-and-white Warbler","Mniotilta varia",33962,"3","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0019","Black-and-white Warbler","Mniotilta varia",33962,"6","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Black-and-white Warbler","Mniotilta varia",33962,"5","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Black-and-white Warbler","Mniotilta varia",33962,"2","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Black-and-white Warbler","Mniotilta varia",33962,"4","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0014","Common Yellowthroat","Geothlypis trichas",34028,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0025","Common Yellowthroat","Geothlypis trichas",34028,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Common Yellowthroat","Geothlypis trichas",34028,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0032","Common Yellowthroat","Geothlypis trichas",34028,"1","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Common Yellowthroat","Geothlypis trichas",34028,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Common Yellowthroat","Geothlypis trichas",34028,"1","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Common Yellowthroat","Geothlypis trichas",34028,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0021","American Redstart","Setophaga ruticilla",34058,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","American Redstart","Setophaga ruticilla",34058,"3","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","American Redstart","Setophaga ruticilla",34058,"3","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","American Redstart","Setophaga ruticilla",34058,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","American Redstart","Setophaga ruticilla",34058,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0031","American Redstart","Setophaga ruticilla",34058,"2","US-MA","Local Park","2026-05-22","08:40 AM","eBird - Casual Observation",NA,0,NA,NA,1,"",NA
+"CHK-0030","American Redstart","Setophaga ruticilla",34058,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","American Redstart","Setophaga ruticilla",34058,"2","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0036","American Redstart","Setophaga ruticilla",34058,"4","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","American Redstart","Setophaga ruticilla",34058,"3","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","American Redstart","Setophaga ruticilla",34058,"2","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","American Redstart","Setophaga ruticilla",34058,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","American Redstart","Setophaga ruticilla",34058,"3","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0019","Cape May Warbler","Setophaga tigrina",34060,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0026","Cape May Warbler","Setophaga tigrina",34060,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0013","Northern Parula","Setophaga americana",34063,"1","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Northern Parula","Setophaga americana",34063,"1","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Northern Parula","Setophaga americana",34063,"2","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0019","Northern Parula","Setophaga americana",34063,"3","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Northern Parula","Setophaga americana",34063,"8","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Northern Parula","Setophaga americana",34063,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Northern Parula","Setophaga americana",34063,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Northern Parula","Setophaga americana",34063,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Northern Parula","Setophaga americana",34063,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Northern Parula","Setophaga americana",34063,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0027","Magnolia Warbler","Setophaga magnolia",34079,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0031","Magnolia Warbler","Setophaga magnolia",34079,"1","US-MA","Local Park","2026-05-22","08:40 AM","eBird - Casual Observation",NA,0,NA,NA,1,"",NA
+"CHK-0036","Magnolia Warbler","Setophaga magnolia",34079,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0027","Bay-breasted Warbler","Setophaga castanea",34083,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Bay-breasted Warbler","Setophaga castanea",34083,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0025","Blackburnian Warbler","Setophaga fusca",34084,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",659079759
+"CHK-0026","Blackburnian Warbler","Setophaga fusca",34084,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",659079822
+"CHK-0040","Blackburnian Warbler","Setophaga fusca",34084,"1","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0017","Northern Yellow Warbler","Setophaga aestiva",34087,"2","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Northern Yellow Warbler","Setophaga aestiva",34087,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Northern Yellow Warbler","Setophaga aestiva",34087,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Northern Yellow Warbler","Setophaga aestiva",34087,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0027","Northern Yellow Warbler","Setophaga aestiva",34087,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0025","Chestnut-sided Warbler","Setophaga pensylvanica",34133,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0023","Chestnut-sided Warbler","Setophaga pensylvanica",34133,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0025","Blackpoll Warbler","Setophaga striata",34138,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0027","Blackpoll Warbler","Setophaga striata",34138,"5","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Blackpoll Warbler","Setophaga striata",34138,"6","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Blackpoll Warbler","Setophaga striata",34138,"6","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0032","Blackpoll Warbler","Setophaga striata",34138,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0031","Blackpoll Warbler","Setophaga striata",34138,"1","US-MA","Local Park","2026-05-22","08:40 AM","eBird - Casual Observation",NA,0,NA,NA,1,"",NA
+"CHK-0030","Blackpoll Warbler","Setophaga striata",34138,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Blackpoll Warbler","Setophaga striata",34138,"4","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Blackpoll Warbler","Setophaga striata",34138,"2","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0035","Blackpoll Warbler","Setophaga striata",34138,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0039","Blackpoll Warbler","Setophaga striata",34138,"3","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0018","Black-throated Blue Warbler","Setophaga caerulescens",34141,"1","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","Black-throated Blue Warbler","Setophaga caerulescens",34141,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0038","Black-throated Blue Warbler","Setophaga caerulescens",34141,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Black-throated Blue Warbler","Setophaga caerulescens",34141,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0010","Palm Warbler","Setophaga palmarum",34148,"1","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
+"CHK-0005","Pine Warbler","Setophaga pinus",34153,"4","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"S Singing Bird",NA
+"CHK-0006","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-04-13","09:59 AM","eBird - Traveling Count",60,1,1.624,NA,2,"S Singing Bird",NA
+"CHK-0008","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"S Singing Bird",NA
+"CHK-0011","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0016","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0017","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-05-09","06:47 AM","eBird - Traveling Count",63,1,0.974,NA,1,"",NA
+"CHK-0019","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0034","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Pine Warbler","Setophaga pinus",34153,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Pine Warbler","Setophaga pinus",34153,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Pine Warbler","Setophaga pinus",34153,"3","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0011","Yellow-rumped Warbler","Setophaga coronata",34159,"12","US-MA","Local Park","2026-05-03","06:20 AM","eBird - Traveling Count",60,1,0.886,NA,1,"",NA
+"CHK-0012","Yellow-rumped Warbler","Setophaga coronata",34159,"4","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Yellow-rumped Warbler","Setophaga coronata",34159,"12","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Yellow-rumped Warbler","Setophaga coronata",34159,"23","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0016","Yellow-rumped Warbler","Setophaga coronata",34159,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0019","Yellow-rumped Warbler","Setophaga coronata",34159,"4","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Yellow-rumped Warbler","Setophaga coronata",34159,"6","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0021","Yellow-rumped Warbler","Setophaga coronata",34159,"3","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Yellow-rumped Warbler","Setophaga coronata",34159,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0015","Yellow-rumped Warbler (Myrtle)","Setophaga coronata coronata",34160,"11","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0026","Yellow-rumped Warbler (Myrtle)","Setophaga coronata coronata",34160,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0015","Black-throated Green Warbler","Setophaga virens",34218,"1","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0019","Black-throated Green Warbler","Setophaga virens",34218,"4","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Black-throated Green Warbler","Setophaga virens",34218,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Black-throated Green Warbler","Setophaga virens",34218,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Black-throated Green Warbler","Setophaga virens",34218,"4","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0023","Black-throated Green Warbler","Setophaga virens",34218,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Black-throated Green Warbler","Setophaga virens",34218,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0032","Black-throated Green Warbler","Setophaga virens",34218,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0031","Black-throated Green Warbler","Setophaga virens",34218,"1","US-MA","Local Park","2026-05-22","08:40 AM","eBird - Casual Observation",NA,0,NA,NA,1,"",NA
+"CHK-0030","Black-throated Green Warbler","Setophaga virens",34218,"1","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0038","Black-throated Green Warbler","Setophaga virens",34218,"2","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Canada Warbler","Cardellina canadensis",34344,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0019","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-05-11","06:24 AM","eBird - Traveling Count",72,1,0.953,NA,1,"",NA
+"CHK-0018","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-05-11","09:42 AM","eBird - Traveling Count",70,1,0.838,NA,1,"",NA
+"CHK-0020","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-13","06:10 AM","eBird - Traveling Count",69,1,0.952,NA,1,"",NA
+"CHK-0021","Scarlet Tanager","Piranga olivacea",34436,"3","US-MA","Local Park","2026-05-13","09:53 AM","eBird - Traveling Count",65,1,0.938,NA,1,"",NA
+"CHK-0025","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0033","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0035","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Scarlet Tanager","Piranga olivacea",34436,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Scarlet Tanager","Piranga olivacea",34436,"2","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0003","Northern Cardinal","Cardinalis cardinalis",34515,"1","US-MA","Local Park","2026-03-27","09:12 AM","eBird - Traveling Count",55,1,1.539,NA,1,"",NA
+"CHK-0005","Northern Cardinal","Cardinalis cardinalis",34515,"4","US-MA","Local Park","2026-04-09","09:52 AM","eBird - Traveling Count",71,1,1.51,NA,1,"",NA
+"CHK-0007","Northern Cardinal","Cardinalis cardinalis",34515,"2","US-MA","Local Park","2026-04-11","03:32 PM","eBird - Traveling Count",59,1,1.747,NA,2,"",NA
+"CHK-0008","Northern Cardinal","Cardinalis cardinalis",34515,"4","US-MA","Local Park","2026-04-15","09:34 AM","eBird - Traveling Count",52,1,1.802,NA,1,"",NA
+"CHK-0009","Northern Cardinal","Cardinalis cardinalis",34515,"1","US-MA","Local Park","2026-04-22","09:55 AM","eBird - Traveling Count",58,1,1.744,NA,1,"",NA
+"CHK-0012","Northern Cardinal","Cardinalis cardinalis",34515,"2","US-MA","Local Park","2026-05-03","09:33 AM","eBird - Traveling Count",60,1,0.955,NA,1,"",NA
+"CHK-0013","Northern Cardinal","Cardinalis cardinalis",34515,"2","US-MA","Local Park","2026-05-05","06:16 AM","eBird - Traveling Count",65,1,0.806,NA,1,"",NA
+"CHK-0014","Northern Cardinal","Cardinalis cardinalis",34515,"4","US-MA","Local Park","2026-05-05","09:27 AM","eBird - Traveling Count",66,1,1.051,NA,1,"",NA
+"CHK-0015","Northern Cardinal","Cardinalis cardinalis",34515,"2","US-MA","Local Park","2026-05-08","06:22 AM","eBird - Traveling Count",70,1,0.981,NA,1,"",NA
+"CHK-0016","Northern Cardinal","Cardinalis cardinalis",34515,"1","US-MA","Local Park","2026-05-08","09:42 AM","eBird - Traveling Count",61,1,1.015,NA,1,"",NA
+"CHK-0026","Northern Cardinal","Cardinalis cardinalis",34515,"3","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Northern Cardinal","Cardinalis cardinalis",34515,"5","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Northern Cardinal","Cardinalis cardinalis",34515,"1","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Northern Cardinal","Cardinalis cardinalis",34515,"1","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Northern Cardinal","Cardinalis cardinalis",34515,"2","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0034","Northern Cardinal","Cardinalis cardinalis",34515,"4","US-MA","Local Park","2026-05-26","06:51 AM","eBird - Traveling Count",68,1,0.93,NA,1,"",NA
+"CHK-0033","Northern Cardinal","Cardinalis cardinalis",34515,"2","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Northern Cardinal","Cardinalis cardinalis",34515,"4","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0035","Northern Cardinal","Cardinalis cardinalis",34515,"3","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Northern Cardinal","Cardinalis cardinalis",34515,"4","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Northern Cardinal","Cardinalis cardinalis",34515,"1","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Northern Cardinal","Cardinalis cardinalis",34515,"5","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0025","Rose-breasted Grosbeak","Pheucticus ludovicianus",34557,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0025","Indigo Bunting","Passerina cyanea",34607,"1","US-MA","Local Park","2026-05-18","06:05 AM","eBird - Traveling Count",72,1,0.974,NA,1,"",NA
+"CHK-0026","Indigo Bunting","Passerina cyanea",34607,"2","US-MA","Local Park","2026-05-18","09:53 AM","eBird - Traveling Count",71,1,0.97,NA,1,"",NA
+"CHK-0027","Indigo Bunting","Passerina cyanea",34607,"2","US-MA","Local Park","2026-05-19","06:43 AM","eBird - Traveling Count",73,1,0.965,NA,1,"",NA
+"CHK-0023","Indigo Bunting","Passerina cyanea",34607,"2","US-MA","Local Park","2026-05-19","09:54 AM","eBird - Traveling Count",71,1,1.072,NA,1,"",NA
+"CHK-0024","Indigo Bunting","Passerina cyanea",34607,"3","US-MA","Local Park","2026-05-20","06:51 AM","eBird - Traveling Count",66,1,0.931,NA,1,"",NA
+"CHK-0028","Indigo Bunting","Passerina cyanea",34607,"1","US-MA","Local Park","2026-05-20","09:51 AM","eBird - Traveling Count",64,1,0.933,NA,1,"",NA
+"CHK-0032","Indigo Bunting","Passerina cyanea",34607,"3","US-MA","Local Park","2026-05-22","07:07 AM","eBird - Traveling Count",67,1,0.962,NA,1,"",NA
+"CHK-0030","Indigo Bunting","Passerina cyanea",34607,"5","US-MA","Local Park","2026-05-22","10:05 AM","eBird - Traveling Count",66,1,0.917,NA,1,"",NA
+"CHK-0033","Indigo Bunting","Passerina cyanea",34607,"3","US-MA","Local Park","2026-05-26","09:56 AM","eBird - Traveling Count",64,1,0.936,NA,1,"",NA
+"CHK-0036","Indigo Bunting","Passerina cyanea",34607,"3","US-MA","Local Park","2026-05-27","05:48 AM","eBird - Traveling Count",66,1,0.902,NA,1,"",NA
+"CHK-0037","Indigo Bunting","Passerina cyanea",34607,"5","US-MA","Local Park","2026-05-27","09:00 AM","eBird - Traveling Count",67,1,0.919,NA,1,"",NA
+"CHK-0035","Indigo Bunting","Passerina cyanea",34607,"3","US-MA","Local Park","2026-05-28","11:20 AM","eBird - Traveling Count",72,1,1.029,NA,1,"",NA
+"CHK-0038","Indigo Bunting","Passerina cyanea",34607,"3","US-MA","Local Park","2026-05-29","06:28 AM","eBird - Traveling Count",66,1,0.945,NA,1,"",NA
+"CHK-0039","Indigo Bunting","Passerina cyanea",34607,"6","US-MA","Local Park","2026-05-29","09:35 AM","eBird - Traveling Count",65,1,0.993,NA,1,"",NA
+"CHK-0040","Indigo Bunting","Passerina cyanea",34607,"3","US-MA","Local Park","2026-06-03","09:58 AM","eBird - Traveling Count",68,1,0.947,NA,1,"",NA
+"CHK-0010","passerine sp.","Passeriformes sp.",35852,"2","US-MA","Local Park","2026-05-01","01:09 PM","eBird - Traveling Count",50,1,1.07,NA,1,"",NA
