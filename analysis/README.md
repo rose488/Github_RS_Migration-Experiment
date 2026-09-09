@@ -23,16 +23,13 @@ unrecognizable, since re-reading it is part of how I'm learning.
 
 ## Privacy: why the Checklist IDs look like "CHK-0001"
 
-Real eBird checklists have a public Submission ID (e.g. `CHK-0011`) that
-anyone can look up at `ebird.org/checklist/<ID>` to see the exact GPS
-location of that outing and the account that submitted it. To keep this
+eBird checklists have a public Submission ID to see the exact GPS
+location and the account that submitted it. To keep this
 project reproducible without exposing precise location or my eBird identity,
 every real ID was swapped for an arbitrary code before this data was
 committed, using a one-time local script (`deidentify_checklist_ids.R`).
 The real IDs never leave my computer — the lookup key and my raw personal
-export are both excluded via `.gitignore`. The species, counts, dates, and
-generic location name ("Local Park") are unchanged, so the analysis itself
-reproduces exactly.
+export are both excluded via `.gitignore`. 
 
 ## Reproducing this analysis
 
@@ -44,3 +41,67 @@ reproduces exactly.
    [ebirdst package docs](https://ebird.github.io/ebirdst/) for how to
    request one and set it as an environment variable.
 3. Open the `.Rmd` in RStudio and run chunks top to bottom, or Knit.
+
+
+# Citations for Source Data
+
+myebird_raw --> personal ebird data (LINK)
+ebird_taxonomy_raw -> ebird (LINK)
+local_status_raw --> state-specific data from ebird (LINK)
+
+# Raw data pre-processing
+
+- Location data that is more granular than state has been deleted from all raw csv files
+- The experiment location has been pre-filtered, so all birding entries loaded in 00_data-prep were part of this experiment, at the same location
+- All personal comment columns deleted
+- The location has been anonymized to "Local Park"
+- Submission IDs have been swapped with a random "code." Only that random code is visible in Github.
+
+# 00_data-prep file
+
+## Definitions
+
+- checklist
+- paired checklist
+- complete/incomplete checklist
+
+## Explanation of birding-specific data cleaning
+
+- Auk roll-up (in code comments)
+- Zero-filling
+
+
+# Other notes
+
+- "EXP" is short for "experiment," and used in my code to distinguish variables, dataframes, etc. that are specific to this experiment
+
+# 01_analysis
+
+ORDER OF OPERATIONS
+
+1. Main dataframes (myebird):
+   1. Load libraries and data
+   2. Quick column cleaning (names; Protocol titles)
+   3. Auk Rollup
+   4. Add Paired/Unpaired
+   5. FILTER CHECKLISTS
+  
+2. External Bird Metadata
+
+    1. Taxonomy, population
+    2. Massachusetts Breeding
+  
+3. Data cleaning: Main dataframe (myebird)
+
+4. Make `checklists` Dataframe (wide form)
+    - each checklist has one row
+    - every species has a separate column
+    - value = count for that checklist
+    - zero filling
+    - binning
+ 
+5. Pivot back to myebird (long form)
+    - one row per observation
+    - every checklist now has one row for each species seen DURING ENTIRE EXPERIMENT
+      - zero filled
+      - number of rows should equal: num_checklists * num_species
