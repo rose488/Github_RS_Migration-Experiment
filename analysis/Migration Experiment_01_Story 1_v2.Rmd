@@ -1,0 +1,1303 @@
+---
+title: "Migration Experiment_01-Data-Exploration"
+output:
+  html_document:
+    code_folding: "hide"
+    df_print: paged
+  pdf_document: default
+    
+---
+
+#  I. Setup
+## I.A. Libraries and Load Data
+```{r Setup, include=FALSE}
+library(tidyverse)
+library(tibble)
+library(here)
+library(lubridate)
+library(wesanderson)
+library(viridisLite)
+library(ggridges)
+library(patchwork)
+library(purrr)
+
+# install.packages("tigris")  # one-time
+library(auk)
+library(ebirdst)  #ebirdst_runs contains breeding data
+library(tigris)
+library(terra)
+
+# Load Data cleaned and processed by 00_data-cleaning
+myebird_EXP <- readRDS("./data/derived/myebird_EXP.rds")
+myebird_EXP_extra_obs_raw <- readRDS("./data/derived/myebird_EXP_extra_obs.rds") 
+myebird_EXP_extra_obs <- myebird_EXP_extra_obs_raw %>% mutate(Count = as.numeric(Count)) # for some reason count is importing as a character
+
+checklists_EXP <- readRDS("./data/derived/checklists_EXP.rds")
+my_tax_EXP <- readRDS("./data/derived/my_taxonomy_EXP.rds")
+
+# Birdcast
+birdcast <- read.csv("./data/raw/Birdcast summary.csv")
+
+```
+
+## I.B. Useful Reference Values
+```{r}
+# Metadata
+num_checklists = n_distinct(checklists_EXP$Checklist.ID)
+num_pairs = n_distinct(checklists_EXP$Date)
+obs_dates = unique(checklists_EXP$Day)
+
+
+# List of Species
+species_order <- my_tax_EXP %>% arrange(Taxonomy) %>% pull(Species)
+num_species = length(species_order)
+```
+
+
+## I.D. Add Population column
+
+"Population" is the max count for each particular day (defined in my filter function)
+
+Adding to overall myebird_EXP dataframe, but if the filter function is used, it will be recalculated within the function
+
+```{r}
+myebird_EXP <- myebird_EXP %>% group_by(Date, Species) %>%
+    mutate(Population = max(Count), .after = Count) %>% ungroup()
+```
+
+
+## I.E. Add Species Groups to myebird_EXP; Make Species and Groups factors
+
+```{r}
+# Add Species Groups to myebird_EXP
+my_tax_EXP_join <- my_tax_EXP %>% select(Species, Species.Group)
+
+myebird_EXP <- left_join(myebird_EXP, my_tax_EXP_join, by = "Species") %>%
+  relocate(Species.Group, .after = Species)
+
+# make Species and Groups factors
+#... for myebird_EXP
+myebird_EXP <- myebird_EXP %>% mutate(
+  Species = factor(Species, levels = my_tax_EXP$Species),
+  Species.Group = factor(Species.Group, levels = unique(my_tax_EXP$Species.Group)))
+#... and for mytaxonomy
+my_tax_EXP <- my_tax_EXP %>% mutate(
+  Species = factor(Species, levels = my_tax_EXP$Species),
+  Species.Group = factor(Species.Group, levels = unique(my_tax_EXP$Species.Group)))
+
+```
+
+
+## I.F. Functions
+```{r, FUNCTIONS}
+# ---- # MY FILTER FUNCTION ---- 
+# - "keep": can select character vectors and/or specific species strings to keep 
+#        - eg keep = c(vec1, "species1")
+# - "group": associated with "Species.Group", which is a grouping of convenience for graphing, NOT a precise phylogenetic grouping 
+# - "complete" and "paired" : pass TRUE/FALSE to function, if statement clears only if TRUE is passed, THEN filter is applied. 
+#        - This shouldn't be necessary since dataframes are already segregated (myebird_EXP, myebird_EXP_extra_obs)
+# - this function uses "my_tax_EXP" dataframe defined in setup chunk, outside of this function
+
+my_filter <- function(df, 
+                      complete = NULL, paired = NULL, 
+                      keep = NULL, drop = NULL,  
+                      group_keep = NULL, group_drop = NULL,
+                      time_bin_keep = NULL,
+                      date_drop = NULL) {
+  
+  
+  # Fold group_keep into keep
+  if(!is.null(group_keep)) {  
+    group_sp <- my_tax_EXP %>% filter(Species.Group %in% group_keep) %>% pull(Species) %>% as.character()
+    keep = c(keep, group_sp) }
+
+  # Fold group_drop into drop
+  if (!is.null(group_drop)) {
+    group_sp <- my_tax_EXP %>% filter(Species.Group %in% group_drop) %>% pull(Species) %>% as.character()
+    drop = c(drop, group_sp) }  
+  
+  
+  # Save "df" argument as "result" so that it has a different name after all the filtering
+  result <- df
+  
+  if(!is.null(complete))                result <- filter(result, Is.Complete == complete)
+  if(!is.null(paired))                  result <- filter(result, Is.Paired == paired)
+  if(!is.null(keep))          result <- filter(result, Species %in% keep)
+  if(!is.null(drop))          result <- filter(result, !(Species %in% drop))
+  # don't actually need the parentheses for !(Species %in% drop), bc !Species doesn't make sense, but !Boolean does
+  if(!is.null(time_bin_keep)) result <- filter(result, Start.Time.Bin %in% time_bin_keep)
+  if(!is.null(date_drop))     result <- filter(result, !(Date %in% date_drop))
+  
+ # result <- result %>% group_by(Date, Species) %>%
+  #  mutate(Population = max(Count), .after = Count) %>% ungroup()
+  
+  result
+}
+```
+
+
+```{r}
+# ---- 0. REGION POLYGON: needed as the default `region_poly` for
+# get_expected_abundance() below. Suffolk County, MA is loaded once here,
+# then reprojected to match the CRS used by eBird's abundance rasters
+# (we load one raster, "yerwar", purely to read its CRS off of it).
+suffolk <- counties(state = "MA", cb = TRUE, progress_bar = FALSE) %>%
+  filter(NAME == "Suffolk")
+
+abd <- load_raster("yerwar", product = "abundance", resolution = "27km")
+
+suffolk_v <- vect(suffolk)
+suffolk_v <- project(suffolk_v, crs(abd))   # match raster's CRS
+
+
+# DOWNLOAD SPECIES ABUNDANCE DATA AND MAKE 3-PART GRAPH
+
+# ---- 1. FUNCTION DEFINITION: one species -> expected abundance curve ----
+# manual overrides for species whose codes don't match my taxonomy df
+code_overrides <- c(
+  "Eastern Warbling Vireo" = "warvir",   # <- replace with what the search returns
+  "Northern House Wren"    = "houwre"    # <- replace with what the search returns
+)
+get_expected_abundance <- function(species_common_name,
+                                   taxonomy_df = my_tax_EXP,
+                                   region_poly = suffolk_v,
+                                   months_keep = c(3,4,5,6)) {
+  code <- if (species_common_name %in% names(code_overrides)) {
+    code_overrides[[species_common_name]]          # override wins if present
+  } else {
+    taxonomy_df %>% filter(Species == species_common_name) %>% pull(Species.Code)
+  }
+  # FIXED GUARD: catches NA, empty, and multi-match
+  if (length(code) != 1 || is.na(code) || code == "") {
+    warning("No usable species code for: ", species_common_name); return(NULL)
+  }
+  result <- try({
+    ebirdst_download_status(species = code)
+    load_raster(code, product = "abundance", resolution = "27km")
+  }, silent = TRUE)
+  if (inherits(result, "try-error")) {             # keeps one bad species from killing the whole run
+    warning("Download/load failed for: ", species_common_name, " (", code, ")")
+    return(NULL)
+  }
+  vals <- as.numeric(extract(result, region_poly, fun = mean, na.rm = TRUE)[1, -1])
+  data.frame(Species = species_common_name,
+             date = as.Date(names(result)),
+             expected_abundance = vals) %>%
+    filter(month(date) %in% months_keep) %>%
+    mutate(yday = yday(date))
+}
+
+
+# ---- 2. FUNCTION DEFINITION: SHARED PLOT SETUP ----
+
+# now a FUNCTION, since the x-range varies by species
+align_layers <- function(rng) {
+  list(
+    geom_vline(xintercept = obs_yday, color = "grey65", linewidth = 0.3, linetype = "dotted"),
+    annotate("rect", xmin = -Inf, xmax = min(obs_yday), ymin = -Inf, ymax = Inf,
+             fill = "grey85", alpha = 0.4),
+    annotate("rect", xmin = max(obs_yday), xmax = Inf, ymin = -Inf, ymax = Inf,
+             fill = "grey85", alpha = 0.4),
+    scale_x_continuous(breaks = month_breaks, labels = month_labels),
+    coord_cartesian(xlim = rng)          # crops the view without dropping rows (no warnings)
+  )
+}
+
+# ---- 3. FUNCTION DEFINITION: one species -> stacked 3-panel figure ----
+make_3panel <- function(sp) {
+  exp_sp <- expected_all %>% filter(Species == sp)
+  if (nrow(exp_sp) == 0) return(NULL)              # skip species that failed lookup
+
+  rng <- if (!is.null(range_overrides[[sp]])) range_overrides[[sp]] else default_range
+
+  p1 <- ggplot(exp_sp, aes(x = yday, y = expected_abundance)) +
+    geom_line() + geom_point() +
+    align_layers(rng) +
+    labs(title = sp, subtitle = "Expected regional abundance (eBird 2023 modeled estimate)", x = NULL, y = "Expected") +
+    theme_minimal()
+    
+    
+  p2 <- birdcast %>%
+    ggplot(aes(x = yday, y = Average.Birds.in.Flight)) +
+    geom_line() + geom_point() +
+    align_layers(rng) +
+    labs(subtitle = "BirdCast migration", x = NULL, y = "Birds in flight") +
+    theme_linedraw()
+
+ 
+  p3 <- myebird_EXP %>% filter(Species == sp) %>%
+    mutate(yday = yday(Date)) %>%
+    ggplot(aes(x = yday, y = Population)) +
+    geom_line(linetype = "dashed", color = "grey50", linewidth = 0.4) +
+    geom_point(size = 2) +
+    geom_rug(sides = "b", length = unit(0.04, "npc")) +
+    align_layers(rng) +
+    labs(subtitle = "Your observed counts (dashed = interpolated between visits)",
+         x = NULL, y = "Count") +
+    theme_minimal()
+
+  p1 / p2 / p3
+}
+
+```
+
+
+#   II. Subdividing Datasets (DAY POPULATION, NO TIMEPOINT)
+
+Let's make some subgrouped dataframes with my filter function
+
+Pass LONG FORM dataframes for graphing (heat maps at least)
+
+## II. A. Migrants, Residents, Nonnative
+```{r}
+#### Tags ####
+residents_sp <- my_tax_EXP %>% filter(Resident == TRUE) %>% pull(Species)
+migrants_sp  <- my_tax_EXP %>% filter(Resident==FALSE) %>% pull(Species)
+nonnative_sp <- c("European Starling","House Sparrow")
+
+#### Datasets ####
+# Selections will remove duplicate rows
+residents    <- my_filter(df = myebird_EXP, keep = residents_sp)  %>% 
+  select(-"Count") %>% distinct(Date, Species, .keep_all=TRUE)
+
+migrants     <- my_filter(df = myebird_EXP, keep = migrants_sp)  %>% 
+  select(-"Count") %>% distinct(Date, Species, .keep_all=TRUE)
+```
+
+## II. B. Warblers: Datasets and Tags
+```{r}
+warblers    <- my_filter(df = myebird_EXP, group_keep = c("Warblers"))  %>% 
+    select(-"Count") %>% distinct(Date, Species, .keep_all=TRUE)
+
+warblers_sp <- warblers %>% distinct(Species) %>% pull(Species) %>% as.character()
+
+```
+
+
+##  II. D. Favorite Species - Datasets and Tags
+### II.D.1. Favorite Species - Large List
+
+```{r}
+favorites <- my_filter(myebird_EXP, drop = c("Mourning Dove", "Turkey Vulture", "Northern Mockingbird", "American Goldfinch", "Brown-headed Cowbird", "Common Grackle", "Northern Cardinal", "European Starling", "American Robin"), group_drop = c("Cormorants", "Corvids"))
+favorites_sp <- favorites %>% distinct(Species) %>% pull(Species) %>% as.character()
+
+# favorites_sp narrowed to migratory (non-resident) species only. Computed
+# here (instead of down in the wave-delta section where it's also used) so
+# the richness calculation below can use it too.
+favorites_nonresident_sp <- favorites_sp[favorites_sp %in% as.character(migrants_sp)]
+```
+
+### II.D.3. Favorite Species - w Good Patterns
+
+Specifically looking for clear patterns, multiple sightings, excluding boring birds (robins, mockingbirds)
+
+```{r}
+##### Dataset ###
+good_patterns_sp <- c("Great Crested Flycatcher",
+    "Eastern Warbling Vireo",
+    "Northern House Wren",
+    "Wood Thrush",
+    "Cedar Waxwing",
+    "Eastern Wood-Pewee",
+    "Scarlet Tanager",
+    "Red-eyed Vireo",
+    "Indigo Bunting",
+    "Chimney Swift",
+    "Pine Warbler",
+    "Black-and-white Warbler",
+    "Ovenbird",
+    "Northern Parula",
+    "Yellow-rumped Warbler",
+    "Black-throated Green Warbler",
+    "Blackpoll Warbler",
+    "American Redstart")
+
+good_patterns <- my_filter(myebird_EXP, keep = c(good_patterns_sp)) %>%
+  select(-"Count") %>% distinct(Date, Species, .keep_all=TRUE)
+
+# Organizing Species order
+good_patterns <- good_patterns %>%
+  mutate(Species = factor(Species, levels = c(
+    "Great Crested Flycatcher",
+    "Eastern Warbling Vireo",
+    "Northern House Wren",
+    "Wood Thrush",
+    "Cedar Waxwing",
+    "Eastern Wood-Pewee",
+    "Scarlet Tanager",
+    "Red-eyed Vireo",
+    "Indigo Bunting",
+    "Chimney Swift",
+    "Pine Warbler",
+    "Black-and-white Warbler",
+    "Ovenbird",
+    "Northern Parula",
+    "Yellow-rumped Warbler",
+    "Black-throated Green Warbler",
+    "Blackpoll Warbler",
+    "American Redstart"
+  )))
+```
+
+#   III. Calculate Species Richness
+
+## III.A. Make Richness Dataframes (wide version, each count gets its own column)
+
+MAIN PURPOSE: Date -> # Unique Species
+
+One row per day, so no time bins, species-specific counts/population
+
+Will make different richness counts, based on different subsets of birds
+
+- "All" richness       = Tot.Sp
+- "Favorites" richness = Tot.Sp.Faves = only counting from my "favorite" species list
+- "Non-Resident Favorites" richness = Tot.Sp.Nonres.Faves
+- "Warblers" richness  = Tot.Sp.Warblers
+
+```{r}
+# 1. Start with richness Tot.Sp count for ALL birds
+richness_by_day <- myebird_EXP %>% filter(Population>0) %>% group_by(Date) %>% 
+  mutate(Tot.Sp = n_distinct(Species)) %>% ungroup() %>%
+  select(c(Date:Day, Tot.Sp)) %>%
+  unique()
+
+# 2. get counts for other subsets, then join to richness_by_day df
+
+# FAVORITES
+richness_faves <- myebird_EXP %>% filter(Population>0, Species %in% favorites_sp) %>% group_by(Date) %>% 
+  mutate(Tot.Sp.Faves = n_distinct(Species)) %>% ungroup() %>%
+  select(c(Date, Tot.Sp.Faves)) %>%
+  unique()
+
+# MIGRANTS
+richness_favorites_nonresident <- myebird_EXP %>% filter(Population>0, Species %in% favorites_nonresident_sp) %>% group_by(Date) %>%
+  mutate(Tot.Sp.Nonres.Faves = n_distinct(Species)) %>% ungroup() %>%
+  select(c(Date, Tot.Sp.Nonres.Faves)) %>%
+  unique()
+
+# WARBLERS
+richness_warblers <- myebird_EXP %>% filter(Population>0, Species %in% warblers_sp) %>% group_by(Date) %>% 
+  mutate(Tot.Sp.Warblers = n_distinct(Species)) %>% ungroup() %>%
+  select(c(Date, Tot.Sp.Warblers)) %>%
+  unique()
+
+
+# 3. Joins!!
+
+richness_by_day <- left_join(richness_by_day, richness_faves, by = "Date")
+richness_by_day  <- left_join(richness_by_day, richness_favorites_nonresident, by = "Date")
+richness_by_day <- left_join(richness_by_day, richness_warblers, by = "Date")
+
+```
+
+## III.B. LENGTHEN Richness df for faceted graphing! 
+
+```{r}
+richness_long <- richness_by_day %>% 
+  pivot_longer(
+    cols = c(Tot.Sp, Tot.Sp.Faves, Tot.Sp.Nonres.Faves, Tot.Sp.Warblers),
+    names_to = "Species.Subset",
+    values_to = "Total.Species"
+    )
+```
+
+#   IV. Graphing
+##  IV. A. GGPLOT THEMES and Other Prep
+
+```{r, Themes}
+# Where to save graphs
+fig_dir        <- "figures"
+
+# Heatmap for overall population by day-- no faceting by timepoint!
+# for larger species counts (duplicated x axis)
+heatmap_theme <- list(
+  geom_tile(),
+  theme_light(),
+  scale_y_discrete(limits = rev),
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = "Population"),
+  theme( plot.title = element_text(hjust = 0.5),
+        plot.subtitle = element_text(hjust = 0.5)))
+
+myviridis3 <-list(
+  scale_fill_gradientn(
+    colours = c(viridis(5)),
+    values = scales::rescale(c(0, 3, 6, 9, 12, 24)))
+)
+
+myviridis_100 <-list(
+  scale_fill_gradientn(
+    colours = c(viridis(5)),
+    values = scales::rescale(c(0, 5, 10, 20, 40, 80)))
+)
+
+```
+
+
+##  IV. B. Color schemes
+
+```{r}
+warbler_colors <- c(
+  "Ovenbird" = "#8C510A",                     # warm brown
+  "Black-and-white Warbler" = "#000000",       # black
+  "American Redstart" = "#E66101",             # burnt orange
+  "Northern Parula" = "#56B4E9",                # sky blue
+  "Blackpoll Warbler" = "#A69488",              # warm gray, orange-tinted (legs!)
+  "Pine Warbler" = "#A6B32E",                   # olive-yellow-green
+  "Yellow-rumped Warbler" = "#F0E442",          # bright lemon yellow
+  "Black-throated Green Warbler" = "#1B7837",    # forest green
+# -- new --
+  "Black-throated Blue Warbler" = "#2166AC",   # deep steel blue (male plumage)
+  "Northern Yellow Warbler" = "#E8A020",        # warm golden yellow (distinct from lemon #F0E442)
+  "Blackburnian Warbler" = "#FF4500",          # vivid orange-red (iconic throat; brighter/redder than Redstart)
+  "Bay-breasted Warbler" = "#8B1A1A",          # dark chestnut red (the bay flanks)
+  "Magnolia Warbler" = "#C4C000",              # yellow-olive (yellow underparts)
+  "Cape May Warbler" = "#D6604D",              # terracotta (rufous cheek)
+  "Common Yellowthroat" = "#D4B200",           # warm yellow (yellow throat)
+"Chestnut-sided Warbler" = "#C1692A"         # russet chestnut (the sides)
+)
+ 
+  
+
+
+```
+
+
+##  IV.C. Experiment Dates
+
+```{r}
+# Graph representing the experiment dates
+p_dates <- myebird_EXP %>%
+  ggplot(aes(x=Date, y = Start.Time.Bin)) +
+  geom_point(size = 4) +
+  theme(axis.text.x = element_text(angle=45, size = 10, hjust=1),
+          panel.grid.minor = element_blank()) +
+  scale_x_date(breaks = sort(unique(myebird_EXP$Date)),
+               date_labels = "%m-%d")+
+  labs(title = "Distribution of Paired, Complete Checklists Across Dates")
+
+p_dates
+
+ggsave(file.path(fig_dir, "Experiment Dates.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
+```
+
+##  IV. D. Birdcast Migration Data
+### IV. D.1 Migration Data: Make lists, dfs, and lines
+```{r}
+# ---- WAVE BOUNDS: single source of truth for the 5 migration waves ----
+# Every band/rectangle drawn later (on the "Day of May" x-axis used by
+# BirdCast, and on the "day of year" x-axis used by everything else) is
+# derived from this one table, so a wave's date range only ever needs to
+# be edited in one place. (assign_wave(), further down in section IV.G,
+# encodes the same 5 waves for per-day lookup and should be kept in sync
+# if these ranges change.)
+wave_bounds <- tribble(
+  ~Wave,     ~xmin, ~xmax,
+  "Wave 1",   4.6,   6.4,
+  "Wave 2",  10.6,  11.4,
+  "Wave 3",  12.6,  13.4,
+  "Wave 4",  16.6,  19.4,
+  "Wave 5",  25.6,  27.4
+)
+
+# Grey rectangles marking each wave, on the "Day of May" axis
+band_peaks <- pmap(wave_bounds, function(Wave, xmin, xmax) {
+  annotate("rect", xmin = xmin, xmax = xmax, ymin = -Inf, ymax = Inf,
+           fill = "grey50", alpha = 0.2)
+})
+
+# Same bands, shifted onto "day of year" (yday) coordinates -- used by every
+# plot below that isn't on BirdCast's own "Day of May" axis.
+may_offset <- yday(as.Date("2026-05-01")) - 1
+wave_bands <- pmap(wave_bounds, function(Wave, xmin, xmax) {
+  annotate("rect", xmin = xmin + may_offset, xmax = xmax + may_offset,
+           ymin = -Inf, ymax = Inf, fill = "grey50", alpha = 0.2)
+})
+
+# Add Column Documenting Wave #
+birdcast <- birdcast %>% mutate(
+  Wave = factor(
+    case_when(
+#      Day.of.May == 1 ~ "Wave 1",
+      Day.of.May == 5 | Day.of.May == 6 ~ "Wave 1",
+      Day.of.May == 11 ~ "Wave 2",
+      Day.of.May == 13 ~ "Wave 3",
+      Day.of.May == 17 | Day.of.May == 18 | Day.of.May == 19 ~ "Wave 4",
+      Day.of.May == 26 | Day.of.May == 27 ~ "Wave 5",
+      .default = "No Wave"),
+    levels = c("Wave 1", "Wave 2", "Wave 3", "Wave 4", "Wave 5", "Wave 6", "No Wave"),
+    ordered = TRUE)
+)
+birdcast <- birdcast %>%
+  mutate(yday = Day.of.May + (yday(as.Date("2026-05-01")) - 1))
+
+```
+
+### IV. D.2 Migration Data: Graphing
+
+```{r}
+title_size <- 18
+subtitle_size <- 12
+axis_title_size <- 12
+axis_text_size <- 10
+# Line graph Avg Migration
+p_birdcast <- 
+birdcast %>% filter(Day.of.May >=3 & Day.of.May <=29) %>%
+                ggplot(aes(x=Day.of.May, y = Average.Birds.in.Flight))+
+                geom_point() +
+                geom_line()+
+                band_peaks +
+                theme_linedraw() +
+                labs(title = "Suffolk County Birdcast Data",
+                                    subtitle = "(Wave Peaks Highlighted in Grey)",
+                                    x = "Morning After Overnight Migration (Day of May)",
+                                    y = "Average Birds in Flight") +
+                scale_x_continuous(breaks = seq(3,29,1), 
+                                    expand = expansion(mult = c(0.03,0.03)))+
+# Scale for patchworking
+                scale_y_continuous(limits = c(0,15000),
+                                   breaks = seq(0,15000,5000),
+                                   expand = expansion(mult= c(0,0)))+
+                theme(plot.title = element_text(hjust = 0.5, size = title_size),
+                      plot.subtitle = element_text(hjust = 0.5, size = subtitle_size),
+                      
+                      axis.title.x=element_text(size = axis_title_size),
+                      axis.text.x = element_text(size = axis_text_size, margin=margin(b=6, t=4), hjust = 0.5),
+                      
+                      axis.title.y = element_text(size =axis_title_size),
+                      axis.text.y = element_text(size = axis_text_size, margin = margin(l=5),hjust = 0.5),
+                      panel.grid.minor = element_blank())
+
+p_birdcast
+
+ggsave(file.path(fig_dir, "Radar-Measured Nightly Migration.png"),
+             p_birdcast, width = 11, height = 7, dpi = 150)
+
+```
+
+##  IV. E. Observations: Heatmaps and Ridgeplots
+
+###  IV.E.1.   All Species
+
+A psuedolog transformation of the color scale is used, along with custom breaks, because a few species have very high counts
+
+```{r, fig.height=12, fig.width = 7}
+# ALL Observations in Heat map, divided into Migrants and Residents
+myebird_EXP_grouped <- myebird_EXP %>%
+  left_join(my_tax_EXP %>% select(Species, Resident), by = "Species") %>%
+  mutate(Resident = factor(Resident, levels = c(FALSE, TRUE), labels = c("Migrant", "Resident")))
+
+myebird_EXP_grouped %>%
+  ggplot(aes(x = Month.Day, y = Species, fill = Population)) +
+  heatmap_theme +
+   labs(title = "Day Population", 
+       subtitle = "Migrants and Residents",
+    #   x = "Date",
+       y = NULL) +
+  facet_grid(rows = vars(Resident), scales = "free_y", space = "free_y") +
+  scale_fill_viridis_c(breaks = c(0,2,5,10,25,50,100), trans = "pseudo_log")+
+ scale_x_discrete(sec.axis = dup_axis())+
+  theme(axis.text.x.bottom = element_text(size=8, angle = 40, vjust = 0.6),
+        axis.text.x.top = element_text(size=8, angle = 40, vjust = 0.4),
+        axis.text.y = element_text(size = 8, vjust = 0.3))
+
+ggsave(file.path(fig_dir, "Heatmap of All Species Observed.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
+
+```
+
+
+###  IV.E.5.    Warblers: Heatmaps; Ridges
+#### IV.E.5.i.  Warbler Heatmaps
+```{r} 
+
+# All Warblers
+warblers %>%
+ggplot(aes(x=Month.Day, y = Species, fill = Population))+
+  heatmap_theme +
+  labs(title = "Day Population", 
+       subtitle = "Warblers!",
+       x = "",
+       y = NULL) +
+  scale_fill_viridis_c(breaks = c(0,1, 2, 5,10,20),trans = "pseudo_log") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+  axis.text.x.top = element_text(margin = margin(b=4), hjust = 0))
+
+ggsave(file.path(fig_dir, "Heatmap of Warblers Observed.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
+```
+
+#### IV.E.5.ii  Warbler Ridges
+
+```{r, fig.height=8, fig.width=8}
+# All warblers
+p_warbs_ridges<- my_filter(warblers) %>%
+                            ggplot(aes(x=Day, y = Species, height = Population, fill = Species))+
+                            geom_ridgeline(scale = 0.2) +
+                            scale_fill_manual(values = warbler_colors) +
+                           # band_peaks +
+                            theme_minimal() +
+                            scale_x_continuous(breaks = obs_dates, 
+                                               expand = expansion(mult = c(0.03,0.03)),
+                                               limits = c(3,29)) +
+                            labs(title = "\nWarbler Sightings",
+                            subtitle = "(Colors correspond to actual bird colorings)",
+                              x="Observation Day")+
+                            theme(legend.position = "none",
+                            plot.title = element_text(hjust = 0.5),
+                            plot.subtitle = element_text(hjust = 0.5),
+                                  panel.grid.major.x = element_line(color = "gray50", linewidth = 0.3),
+                                  axis.ticks.minor.x = element_blank(),
+                                  panel.grid.minor.x = element_blank(),
+                                  axis.ticks.major.y = element_blank())
+                            
+p_birdcast / p_warbs_ridges + plot_layout(heights = c(1,6))
+
+ggsave(file.path(fig_dir, "Warbler Ridge Graphs.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
+
+```
+
+#### IV.E.5.iii Warbler DISCRETE Bar Graphs (technically more accurate than ridges)
+
+```{r, fig.width=8, fig.height=6}
+# ALL WARBLERS
+
+# STAGGERED BARS -- Use geom_rect so it can be merged like the ridgelines
+
+# Give each species a numeric baseline position ####
+warblers <- warblers %>%
+    mutate(Species.Num = as.numeric(factor(Species)))
+
+# GRAPHING
+# Plot the Data ####
+p_warbs_bars <- warblers %>%
+    ggplot(aes(x = Day, y = Species.Num)) +
+    geom_rect(aes(xmin = Day - 0.4, xmax = Day + 0.4,
+                  ymin = Species.Num, ymax = Species.Num + Population * 0.15,
+                  fill = Species)) +
+# Theme and aesthetics ####
+    theme_linedraw() +
+    scale_fill_manual(values = warbler_colors)+
+    band_peaks+
+    labs(title = "",
+         y = "")+
+# Axes ####
+    scale_x_continuous(
+      limits = c(3,29),
+      breaks = obs_dates,
+      expand = expansion(mult= c(0.03,0.03))) +
+    scale_y_continuous(
+      breaks = sort(unique(warblers$Species.Num)),
+      labels = levels(factor(warblers$Species)),
+      expand = expansion(mult = c(0,0))) +
+  # Use coord_cart instead of scale_y_cont(limits = ) so that geom_rect doesn't drop any bars if they go off the chart!
+    coord_cartesian(ylim = c(1,18.7))+    
+    theme(legend.position = "none",
+         # panel.grid.major = seq(1,31,7),
+          panel.grid.minor = element_blank())
+
+p_birdcast / p_warbs_bars + plot_layout(heights= c(1,6))
+
+ggsave(file.path(fig_dir, "Warbler Ridge Graphs.png"),
+             p_dates, width = 11, height = 7, dpi = 150)
+```
+
+
+###  IV.D.6.    18 Favorites: Ridges; Ridges+ Birdcast Merged PLot
+#### IV.D.6.i.  Ridges plot alone
+
+```{r}
+# Make Ridges plot
+p_good_patterns_ridges <- good_patterns %>%
+                            ggplot(aes(x=Day, y = Species, height = Population, fill = Species))+
+                            geom_ridgeline(scale = 0.15) +
+                           # scale_fill_manual(values = warbler_colors) +
+                           # band_peaks +
+                            theme_minimal() +
+                            scale_x_continuous(breaks = obs_dates, 
+                                               expand = expansion(mult = c(0.03,0.03)),
+                                               limits = c(3,29)) +
+                            coord_cartesian(ylim = c(1.3, 17.4)) +
+                            labs(title = "Favorite Birds, Clear Patterns",
+                                 #subtitle = "",
+                                 y = NULL,
+                                 x="Observation Day") +                          
+                            theme(legend.position = "none",
+                                  plot.title = element_text(hjust = 0.5),
+                                  panel.grid.major.x = element_line(color = "gray50", linewidth = 0.3),
+                                  panel.grid.major.y = element_line(color = "gray0", linewidth = 0.3),
+                               #  axis.ticks.major.y = element_blank()) +  # not defined in element hierarcy error
+                                #  axis.ticks.minor.x = element_blank(),  # not defined in element hierarcy error
+                                  panel.grid.minor.x = element_blank()) 
+
+```
+
+#### IV.D.6.ii.   Ridges + Birdcast Merged Plot 
+
+```{r, fig.height=8, fig.width = 8}
+# Re-set graph sizes for this merged figure specifically (smaller
+# axis_title_size/axis_text_size than the standalone BirdCast plot above,
+# since this version gets squeezed into a shared panel with the ridgeline).
+title_size <- 18
+subtitle_size <- 12
+axis_title_size <-10
+axis_text_size <-10
+
+# Make Birdcast portion of plot
+p_birdcast_large <-  p_birdcast + 
+  theme(
+    axis.title.y = element_text(size = axis_title_size, margin = margin(r = 0),vjust = 0.5),
+    axis.text.y  = element_text(size = axis_text_size,  hjust = 1, margin = margin(r=3,l=0)),
+    axis.title.x = element_text(size = axis_title_size)
+                                )
+
+# Make Ridges portion of plot
+p_good_patterns_ridges_large <- 
+  p_good_patterns_ridges +
+  theme(plot.title = element_text(size=title_size, margin = margin(t=5)),
+        axis.text.x = element_text(size=axis_text_size),
+        axis.text.y = element_text(size=axis_text_size))
+
+# Print plot
+p_birdcast_large / p_good_patterns_ridges_large + plot_layout(heights = c(1,6))
+```
+
+
+
+##  IV. F. 3-panel figures
+
+
+### IV. F.1. Download Expected Species Data (Abundance from)
+
+```{r}
+# ---- CALL MAP_DFR TO DOWNLOAD SPECIES DATA-- all 18 species ----
+# Checks if it's already been downloaded
+# Saves new RDS ONLY ONCE, expected_all and exp_path
+good_patterns_sp <- levels(good_patterns$Species)
+
+# Relative to this .Rmd's own folder (same convention as the readRDS() calls
+# in Setup), so it still works no matter whose computer this project is on.
+exp_path <- "./data/expected_all.rds"
+
+if (file.exists(exp_path)) {
+  expected_all <- readRDS(exp_path)
+} else {
+  expected_all <- map_dfr(good_patterns_sp, get_expected_abundance)
+  saveRDS(expected_all, exp_path)
+}
+
+```
+
+### IV. F.2. Single Species 3-Panel Figures
+```{r}
+#-------- 3-GRAPH/SPECIES; MANY SPECIES: BIRDCAST, EXPECTED=ABUNDANCE, ACTUAL OBSERVED  ---------
+
+# ---- 1.  SHARED PLOT SETUP ----
+obs_yday <- sort(unique(yday(myebird_EXP$Date)))        # days you actually birded
+
+# default window: mid-April through mid-June
+default_range <- yday(as.Date(c("2026-04-26", "2026-06-07")))
+
+# species that need an earlier start (last ~2 weekly points of March)
+range_overrides <- list(
+  "Yellow-rumped Warbler" = yday(as.Date(c("2026-03-29", "2026-06-08"))),
+  "Pine Warbler"          = yday(as.Date(c("2026-03-29", "2026-06-08")))
+)
+
+# per-species x windows: overrides where defined, default otherwise
+# MOVED UP from the "2-GRAPHS" chunk further down -- trim_to_window() gets
+# called by name earlier in this doc (the "1-GRAPH/SP" chunk below), so both
+# rng_df and the function itself have to exist before that first call, not
+# just before their original spot.
+rng_df <- tibble(
+  Species = factor(good_patterns_sp, levels = good_patterns_sp),
+  lo = sapply(good_patterns_sp, function(s)
+        if (!is.null(range_overrides[[s]])) range_overrides[[s]][1] else default_range[1]),
+  hi = sapply(good_patterns_sp, function(s)
+        if (!is.null(range_overrides[[s]])) range_overrides[[s]][2] else default_range[2])
+)
+
+# TRIM FIRST — so the denominator reflects only the visible window
+trim_to_window <- function(df) {
+  df %>%
+    left_join(rng_df, by = "Species") %>%
+    filter(yday >= lo, yday <= hi) %>%
+    select(-lo, -hi)
+}
+
+# scales fig.height to the number of facet panels, so species-count changes
+# don't require re-tuning fig.height by hand (panel_h/extra are the only
+# knobs -- inches per row, and fixed room for title/legend/axis)
+facet_height <- function(n, ncol, panel_h = 2.2, extra = 1.8) {
+  nrow <- ceiling(n / ncol)
+  nrow * panel_h + extra
+}
+
+month_breaks <- yday(as.Date(c("2026-03-01","2026-04-01","2026-05-01","2026-06-01")))
+month_labels <- c("Mar","Apr","May","Jun")
+
+# ---- 2. CALL 3-PANEL GRAPHING FUNCTION: one figure per species ----
+all_figs <- map(good_patterns_sp, make_3panel)   # <- the call
+names(all_figs) <- good_patterns_sp
+all_figs[["Blackpoll Warbler"]]              # view one
+all_figs[["Pine Warbler"]]                   # view one
+#all_figs
+```
+
+### IV. F.3. 18 Favorite Species, Observed Counts
+```{r, fig.width = 7, fig.height = facet_height(length(good_patterns_sp), 3)}
+# CLAUDE
+
+# ----- 1-GRAPH/SP; MANY SPECIES = ACTUAL OBSERVED COUNTS ONLY ----
+# ---- MANY SPECIES PER FIGURE
+
+
+month_breaks <- yday(as.Date(c(
+  "2026-03-01","2026-03-15","2026-04-01","2026-04-15",
+  "2026-05-01","2026-05-15","2026-06-01","2026-06-15")))
+month_labels <- c("Mar 1","Mar 15","Apr 1","Apr 15","May 1","May 15","Jun 1","Jun 15")
+
+# may_offset and wave_bands (the grey migration-wave rectangles in yday
+# space) were already built once in section IV.D.1 -- reused here as-is.
+
+obs_counts <- myebird_EXP %>%
+  filter(Species %in% good_patterns_sp) %>%
+  mutate(Species = factor(Species, levels = good_patterns_sp),
+         yday = yday(Date)) %>%
+  distinct(Species, yday, Population) %>%
+  trim_to_window()
+
+# same "only show extras that add information" logic, but on raw counts
+interp_counts <- function(sp, x) {
+  o <- obs_counts %>% filter(Species == sp) %>% arrange(yday)
+  if (nrow(o) < 2) return(NA_real_)
+  approx(o$yday, o$Population, xout = x, rule = 1)$y
+}
+
+extra_counts <- myebird_EXP_extra_obs %>%
+  filter(Presence.Only == FALSE) %>%
+  filter(Species %in% good_patterns_sp) %>%
+  mutate(Species = factor(Species, levels = good_patterns_sp),
+         yday = yday(Date)) %>%
+  rowwise() %>%
+  mutate(obs_interp = interp_counts(Species, yday)) %>%
+  ungroup() %>%
+  filter(is.na(obs_interp) | Count > obs_interp) %>%
+  trim_to_window()
+
+ggplot(obs_counts, aes(x = yday, y = Population)) +
+  wave_bands +
+  geom_line(linetype = "dashed", color = "grey50", linewidth = 0.4) +   # dashed = interpolated
+  geom_point(color = "#1B7837", size = 1.4) +                           # solid = real observation
+  geom_rug(sides = "b", length = unit(0.03, "npc"), color = "grey40") + # tick per sampling day
+  geom_point(data = extra_counts,
+             aes(x = yday, y = Count, shape = "Unpaired / incomplete checklist"),
+             color = "red", size = 2, inherit.aes = FALSE) +
+  scale_shape_manual(values = c("Unpaired / incomplete checklist" = 8)) +
+  guides(shape = guide_legend(override.aes = list(color = "red"))) +
+  facet_wrap(~Species, ncol = 3, scales = "free") +
+  scale_x_continuous(breaks = month_breaks, labels = month_labels) +
+  labs(title = "Observed Counts by Species",
+       subtitle = "Actual counts, not normalized — y-axis differs per panel.\nGrey bands = BirdCast migration waves. Dashed line = interpolated between visits.",
+       x = NULL, y = "Day population (max individuals seen)", shape = NULL) +
+  theme_minimal() +
+  theme(legend.position = "top",
+        strip.text = element_text(size = 8, face = "bold"),
+        strip.background = element_rect(fill = "grey90", color = NA),
+        panel.spacing.y = unit(1, "lines"),
+        panel.spacing.x = unit(0.5, "lines"))
+```
+
+### IV. F.4. 18 Favorite Species, SCALED Observed vs Expected
+
+```{r, fig.width = 7, fig.height = facet_height(length(good_patterns_sp), 3)}
+# CLAUDE
+
+# ---- 2-GRAPHS = ACTUAL OBSERVED COUNTS &  EBIRD EXPECTED ABUNDANCE ----
+# ----- MANY SPECIES PER FIGURE
+# ---- SCALING METHOD: "max", "mean", or "total" ----
+
+scale_method <- "mean"
+
+y_lab <- switch(scale_method,
+  max   = "Proportion of each series' own peak (0–1)",
+  mean  = "Normalized to series average \n(1.0 = mean)",
+  total = "Share of season total")
+
+# may_offset and wave_bands (the grey migration-wave rectangles in yday
+# space) were already built once in section IV.D.1 -- reused here as-is.
+
+# rng_df and trim_to_window() are now defined earlier in the doc (1.SHARED
+# PLOT SETUP chunk), since trim_to_window() was being called before it was
+# defined. Left rng_df's construction there since good_patterns_sp,
+# range_overrides, and default_range are already available by that point.
+
+exp_long <- expected_all %>%
+  transmute(Species, yday, value = expected_abundance, source = "Expected (regional)") %>%
+  mutate(Species = factor(Species, levels = good_patterns_sp))
+
+obs_long <- myebird_EXP %>%
+  filter(Species %in% good_patterns_sp) %>%
+  mutate(yday = yday(Date)) %>%
+  distinct(Species, yday, Population) %>%
+  transmute(Species, yday, value = Population, source = "Observed (mine)") %>%
+  mutate(Species = factor(Species, levels = good_patterns_sp))
+
+exp_long <- trim_to_window(exp_long)
+obs_long <- trim_to_window(obs_long)
+
+# THEN scale, using only what's displayed
+combined <- bind_rows(exp_long, obs_long) %>%
+  group_by(Species, source) %>%
+  mutate(denom = case_when(
+           scale_method == "max"   ~ max(value,  na.rm = TRUE),
+           scale_method == "mean"  ~ mean(value, na.rm = TRUE),
+           scale_method == "total" ~ sum(value,  na.rm = TRUE)),
+         value_scaled = ifelse(denom > 0, value / denom, 0)) %>%
+  ungroup() %>%
+  select(-denom)
+
+obs_denom <- obs_long %>%
+  group_by(Species) %>%
+  summarize(denom = case_when(
+              scale_method == "max"   ~ max(value,  na.rm = TRUE),
+              scale_method == "mean"  ~ mean(value, na.rm = TRUE),
+              scale_method == "total" ~ sum(value,  na.rm = TRUE)),
+            .groups = "drop")
+
+interp_obs <- function(sp, x) {
+  o <- combined %>%
+    filter(source == "Observed (mine)", Species == sp) %>%
+    arrange(yday)
+  if (nrow(o) < 2) return(NA_real_)
+  approx(o$yday, o$value_scaled, xout = x, rule = 1)$y
+}
+
+extra_scaled <- myebird_EXP_extra_obs %>%
+  filter(Presence.Only == FALSE) %>%
+  filter(Species %in% good_patterns_sp) %>%
+  mutate(Species = factor(Species, levels = good_patterns_sp),
+         yday = yday(Date)) %>%
+  left_join(obs_denom, by = "Species") %>%
+  mutate(value_scaled = ifelse(denom > 0, Count / denom, 0)) %>%
+  rowwise() %>%
+  mutate(obs_interp = interp_obs(Species, yday)) %>%
+  ungroup() %>%
+  filter(is.na(obs_interp) | value_scaled > obs_interp) %>%
+  trim_to_window()
+
+ggplot(combined, aes(x = yday, y = value_scaled, color = source, linetype = source)) +
+  wave_bands +                                    # waves behind everything
+  geom_line(linewidth = 0.5) +
+  geom_point(size = 0.8) +
+  geom_point(data = extra_scaled,
+             aes(x = yday, y = value_scaled, shape = "Unpaired / incomplete checklist"),
+             color = "red", size = 2, inherit.aes = FALSE) +
+
+  # all three scales share name = NULL, which merges color + linetype into ONE legend
+  scale_color_manual(name = NULL,
+    values = c("Expected (regional)" = "grey40", "Observed (mine)" = "#1B7837")) +
+  scale_linetype_manual(name = NULL,
+    values = c("Expected (regional)" = "solid", "Observed (mine)" = "dashed")) +
+  scale_shape_manual(name = NULL,
+    values = c("Unpaired / incomplete checklist" = 8)) +
+  # legend key would otherwise be black, since color is set outside aes()
+  guides(shape = guide_legend(override.aes = list(color = "red"))) +
+
+  facet_wrap(~Species, ncol = 3, scales = "free_y") +
+  scale_x_continuous(breaks = month_breaks, labels = month_labels) +
+  coord_cartesian(xlim = default_range) +
+
+  labs(title = "SCALED Observed Population vs. Expected Abundance",
+       subtitle = " 'Observed Population' = Counts from my outings\n'Expected Abundance' = from eBird Modeling\n  Grey bands = BirdCast migration waves",
+       caption = "*Note*: 'Expected' is a multi-year average, so it's a smoothed estimate -- real migration comes in waves",
+       x = NULL, y = y_lab) +
+
+  theme_minimal() +
+  theme(legend.position = "top",
+        plot.title    = element_text(hjust = 0.5, size = 16, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5, size = 11),
+        plot.caption  = element_text(hjust = 0.5, size = 11),
+        strip.text = element_text(size = 8, face = "bold"),
+        strip.background = element_rect(fill = "grey90", color = NA),  # boxes the label with its panel
+        panel.spacing.y = unit(1, "lines"),                            # more gap between rows than within
+        panel.spacing.x = unit(0.5, "lines"))
+```
+
+
+
+##  IV. G. Species Richness (Total species count)
+
+```{r}
+subset_labels <-c(
+  "Tot.Sp"              =   "All Species",
+  "Tot.Sp.Faves"        = "Favorite Species",
+  "Tot.Sp.Nonres.Faves" = "Migrant Favorites",
+  "Tot.Sp.Warblers"     = "Warblers"
+)
+
+
+richness_long %>% filter(!Species.Subset %in% c("Tot.Sp.Faves"))%>%
+ggplot(aes(x=Month.Day, y = Total.Species, fill = Species.Subset))+
+  geom_col() +
+  facet_wrap(~Species.Subset, labeller = as_labeller(subset_labels)) +
+  scale_fill_discrete(labels = subset_labels) +
+  theme_linedraw() +
+  theme(axis.text.x = element_text(size=6, angle = 45, vjust = 0.4)) +
+  labs(title = "Species Richness by Day",
+       y = "Number of Species",
+       x = "Date")
+
+richness_long %>% filter(!Species.Subset %in% c("Tot.Sp.Faves"))%>%
+ggplot(aes(x=Month.Day, y = Total.Species, fill = Species.Subset))+
+  geom_col(position = "dodge", color = "grey30") +
+  scale_fill_discrete(labels = subset_labels)+
+  theme_minimal() +
+  labs(title = "Species Richness by Day",
+       y = "Number of Species",
+       x = "Date") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1))
+
+```
+
+```{r, fig.width = 11, fig.height = 7}
+# ---- 1. WAVE-HIGHLIGHTABLE BAND PEAKS ----
+# wave_bounds (one row per wave) was already defined in section IV.D.1 and
+# is reused here as the single source of truth for every wave's bounds.
+
+make_band_peaks <- function(highlight_wave = NULL) {
+  pmap(wave_bounds, function(Wave, xmin, xmax) {
+    if (!is.null(highlight_wave) && Wave == highlight_wave) {
+      annotate("rect", xmin = xmin, xmax = xmax, ymin = -Inf, ymax = Inf,
+               fill = "#F5A623", alpha = 0.35, color = "#B8730A", linewidth = 1)
+    } else {
+      annotate("rect", xmin = xmin, xmax = xmax, ymin = -Inf, ymax = Inf,
+               fill = "grey50", alpha = 0.2)
+    }
+  })
+}
+
+# "Wave N" text sitting inside the top of each band, as in the slides
+make_band_labels <- function(y = 13600, size = 2.7) {
+  annotate("text",
+           x = (wave_bounds$xmin + wave_bounds$xmax) / 2,
+           y = y, label = wave_bounds$Wave,
+           size = size, color = "grey20")
+}
+
+# ---- 2. BIRDCAST PLOT BUILDER ----
+build_birdcast_plot <- function(bands = band_peaks, observed_days = NULL) {
+  p <- birdcast %>% filter(Day.of.May >= 3 & Day.of.May <= 29) %>%
+    ggplot(aes(x = Day.of.May, y = Average.Birds.in.Flight)) +
+    bands +                     # bands behind the trace
+    make_band_labels() +
+    geom_point() +
+    geom_line() +
+    theme_linedraw() +
+    labs(title = "Suffolk County Birdcast Data",
+         subtitle = "(Wave Peaks Highlighted in Grey)",
+         x = "Morning After Overnight Migration (Day of May)",
+         y = "Average Birds in Flight") +
+    scale_x_continuous(breaks = seq(3, 29, 1), expand = expansion(mult = c(0.03, 0.03))) +
+    scale_y_continuous(limits = c(0, 15000), breaks = seq(0, 15000, 5000), expand = expansion(mult = c(0, 0))) +
+    theme(plot.title = element_text(hjust = 0.5, size = title_size),
+          plot.subtitle = element_text(hjust = 0.5, size = subtitle_size),
+          axis.title.x = element_text(size = axis_title_size),
+          axis.text.x = element_text(size = axis_text_size, margin = margin(b = 6, t = 4), hjust = 0.5),
+          axis.title.y = element_text(size = axis_title_size),
+          axis.text.y = element_text(size = axis_text_size, margin = margin(l = 5), hjust = 0.5),
+          panel.grid.minor = element_blank())
+
+  # optional day marker; the slide reference doesn't use one, so it's off by default
+  if (!is.null(observed_days)) {
+    p <- p + geom_vline(xintercept = observed_days, color = "black", linewidth = 0.7, linetype = "solid")
+  }
+  p
+}
+
+# ---- 3. WAVE ASSIGNMENT FOR YOUR OBSERVATION DAYS ----
+assign_wave <- function(day) {
+  case_when(
+    day %in% c(5, 6)       ~ "Wave 1",
+    day == 11              ~ "Wave 2",
+    day == 13              ~ "Wave 3",
+    day %in% c(17, 18, 19) ~ "Wave 4",
+    day %in% c(26, 27)     ~ "Wave 5",
+    TRUE                   ~ NA_character_
+  )
+}
+
+# ---- 4. SPECIES x DAY GRID WITH DELTA ----
+build_species_day_grid <- function(species_subset) {
+  all_dates <- sort(unique(myebird_EXP$Date))
+  myebird_EXP %>%
+    select(Date, Species, Population) %>%
+    distinct() %>%
+    filter(Species %in% species_subset) %>%
+    mutate(Species = as.character(Species)) %>%
+    complete(Date = all_dates, Species = species_subset, fill = list(Population = 0)) %>%
+    mutate(Species = factor(Species, levels = species_subset),
+           Day = day(Date)) %>%
+    arrange(Species, Date) %>%
+    group_by(Species) %>%
+    mutate(Delta = Population - lag(Population)) %>%
+    ungroup()
+}
+
+# ---- 5. TAG GRID WITH WAVE ----
+tag_wave_days <- function(grid_df) {
+  grid_df %>%
+    mutate(Wave = factor(assign_wave(Day), levels = wave_bounds$Wave)) %>%
+    filter(!is.na(Wave)) %>%
+    mutate(Wave = droplevels(Wave))
+}
+
+# ---- 6. WHICH OBSERVED DAYS FALL IN A GIVEN WAVE ----
+obs_days_for_wave <- function(wave_name) {
+  all_days <- sort(unique(myebird_EXP$Day))
+  all_days[assign_wave(all_days) %in% wave_name]
+}
+
+# ---- 7. UNCOMMON SPECIES (< 4 total individuals across the whole experiment) ----
+uncommon_sp <- myebird_EXP %>%
+  select(Date, Species, Population) %>%
+  distinct() %>%
+  group_by(Species) %>%
+  summarize(Total.Population = sum(Population), .groups = "drop") %>%
+  filter(Total.Population < 4) %>%
+  pull(Species) %>%
+  as.character()
+
+# ---- 8. FIXED AXIS FOR ALL WAVE-DELTA GRAPHS ----
+# Same frame on every graph so waves stay comparable. Bars past the frame are
+# CLAMPED to the frame edge (see y_draw below) and their label still prints the
+# true count, so a handful of blown-out bars never force the axis to expand.
+delta_ylim   <- c(-6, 11)                 # visible frame
+delta_breaks <- c(-5, 0, 5, 10)           # axis ticks
+
+# ---- 9. SPECIES SUBSET: FAVORITES MINUS RESIDENTS ----
+# favorites_nonresident_sp was already computed in section II.D.1 (it's also
+# used by the richness calculation above) -- reused here as-is.
+grid_favorites_nonresident <- build_species_day_grid(favorites_nonresident_sp)
+grid_favorites_nonresident_wave <- tag_wave_days(grid_favorites_nonresident)
+warbler_sp_in_favorites_nonresident <- intersect(favorites_nonresident_sp, warblers_sp)
+
+# ---- 10. ONE DAY'S BARS ----
+plot_day_delta <- function(df_wave, wave_name, day, subset_label, warbler_sp = NULL) {
+  df <- df_wave %>%
+    filter(Wave == wave_name, Day == day, !is.na(Delta), Delta != 0) %>%
+    mutate(Species = droplevels(Species),
+           Is.Uncommon = Species %in% uncommon_sp)
+
+  lab_off  <- 0.55   # in-range label sits this far past the bar tip
+  cap_off  <- 1.30   # capped label sits this far INSIDE the frame edge,
+                     # which also keeps it clear of the "Warblers" label below
+  diam_off <- 1.7    # diamond sits this far past the LABEL, so they never collide
+
+  df <- df %>%
+    mutate(
+      # y_draw is what geom_col actually draws.  clip = "off" is needed for the
+      # "Warblers" bracket label, and it also stops ggplot from trimming the
+      # bars, so an out-of-range bar has to be clamped in the DATA or it runs
+      # straight off the bottom of the figure.
+      y_draw  = pmin(pmax(Delta, delta_ylim[1]), delta_ylim[2]),
+      # ">=" so a bar that lands exactly on the frame edge is labelled inside
+      # the bar too, the way the slides do it
+      Capped  = Delta >= delta_ylim[2] | Delta <= delta_ylim[1],
+      # in-range bar: label just past the tip, in black.
+      # capped bar: label tucked inside the bar in white, so it can never
+      # collide with the title above or the species names below.
+      label_y    = ifelse(Capped, y_draw - sign(Delta) * cap_off,
+                                  y_draw + sign(Delta) * lab_off),
+      label_col  = ifelse(Capped, "white", "black"),
+      label_text = ifelse(Delta > 0, paste0("+", Delta), as.character(Delta)),
+      diamond_y  = ifelse(Capped, y_draw - sign(Delta) * (cap_off + 1.1),
+                                  y_draw + sign(Delta) * diam_off)
+    )
+
+  p <- ggplot(df, aes(x = Species, y = y_draw, fill = Delta > 0)) +
+    geom_col(width = 0.65) +
+    geom_hline(yintercept = 0, color = "grey40", linewidth = 0.3) +
+    geom_text(aes(y = label_y, label = label_text, color = label_col),
+              size = 2.9, fontface = "bold", show.legend = FALSE) +
+    scale_color_identity() +
+    scale_fill_manual(values = c(`TRUE` = "#2166AC", `FALSE` = "#B2182B"), guide = "none") +
+    scale_y_continuous(breaks = delta_breaks, expand = expansion(mult = c(0, 0))) +
+    coord_cartesian(ylim = delta_ylim, clip = "off") +
+    labs(title = paste0(wave_name, ", Day ", day,
+                        ": Change vs. Previous Observed Day — ", subset_label),
+         x = NULL, y = "Change in Population") +
+    theme_minimal() +
+    theme(plot.title   = element_text(hjust = 0.5, face = "bold", size = 12,
+                                      margin = margin(b = 14)),  # room for capped labels above the frame
+          plot.margin  = margin(t = 8, r = 12, b = 8, l = 8),
+          axis.text.x  = element_text(angle = 45, hjust = 1, size = 7.5,
+                                      margin = margin(t = 4)),
+          panel.grid.minor = element_blank())
+
+  # diamond on every uncommon-species bar
+  diamonds <- df %>% filter(Is.Uncommon)
+  if (nrow(diamonds) > 0) {
+    p <- p + geom_point(data = diamonds, aes(x = Species, y = diamond_y),
+                        shape = 18, size = 3.4, color = "#F5A623", inherit.aes = FALSE)
+  }
+
+  # green bracket + label around the warbler block
+  if (!is.null(warbler_sp) && length(warbler_sp) > 0) {
+    warb_present <- intersect(levels(df$Species), warbler_sp)
+    if (length(warb_present) > 0) {
+      xs <- match(warb_present, levels(df$Species))
+      x_min <- min(xs) - 0.5; x_max <- max(xs) + 0.5
+      p <- p +
+        annotate("rect", xmin = x_min, xmax = x_max,
+                 ymin = delta_ylim[1], ymax = delta_ylim[2],
+                 fill = NA, color = "#1B7837", linewidth = 0.7) +
+        # label sits just INSIDE the frame, so it can't collide with the
+        # species names below; the white fill keeps it readable if a bar
+        # happens to run behind it
+        annotate("label", x = (x_min + x_max) / 2, y = delta_ylim[1] + 0.42,
+                 label = "Warblers", color = "#1B7837", fontface = "bold", size = 3.2,
+                 fill = "white", linewidth = 0, label.padding = unit(0.12, "lines"))
+    }
+  }
+  p
+}
+
+# ---- 11. BIRDCAST PANEL ABOVE THAT DAY'S DELTA BARS ----
+plot_day_with_birdcast <- function(df_wave, wave_name, day, subset_label, warbler_sp = NULL) {
+  p_top <- build_birdcast_plot(make_band_peaks(highlight_wave = wave_name)) +
+    theme(plot.title = element_text(size = 13), plot.subtitle = element_text(size = 9))
+  p_bottom <- plot_day_delta(df_wave, wave_name, day, subset_label, warbler_sp = warbler_sp)
+  p_top / p_bottom + plot_layout(heights = c(1, 2.2))
+}
+
+# ---- 12. OUTPUT: ALL WAVES ----
+# fig.width / fig.height live in THIS chunk header, so every wave gets the same
+# frame. Keep the whole loop in one chunk; splitting it (or dropping the header
+# options on one chunk) is what made the last wave render at a different size.
+#
+# RStudio's inline preview re-renders the most recently drawn plot at whatever
+# size the pane happens to be, so the last graph in a loop can still LOOK
+# smaller there. The files written below are the ones to trust, and they are
+# what the portfolio page should use.
+save_wave_figs <- TRUE
+fig_dir        <- "figures/waves"
+if (save_wave_figs) dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
+
+for (wave_name in wave_bounds$Wave) {
+  for (d in obs_days_for_wave(wave_name)) {
+    p <- plot_day_with_birdcast(grid_favorites_nonresident_wave, wave_name, d,
+                                "Non-Resident Favorites",
+                                warbler_sp = warbler_sp_in_favorites_nonresident)
+    print(p)
+    if (save_wave_figs) {
+      ggsave(file.path(fig_dir, sprintf("%s_day%02d.png", gsub(" ", "", wave_name), d)),
+             p, width = 11, height = 7, dpi = 150)
+    }
+  }
+}
+```
