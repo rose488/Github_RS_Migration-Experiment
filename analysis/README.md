@@ -49,6 +49,25 @@ myebird_raw --> personal ebird data (LINK)
 ebird_taxonomy_raw -> ebird (LINK)
 local_status_raw --> state-specific data from ebird (LINK)
 
+# Birdcast
+https://birdcast.org/how-to-cite/
+
+To cite Live Maps imagery, please use the following syntax: 
+
+BirdCast, Live Migration Map; date and time (most easily accessible from image file name/s). Cornell Lab of Ornithology. https://birdcast.org/migration-tools/live-migration-maps. Date/s of access or download.
+
+To cite Forecast Maps imagery, please use the following syntax: 
+
+Van Doren, B. M. and Horton, K. G. Year/s of migration forecast map image. BirdCast, Migration Forecast Map; date and time (from forecast image lower right corner). Cornell Lab of Ornithology, Purdue University and University of Illinois Urbana-Champaign. https://birdcast.org/migration-tools/forecast-maps. Date/s of access or download.
+
+Citation for forecast model underlying the Forecast Maps: 
+
+Van Doren, B. M. and K. G. Horton. 2018. A continental system for forecasting bird migration. Science 361:1115-1118. doi: 10.1126/science.aat7526.
+
+To cite the Migration Dashboard imagery, please use the following syntax: 
+
+BirdCast, Migration Dashboard; state/or county, date and time. Cornell Lab of Ornithology. https://birdcast.org/migration-tools/migration-dashboard. Date/s of access or download.
+
 # Raw data pre-processing
 
 - Location data that is more granular than state has been deleted from all raw csv files
