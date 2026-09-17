@@ -352,25 +352,30 @@ display: none;
 </div>
 
 
+<div id="to-view-website" class="section level1">
+<h1>To View Website</h1>
+<p>Go to story-site-v2.2 and open <code>index.html</code></p>
+</div>
 <div id="spring-migration-experiment-2026" class="section level1">
 <h1>Spring Migration Experiment (2026)</h1>
 <p>An analysis of my own eBird checklists from a single local patch
-across spring migration 2026, comparing what I actually observed against
-two independent expectations: eBird’s modeled regional abundance (via
-<code>ebirdst</code>) and BirdCast’s nocturnal migration intensity data
-for the area.</p>
+across spring migration 2026. STORY 1: comparing what I actually
+observed against two independent expectations: eBird’s modeled regional
+abundance (via <code>ebirdst</code>) and BirdCast’s nocturnal migration
+intensity data for the area. STORY 2: Is going birding at dawn actually
+that much better than later in the morning?</p>
 <p>This was also my first project in R — the code is intentionally left
 close to how I actually wrote/learned it (including sections co-written
-with Claude, marked with <code># CLAUDE</code> comments) rather than
-polished into something unrecognizable, since re-reading it is part of
-how I’m learning.</p>
+with Claude, some written by me, some by Claude)</p>
 <div id="whats-here" class="section level2">
 <h2>What’s here</h2>
 <ul>
-<li><code>9-9-26_Mig Exp_01_Story 1.Rmd</code> — the main analysis: data
-setup, species filtering, richness calculations, and all figures
-(heatmaps, ridgeline plots, observed-vs-expected panels, migration-wave
-delta charts).</li>
+<li><code>Migration Experiment_00_data-prep.Rmd</code> - data cleaning
+and basic organizing</li>
+<li><code>Migration Experiment_01_Story 1_v2.2</code> — the main
+analysis: data setup, species filtering, richness calculations, and all
+figures (heatmaps, ridgeline plots, observed-vs-expected panels,
+migration-wave delta charts).</li>
 <li><code>data/derived/</code> — cleaned checklist data used directly by
 the Rmd.</li>
 <li><code>data/raw/</code> — reference data (BirdCast summary, eBird
@@ -411,6 +416,52 @@ or Knit.</li>
 <p>myebird_raw –&gt; personal ebird data (LINK) ebird_taxonomy_raw -&gt;
 ebird (LINK) local_status_raw –&gt; state-specific data from ebird
 (LINK)</p>
+</div>
+<div id="birdcast" class="section level1">
+<h1>Birdcast</h1>
+<div id="citations-for-things-i-used" class="section level2">
+<h2>Citations for things I used</h2>
+<ul>
+<li>For radar animation, pretty sure this is the right one:
+<ul>
+<li>Van Doren, B. M. and K. G. Horton. 2018. A continental system for
+forecasting bird migration. Science 361:1115-1118. doi:
+10.1126/science.aat7526.</li>
+<li>Base reflectivity radar imagery from October 16-17, 2017, 12pm-12pm
+EST.</li>
+</ul></li>
+<li>For “Birdcast_Live Map_May 18 2026.png”: -BirdCast, live migration
+map; May 18, 2026, 23:40 EST. Cornell Lab of Ornithology. <a href="https://birdcast.org/migration-tools/live-migration-maps" class="uri">https://birdcast.org/migration-tools/live-migration-maps</a>.
+Downloaded September 15, 2026.</li>
+<li>For “Night of May 18, 2026 - Migration Dashboard - BirdCast.png”:
+-BirdCast, Migration Dashboard; Massachusetts, May 18, 2026. Cornell Lab
+of Ornithology. <a href="https://birdcast.org/migration-tools/migration-dashboard" class="uri">https://birdcast.org/migration-tools/migration-dashboard</a>.
+Downloaded September 15, 2026.”</li>
+</ul>
+</div>
+<div id="citations-reference-pulled-from-their-website" class="section level2">
+<h2>Citations Reference pulled from their website:</h2>
+<p>“<a href="https://birdcast.org/how-to-cite/" class="uri">https://birdcast.org/how-to-cite/</a></p>
+<ul>
+<li><p>To cite Live Maps imagery, please use the following syntax:
+BirdCast, Live Migration Map; date and time (most easily accessible from
+image file name/s). Cornell Lab of Ornithology. <a href="https://birdcast.org/migration-tools/live-migration-maps" class="uri">https://birdcast.org/migration-tools/live-migration-maps</a>.
+Date/s of access or download.</p></li>
+<li><p>To cite Forecast Maps imagery, please use the following syntax:
+Van Doren, B. M. and Horton, K. G. Year/s of migration forecast map
+image. BirdCast, Migration Forecast Map; date and time (from forecast
+image lower right corner). Cornell Lab of Ornithology, Purdue University
+and University of Illinois Urbana-Champaign. <a href="https://birdcast.org/migration-tools/forecast-maps" class="uri">https://birdcast.org/migration-tools/forecast-maps</a>.
+Date/s of access or download.</p></li>
+</ul>
+<p>-Citation for forecast model underlying the Forecast Maps: Van Doren,
+B. M. and K. G. Horton. 2018. A continental system for forecasting bird
+migration. Science 361:1115-1118. doi: 10.1126/science.aat7526.</p>
+<p>-To cite the Migration Dashboard imagery, please use the following
+syntax: BirdCast, Migration Dashboard; state/or county, date and time.
+Cornell Lab of Ornithology. <a href="https://birdcast.org/migration-tools/migration-dashboard" class="uri">https://birdcast.org/migration-tools/migration-dashboard</a>.
+Date/s of access or download.”</p>
+</div>
 </div>
 <div id="raw-data-pre-processing" class="section level1">
 <h1>Raw data pre-processing</h1>

@@ -1,18 +1,23 @@
+# To View Website
+
+Go to story-site-v2.2 and open `index.html`
+
 # Spring Migration Experiment (2026)
 
 An analysis of my own eBird checklists from a single local patch across spring
-migration 2026, comparing what I actually observed against two independent
+migration 2026. STORY 1: comparing what I actually observed against two independent
 expectations: eBird's modeled regional abundance (via `ebirdst`) and
-BirdCast's nocturnal migration intensity data for the area.
+BirdCast's nocturnal migration intensity data for the area. STORY 2: Is going 
+birding at dawn actually that much better than later in the morning?
 
 This was also my first project in R — the code is intentionally left close
 to how I actually wrote/learned it (including sections co-written with
-Claude, marked with `# CLAUDE` comments) rather than polished into something
-unrecognizable, since re-reading it is part of how I'm learning.
+Claude, some written by me, some by Claude)
 
 ## What's here
 
-- `9-9-26_Mig Exp_01_Story 1.Rmd` — the main analysis: data setup, species
+- `Migration Experiment_00_data-prep.Rmd` - data cleaning and basic organizing
+- `Migration Experiment_01_Story 1_v2.2` — the main analysis: data setup, species
   filtering, richness calculations, and all figures (heatmaps, ridgeline
   plots, observed-vs-expected panels, migration-wave delta charts).
 - `data/derived/` — cleaned checklist data used directly by the Rmd.
