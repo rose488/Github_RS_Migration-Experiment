@@ -50,23 +50,32 @@ ebird_taxonomy_raw -> ebird (LINK)
 local_status_raw --> state-specific data from ebird (LINK)
 
 # Birdcast
-https://birdcast.org/how-to-cite/
+## Citations for things I used
+- For radar animation, pretty sure this is the right one:
+  - Van Doren, B. M. and K. G. Horton. 2018. A continental system for forecasting bird migration. Science 361:1115-1118. doi: 10.1126/science.aat7526.
+  - Base reflectivity radar imagery from October 16-17, 2017, 12pm-12pm EST.
+- For "Birdcast_Live Map_May 18 2026.png":
+  -BirdCast, live migration map; May 18, 2026, 23:40 EST. Cornell Lab of Ornithology. https://birdcast.org/migration-tools/live-migration-maps. Downloaded September 15, 2026.
+- For "Night of May 18, 2026 - Migration Dashboard - BirdCast.png":
+  -BirdCast, Migration Dashboard; Massachusetts, May 18, 2026. Cornell Lab of Ornithology. https://birdcast.org/migration-tools/migration-dashboard. Downloaded September 15, 2026."
 
-To cite Live Maps imagery, please use the following syntax: 
 
+## Citations Reference pulled from their website:
+
+"https://birdcast.org/how-to-cite/
+
+- To cite Live Maps imagery, please use the following syntax: 
 BirdCast, Live Migration Map; date and time (most easily accessible from image file name/s). Cornell Lab of Ornithology. https://birdcast.org/migration-tools/live-migration-maps. Date/s of access or download.
 
-To cite Forecast Maps imagery, please use the following syntax: 
 
+- To cite Forecast Maps imagery, please use the following syntax: 
 Van Doren, B. M. and Horton, K. G. Year/s of migration forecast map image. BirdCast, Migration Forecast Map; date and time (from forecast image lower right corner). Cornell Lab of Ornithology, Purdue University and University of Illinois Urbana-Champaign. https://birdcast.org/migration-tools/forecast-maps. Date/s of access or download.
 
-Citation for forecast model underlying the Forecast Maps: 
-
+-Citation for forecast model underlying the Forecast Maps: 
 Van Doren, B. M. and K. G. Horton. 2018. A continental system for forecasting bird migration. Science 361:1115-1118. doi: 10.1126/science.aat7526.
 
-To cite the Migration Dashboard imagery, please use the following syntax: 
-
-BirdCast, Migration Dashboard; state/or county, date and time. Cornell Lab of Ornithology. https://birdcast.org/migration-tools/migration-dashboard. Date/s of access or download.
+-To cite the Migration Dashboard imagery, please use the following syntax: 
+BirdCast, Migration Dashboard; state/or county, date and time. Cornell Lab of Ornithology. https://birdcast.org/migration-tools/migration-dashboard. Date/s of access or download."
 
 # Raw data pre-processing
 

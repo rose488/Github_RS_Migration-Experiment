@@ -26,6 +26,8 @@ library(auk)
 library(ebirdst)  #ebirdst_runs contains breeding data
 library(tigris)
 library(terra)
+library(ggh4x)  # facet_wrap2()/force_panelsizes() -- used by the faceted-by-taxonomy
+                 # wave-bar style (VI.E.3.b) to make panel width scale with species count
 
 # Load Data cleaned and processed by 00_data-cleaning
 myebird_EXP <- readRDS("./data/derived/myebird_EXP.rds")
@@ -138,16 +140,16 @@ my_filter <- function(df,
 
 ```{r}
 # ---- 0. REGION POLYGON: needed as the default `region_poly` for
-# get_expected_abundance() below. Suffolk County, MA is loaded once here,
+# get_expected_abundance() below. Local County is loaded once here,
 # then reprojected to match the CRS used by eBird's abundance rasters
 # (we load one raster, "yerwar", purely to read its CRS off of it).
-suffolk <- counties(state = "MA", cb = TRUE, progress_bar = FALSE) %>%
+local_county <- counties(state = "MA", cb = TRUE, progress_bar = FALSE) %>%  # real state/county needed to query tigris; renamed for the public repo
   filter(NAME == "Suffolk")
 
 abd <- load_raster("yerwar", product = "abundance", resolution = "27km")
 
-suffolk_v <- vect(suffolk)
-suffolk_v <- project(suffolk_v, crs(abd))   # match raster's CRS
+local_county_v <- vect(local_county)
+local_county_v <- project(local_county_v, crs(abd))   # match raster's CRS
 
 
 # DOWNLOAD SPECIES ABUNDANCE DATA AND MAKE 3-PART GRAPH
@@ -163,7 +165,7 @@ code_overrides <- c(
 )
 get_expected_abundance <- function(species_common_name,
                                    taxonomy_df = my_tax_EXP,
-                                   region_poly = suffolk_v,
+                                   region_poly = local_county_v,
                                    months_keep = c(3,4,5,6)) {
   code <- if (species_common_name %in% names(code_overrides)) {
     code_overrides[[species_common_name]]          # override wins if present
@@ -511,6 +513,12 @@ richness_long <- richness_by_day %>%
 # Where to save graphs
 fig_dir        <- "figures"
 
+# Where the story site's live copies live -- relative to this .Rmd's own
+# folder, same convention as fig_dir. Used by plot_observed_vs_expected()'s
+# breeder/migrant subgroup charts so they land straight in the site instead
+# of needing a manual export/copy step.
+site_assets_dir <- "../Test Interfaces/story-site-v2.2/assets"
+
 # ---- SHARED FONT SIZES: one set of numbers for every plot in this doc,
 # instead of each chunk picking its own (8, 10, 12, 16, 18...). Add
 # `+ story_theme_sizes` after any theme_minimal()/theme_linedraw()/
@@ -758,7 +766,8 @@ rescale_expected_to_observed <- function(exp_long, obs_long) {
 # Encapsulates the exp_long/obs_long/rescale/extra_counts/ggplot pipeline
 # shared by every Observed-vs-Expected plot -- the all-species view and each
 # breeding-status/arrival-timing subgroup (II.E), in both VI.C and VI.D.
-plot_observed_vs_expected <- function(species_subset, title, ncol = min(3, length(species_subset))) {
+plot_observed_vs_expected <- function(species_subset, title, ncol = min(3, length(species_subset)),
+                                       site_file = NULL, width = 9, height = 9) {
   exp_long <- expected_all %>%
     filter(Species %in% species_subset) %>%
     transmute(Species, yday, value = expected_abundance, source = "Expected (regional)") %>%
@@ -806,9 +815,9 @@ plot_observed_vs_expected <- function(species_subset, title, ncol = min(3, lengt
 
     # all three scales share name = NULL, which merges color + linetype into ONE legend
     scale_color_manual(name = NULL,
-      values = c("Expected (regional)" = "grey40", "Observed (mine)" = "#1B7837")) +
+      values = c("Expected (regional)" = "grey65", "Observed (mine)" = "#1B7837")) +
     scale_linetype_manual(name = NULL,
-      values = c("Expected (regional)" = "solid", "Observed (mine)" = "dashed")) +
+      values = c("Expected (regional)" = "dashed", "Observed (mine)" = "solid")) +
     scale_shape_manual(name = NULL,
       values = c("Unpaired / incomplete checklist" = 8)) +
     # legend key would otherwise be black, since color is set outside aes()
@@ -819,14 +828,21 @@ plot_observed_vs_expected <- function(species_subset, title, ncol = min(3, lengt
     scale_y_continuous(expand = expansion(mult = c(0, 0.08))) +  # 0 pinned at floor; 8% headroom above the peak
 
     labs(title = title,
-         subtitle = " 'Observed Population' = Counts from my outings, unaltered\n'Expected Abundance' = eBird modeling, rescaled to your species' average count\n  Grey = outside your observation window. Dotted lines = your observation days.",
-         caption = "*Note*: 'Expected' is a multi-year average rescaled onto your count axis -- only its SHAPE is meaningful, not its exact magnitude",
          x = NULL, y = "Day population (max individuals seen)", shape = NULL) +
 
     theme_minimal() + story_theme_sizes +
     theme(legend.position = "top",
           panel.spacing.y = unit(0.6, "lines"),                          # more gap between rows than within
-          panel.spacing.x = unit(0.3, "lines"))
+          panel.spacing.x = unit(0.3, "lines")) -> p
+
+  # site_file lets a caller save straight into the story site's assets
+  # folder (site_assets_dir, set in V.A) instead of a manual export/copy
+  # step -- pass NULL (the default) to just return the plot as before.
+  if (!is.null(site_file)) {
+    ggsave(file.path(site_assets_dir, site_file), p, width = width, height = height, dpi = 150)
+  }
+
+  p
 }
 ```
 
@@ -865,7 +881,7 @@ birdcast %>% filter(Day.of.May >=3 & Day.of.May <=29) %>%
                 geom_line()+
                 band_peaks +
                 theme_linedraw() + story_theme_sizes +
-                labs(title = "Suffolk County Birdcast Data",
+                labs(title = "Local County Birdcast Data",
                                     subtitle = "(Wave Peaks Highlighted in Grey)",
                                     x = "Morning After Overnight Migration (Day of May)",
                                     y = "Average Birds in Flight") +
@@ -1067,7 +1083,8 @@ ggplot(obs_counts, aes(x = yday, y = Population)) +
 ```{r, fig.width = 9, fig.height = 12.8}
 # plot_observed_vs_expected() is defined once in section V.D -- see there
 # for the full pipeline (rescaling, extra-checklist markers, background).
-plot_observed_vs_expected(good_patterns_sp, "Observed Population vs. Expected Abundance")
+plot_observed_vs_expected(good_patterns_sp, "Observed Population vs. Expected Abundance",
+                           site_file = "obsexp-favorites.png", width = 9, height = 12.8)
 ```
 
 ###  VI. C.4a. Early-Arriving Breeders
@@ -1075,7 +1092,8 @@ plot_observed_vs_expected(good_patterns_sp, "Observed Population vs. Expected Ab
 ```{r, fig.width = 9, fig.height = 7.1}
 plot_observed_vs_expected(
   intersect(early_breeding_sp, good_patterns_sp),
-  "Observed Population vs. Expected Abundance — Early-Arriving Breeders"
+  "Observed Population vs. Expected Abundance — Early-Arriving Breeders",
+  site_file = "obsexp-early-breeders.png", width = 9, height = 7.1
 )
 ```
 
@@ -1084,7 +1102,8 @@ plot_observed_vs_expected(
 ```{r, fig.width = 9, fig.height = 5.2}
 plot_observed_vs_expected(
   intersect(midlate_breeding_sp, good_patterns_sp),
-  "Observed Population vs. Expected Abundance — Mid/Late-Arriving Breeders"
+  "Observed Population vs. Expected Abundance — Mid/Late-Arriving Breeders",
+  site_file = "obsexp-midlate-breeders.png", width = 9, height = 5.2
 )
 ```
 
@@ -1093,7 +1112,8 @@ plot_observed_vs_expected(
 ```{r, fig.width = 9, fig.height = 5.2}
 plot_observed_vs_expected(
   intersect(early_passing_sp, good_patterns_sp),
-  "Observed Population vs. Expected Abundance — Early Passing Migrants"
+  "Observed Population vs. Expected Abundance — Early Passing Migrants",
+  site_file = "obsexp-early-passing.png", width = 9, height = 5.2
 )
 ```
 
@@ -1102,7 +1122,8 @@ plot_observed_vs_expected(
 ```{r, fig.width = 9, fig.height = 3.3}
 plot_observed_vs_expected(
   intersect(midlate_passing_sp, good_patterns_sp),
-  "Observed Population vs. Expected Abundance — Mid/Late Passing Migrants"
+  "Observed Population vs. Expected Abundance — Mid/Late Passing Migrants",
+  site_file = "obsexp-midlate-passing.png", width = 9, height = 3.3
 )
 ```
 
@@ -1353,9 +1374,9 @@ ggplot(combined, aes(x = yday, y = value, color = source, linetype = source)) +
 
   # all three scales share name = NULL, which merges color + linetype into ONE legend
   scale_color_manual(name = NULL,
-    values = c("Expected (regional, normalized)" = "grey40", "Observed (mine)" = "#1B7837")) +
+    values = c("Expected (regional, normalized)" = "grey65", "Observed (mine)" = "#1B7837")) +
   scale_linetype_manual(name = NULL,
-    values = c("Expected (regional, normalized)" = "solid", "Observed (mine)" = "dashed")) +
+    values = c("Expected (regional, normalized)" = "dashed", "Observed (mine)" = "solid")) +
   scale_shape_manual(name = NULL,
     values = c("Unpaired / incomplete checklist" = 8)) +
   # legend key would otherwise be black, since color is set outside aes()
@@ -1366,8 +1387,6 @@ ggplot(combined, aes(x = yday, y = value, color = source, linetype = source)) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.08))) +  # 0 stays pinned at the axis floor; 8% breathing room above the highest point
 
   labs(title = "Observed Population vs. Expected Abundance",
-       subtitle = " 'Observed Population' = Counts from my outings, unaltered\n'Expected Abundance' = eBird modeling, rescaled to your species' average count\n  Grey = outside your observation window. Dotted lines = your observation days.",
-       caption = "*Note*: 'Expected' is a multi-year average rescaled onto your count axis -- only its SHAPE is meaningful, not its exact magnitude",
        x = NULL, y = "Day population (max individuals seen)", shape = NULL) +
 
   theme_minimal() + story_theme_sizes +
@@ -1375,6 +1394,38 @@ ggplot(combined, aes(x = yday, y = value, color = source, linetype = source)) +
         panel.spacing.y = unit(0.6, "lines"),                            # more gap between rows than within
         panel.spacing.x = unit(0.3, "lines"))
 ```
+
+###  VI. D.5a. Early-Arriving Breeders
+
+```{r, fig.width = 9, fig.height = 7.1}
+plot_observed_vs_expected(
+  intersect(early_breeding_sp, warblers_sp),
+  "Observed Population vs. Expected Abundance — Early-Arriving Breeders",
+  site_file = "obsexp-warblers-early-breeders.png", width = 9, height = 7.1
+)
+```
+
+###  VI. D.5b. Mid/Late-Arriving Breeders
+
+```{r, fig.width = 9, fig.height = 5.2, eval = FALSE}
+# intersect(midlate_breeding_sp, warblers_sp) is empty -- none of my 17
+# warblers fall in this group, so there's no plot to make. Left as eval =
+# FALSE (not deleted) so the chunk still documents why this pairing is
+# skipped, mirroring VI.C.4a-d/VI.D.5a-d 1:1.
+plot_observed_vs_expected(
+  intersect(midlate_breeding_sp, warblers_sp),
+  "Observed Population vs. Expected Abundance — Mid/Late-Arriving Breeders"
+)
+```
+
+###  VI. D.5c. Early Passing Migrants, VI. D.5d. Mid/Late Passing Migrants
+
+`intersect(early_passing_sp, warblers_sp)` and `intersect(midlate_passing_sp,
+warblers_sp)` are both the full early/midlate passing groups -- every species
+in those two groups is already a warbler. So these are identical to
+VI.C.4c/VI.C.4d and aren't replotted here; reuse those figures
+(`obsexp-early-passing.png` / `obsexp-midlate-passing.png`) directly on the
+warblers page.
 
 ###  VI. D.6. Single Species Multi-Panel Figures: EXPECTED, OBSERVED
 
@@ -1429,7 +1480,13 @@ ggplot(aes(x=Month.Day, y = Total.Species, fill = Species.Subset))+
 
 ```
 
-###  VI. E.2. Wave-by-Wave Species Bars
+###  VI. E.2. Style A: Birdcast + Wave-by-Wave Species Bars (Original)
+
+The very first version of the wave-by-wave breakdown -- kept as-is (see
+VI.E.3 below for Styles B/C/D, three later alternatives to the bottom
+bar chart specifically). Retroactively labeled "Style A" now that there
+are others to distinguish it from; the birdcast top panel here is also
+the one reused on its own (no bottom chart) for the story site.
 
 ```{r, fig.width = 11, fig.height = 7}
 # ---- 1. WAVE-HIGHLIGHTABLE BAND PEAKS ----
@@ -1457,7 +1514,7 @@ make_band_labels <- function(y = 13600, size = 2.7) {
 }
 
 # ---- 2. BIRDCAST PLOT BUILDER ----
-build_birdcast_plot <- function(bands = band_peaks, observed_days = NULL) {
+build_birdcast_plot <- function(bands = band_peaks, current_day = NULL, previous_day = NULL) {
   p <- birdcast %>% filter(Day.of.May >= 3 & Day.of.May <= 29) %>%
     ggplot(aes(x = Day.of.May, y = Average.Birds.in.Flight)) +
     bands +                     # bands behind the trace
@@ -1465,8 +1522,7 @@ build_birdcast_plot <- function(bands = band_peaks, observed_days = NULL) {
     geom_point() +
     geom_line() +
     theme_linedraw() +
-    labs(title = "Suffolk County Birdcast Data",
-         subtitle = "(Wave Peaks Highlighted in Grey)",
+    labs(title = "Local County Birdcast Data",
          x = "Morning After Overnight Migration (Day of May)",
          y = "Average Birds in Flight") +
     scale_x_continuous(breaks = seq(3, 29, 1), expand = expansion(mult = c(0.03, 0.03))) +
@@ -1479,11 +1535,24 @@ build_birdcast_plot <- function(bands = band_peaks, observed_days = NULL) {
           axis.text.y = element_text(size = axis_text_size, margin = margin(l = 5), hjust = 0.5),
           panel.grid.minor = element_blank())
 
-  # optional day marker; the slide reference doesn't use one, so it's off by default
-  if (!is.null(observed_days)) {
-    p <- p + geom_vline(xintercept = observed_days, color = "black", linewidth = 0.7, linetype = "solid")
+  # today's survey day: solid dark line. The day it's being compared
+  # against (previous_obs_day(), below): lighter, dashed -- drawn first so
+  # today's solid line sits on top if they're ever close together.
+  if (!is.null(previous_day)) {
+    p <- p + geom_vline(xintercept = previous_day, color = "grey55", linewidth = 0.6, linetype = "dashed")
+  }
+  if (!is.null(current_day)) {
+    p <- p + geom_vline(xintercept = current_day, color = "grey15", linewidth = 0.8, linetype = "solid")
   }
   p
+}
+
+# ---- 2b. PREVIOUS SURVEY DAY (whatever Delta was actually computed against) ----
+previous_obs_day <- function(day) {
+  all_days <- sort(unique(myebird_EXP$Day))
+  prior <- all_days[all_days < day]
+  if (length(prior) == 0) return(NA_integer_)
+  max(prior)
 }
 
 # ---- 3. WAVE ASSIGNMENT FOR YOUR OBSERVATION DAYS ----
@@ -1546,6 +1615,13 @@ uncommon_sp <- myebird_EXP %>%
 delta_ylim   <- c(-6, 11)                 # visible frame
 delta_breaks <- c(-5, 0, 5, 10)           # axis ticks
 
+# same idea, for the companion absolute-count graph (VI.E.2, item 10b) --
+# counts are never negative, so the frame starts at 0 instead of -6
+count_ylim   <- c(0, 20)                  # visible frame -- bars past this are clamped to the frame
+                                           # edge, with the true count shown in parentheses (see
+                                           # label_text in plot_day_count below)
+count_breaks <- c(0, 5, 10, 15, 20)  # axis ticks
+
 # ---- 9. SPECIES SUBSET: FAVORITES MINUS RESIDENTS ----
 # favorites_nonresident_sp was already computed in section II.D.1 (it's also
 # used by the richness calculation above) -- reused here as-is.
@@ -1557,13 +1633,11 @@ warbler_sp_in_favorites_nonresident <- intersect(favorites_nonresident_sp, warbl
 plot_day_delta <- function(df_wave, wave_name, day, subset_label, warbler_sp = NULL) {
   df <- df_wave %>%
     filter(Wave == wave_name, Day == day, !is.na(Delta), Delta != 0) %>%
-    mutate(Species = droplevels(Species),
-           Is.Uncommon = Species %in% uncommon_sp)
+    mutate(Species = droplevels(Species))
 
   lab_off  <- 0.55   # in-range label sits this far past the bar tip
   cap_off  <- 1.30   # capped label sits this far INSIDE the frame edge,
                      # which also keeps it clear of the "Warblers" label below
-  diam_off <- 1.7    # diamond sits this far past the LABEL, so they never collide
 
   df <- df %>%
     mutate(
@@ -1581,9 +1655,7 @@ plot_day_delta <- function(df_wave, wave_name, day, subset_label, warbler_sp = N
       label_y    = ifelse(Capped, y_draw - sign(Delta) * cap_off,
                                   y_draw + sign(Delta) * lab_off),
       label_col  = ifelse(Capped, "white", "black"),
-      label_text = ifelse(Delta > 0, paste0("+", Delta), as.character(Delta)),
-      diamond_y  = ifelse(Capped, y_draw - sign(Delta) * (cap_off + 1.1),
-                                  y_draw + sign(Delta) * diam_off)
+      label_text = ifelse(Delta > 0, paste0("+", Delta), as.character(Delta))
     )
 
   p <- ggplot(df, aes(x = Species, y = y_draw, fill = Delta > 0)) +
@@ -1595,9 +1667,8 @@ plot_day_delta <- function(df_wave, wave_name, day, subset_label, warbler_sp = N
     scale_fill_manual(values = c(`TRUE` = "#2166AC", `FALSE` = "#B2182B"), guide = "none") +
     scale_y_continuous(breaks = delta_breaks, expand = expansion(mult = c(0, 0))) +
     coord_cartesian(ylim = delta_ylim, clip = "off") +
-    labs(title = paste0(wave_name, ", Day ", day,
-                        ": Change vs. Previous Observed Day — ", subset_label),
-         x = NULL, y = "Change in Population") +
+    labs(title = "Change vs. Previous Day",
+         x = NULL, y = "Change") +
     theme_minimal() +
     theme(plot.title   = element_text(hjust = 0.5, face = "bold", size = 12,
                                       margin = margin(b = 14)),  # room for capped labels above the frame
@@ -1605,13 +1676,6 @@ plot_day_delta <- function(df_wave, wave_name, day, subset_label, warbler_sp = N
           axis.text.x  = element_text(angle = 45, hjust = 1, size = 7.5,
                                       margin = margin(t = 4)),
           panel.grid.minor = element_blank())
-
-  # diamond on every uncommon-species bar
-  diamonds <- df %>% filter(Is.Uncommon)
-  if (nrow(diamonds) > 0) {
-    p <- p + geom_point(data = diamonds, aes(x = Species, y = diamond_y),
-                        shape = 18, size = 3.4, color = "#F5A623", inherit.aes = FALSE)
-  }
 
   # green bracket + label around the warbler block
   if (!is.null(warbler_sp) && length(warbler_sp) > 0) {
@@ -1634,9 +1698,83 @@ plot_day_delta <- function(df_wave, wave_name, day, subset_label, warbler_sp = N
   p
 }
 
+# ---- 10b. ONE DAY'S ABSOLUTE COUNTS (companion to plot_day_delta) ----
+# Same Wave/Day/Species selection as plot_day_delta() (species with a
+# nonzero Delta that day) -- same x-axis order and count, so the two bar
+# charts read as a matched pair: this one answers "how many, actually?"
+# for a species whose Delta alone ("-1") doesn't say whether that was
+# 3->2 or 1->0. Diamond markers (uncommon species) live here now, not on
+# the Delta graph.
+plot_day_count <- function(df_wave, wave_name, day, subset_label, warbler_sp = NULL) {
+  df <- df_wave %>%
+    filter(Wave == wave_name, Day == day, !is.na(Delta), Delta != 0) %>%
+    mutate(Species = droplevels(Species),
+           Is.Uncommon = Species %in% uncommon_sp)
+
+  lab_off  <- 0.55
+  cap_off  <- 1.30
+  diam_off <- 1.7
+
+  df <- df %>%
+    mutate(
+      y_draw     = pmin(Population, count_ylim[2]),   # counts are never negative, so only the top needs clamping
+      Capped     = Population >= count_ylim[2],
+      label_y    = ifelse(Capped, y_draw - cap_off, y_draw + lab_off),
+      label_col  = ifelse(Capped, "white", "black"),
+      # capped bars show their true count in parentheses, since the bar
+      # itself no longer reaches that height on the (now shorter) axis
+      label_text = ifelse(Capped, paste0("(", Population, ")"), as.character(Population)),
+      diamond_y  = ifelse(Capped, y_draw - (cap_off + 1.1), y_draw + diam_off)
+    )
+
+  p <- ggplot(df, aes(x = Species, y = y_draw)) +
+    geom_col(width = 0.65, fill = "#1B7837") +
+    geom_text(aes(y = label_y, label = label_text, color = label_col),
+              size = 2.9, fontface = "bold", show.legend = FALSE) +
+    scale_color_identity() +
+    scale_y_continuous(breaks = count_breaks, expand = expansion(mult = c(0, 0))) +
+    coord_cartesian(ylim = count_ylim, clip = "off") +
+    labs(title = "Observed Population",
+         x = NULL, y = "Population") +
+    theme_minimal() +
+    theme(plot.title   = element_text(hjust = 0.5, face = "bold", size = 12,
+                                      margin = margin(b = 14)),
+          plot.margin  = margin(t = 8, r = 12, b = 8, l = 8),
+          axis.text.x  = element_text(angle = 45, hjust = 1, size = 7.5,
+                                      margin = margin(t = 4)),
+          panel.grid.minor = element_blank())
+
+  # diamond on every uncommon-species bar -- ONLY when actually seen that day
+  # (Population > 0). Without this, a species dropping TO 0 (a real Delta,
+  # so it's still in df) got a diamond despite not being seen.
+  diamonds <- df %>% filter(Is.Uncommon, Population > 0)
+  if (nrow(diamonds) > 0) {
+    p <- p + geom_point(data = diamonds, aes(x = Species, y = diamond_y),
+                        shape = 18, size = 3.4, color = "#F5A623", inherit.aes = FALSE)
+  }
+
+  # green bracket + label around the warbler block (same as plot_day_delta)
+  if (!is.null(warbler_sp) && length(warbler_sp) > 0) {
+    warb_present <- intersect(levels(df$Species), warbler_sp)
+    if (length(warb_present) > 0) {
+      xs <- match(warb_present, levels(df$Species))
+      x_min <- min(xs) - 0.5; x_max <- max(xs) + 0.5
+      p <- p +
+        annotate("rect", xmin = x_min, xmax = x_max,
+                 ymin = count_ylim[1], ymax = count_ylim[2],
+                 fill = NA, color = "#1B7837", linewidth = 0.7) +
+        annotate("label", x = (x_min + x_max) / 2, y = count_ylim[1] + 0.42,
+                 label = "Warblers", color = "#1B7837", fontface = "bold", size = 3.2,
+                 fill = "white", linewidth = 0, label.padding = unit(0.12, "lines"))
+    }
+  }
+  p
+}
+
 # ---- 11. BIRDCAST PANEL ABOVE THAT DAY'S DELTA BARS ----
 plot_day_with_birdcast <- function(df_wave, wave_name, day, subset_label, warbler_sp = NULL) {
-  p_top <- build_birdcast_plot(make_band_peaks(highlight_wave = wave_name)) +
+  p_top <- build_birdcast_plot(make_band_peaks(highlight_wave = wave_name),
+                                current_day = day, previous_day = previous_obs_day(day)) +
     theme(plot.title = element_text(size = 13), plot.subtitle = element_text(size = 9))
   p_bottom <- plot_day_delta(df_wave, wave_name, day, subset_label, warbler_sp = warbler_sp)
   p_top / p_bottom + plot_layout(heights = c(1, 2.2))
@@ -1661,10 +1799,447 @@ for (wave_name in wave_bounds$Wave) {
                                 "Non-Resident Favorites",
                                 warbler_sp = warbler_sp_in_favorites_nonresident)
     print(p)
+
+    # companion count graph -- same species/order/width as the Delta graph
+    # above (same df_wave/wave_name/day/warbler_sp), printed directly below
+    # it so the two read as a matched pair. Printed at the full figure
+    # height (no blank spacer). count_ylim caps at 20; any bar past that
+    # is clamped with its true count shown in parentheses (see
+    # plot_day_count's label_text) rather than stretching the axis.
+    p_count <- plot_day_count(grid_favorites_nonresident_wave, wave_name, d,
+                              "Non-Resident Favorites",
+                              warbler_sp = warbler_sp_in_favorites_nonresident)
+    print(p_count)
+
     if (save_wave_figs) {
       ggsave(file.path(fig_dir, sprintf("%s_day%02d.png", gsub(" ", "", wave_name), d)),
              p, width = canvas_wide$width, height = canvas_wide$height, dpi = 150)
+      ggsave(file.path(fig_dir, sprintf("%s_day%02d_counts.png", gsub(" ", "", wave_name), d)),
+             p_count, width = canvas_wide$width, height = canvas_wide$height, dpi = 150)
+      # birdcast panel alone (no bottom "Change vs. Previous Day" chart) --
+      # this is the one the story site uses now that Style C covers the
+      # per-species breakdown on its own. Sized on its own terms (not the
+      # 1:2.2 squeeze plot_day_with_birdcast uses to fit above the delta
+      # bars) since it's no longer sharing a figure with anything else.
+      ggsave(file.path(fig_dir, sprintf("%s_day%02d_birdcast.png", gsub(" ", "", wave_name), d)),
+             build_birdcast_plot(make_band_peaks(highlight_wave = wave_name),
+                                  current_day = d, previous_day = previous_obs_day(d)),
+             width = canvas_wide$width, height = 4.5, dpi = 150)
     }
+  }
+}
+```
+
+
+##   VI. E.3. Alternate Wave-Bar Visualizations (Experimental)
+
+Three other ways of showing the same wave-day data as VI.E.2 (Style A)
+above -- kept as separate, clearly-labeled styles rather than replacing
+the original. All read the same `grid_favorites_nonresident_wave` data
+and use the same `wave_name`/`day`/`warbler_sp` arguments as VI.E.2's
+functions; only the chart itself differs. Style C is the one actually
+wired into the story site now (looped/saved for every wave/day below);
+Styles B and D are each just a function plus one example render, so you
+can preview a style on one day before deciding whether to loop it over
+every wave/day.
+
+```{r}
+# Taxonomy grouping, shared by Styles B and D
+taxon_groups <- read.csv("./data/Taxonomy-ish_Groupings/species_groups_moderate.csv", stringsAsFactors = FALSE) %>%
+  select(Species = common_name, group_name) %>%
+  distinct(Species, .keep_all = TRUE)
+# preserve the CSV's own row order (phylogenetic sequence), not alphabetical.
+# Ordered by group_name alone (not paired with group_key) -- group_key isn't
+# 1:1 with group_name (e.g. both "nonpass" and "corvides" have a row named
+# "Birds of Prey, Corvids"), so pairing them produced duplicate group_name
+# entries and factor() rejected them.
+taxon_group_order <- taxon_groups %>% distinct(group_name) %>% pull(group_name)
+
+# same Dark2 palette/order as data/Taxonomy-ish_Groupings/build_taxonomic_tree.R,
+# so a group's facet strip color here matches its band color in the tree png
+# (Style B's strip coloring is currently commented out, but the mapping is
+# kept here in case it -- or something else -- wants it again later)
+taxon_group_colors <- setNames(RColorBrewer::brewer.pal(length(taxon_group_order), "Dark2"),
+                                taxon_group_order)
+```
+
+###  VI. E.3.a. Style D: Horizontal Dodged Bars
+
+(Numbered "a" for its position in this section, not its style letter --
+this was the original Style A before VI.E.2 was retroactively given that
+name; keeping its outline position rather than reshuffling every chunk
+below just to keep a/b/c/d matching the style letters.)
+
+Species on the y-axis (easier to read full names) grouped by taxonomy
+into bordered panels, stacked one group per row. Grey bar = previous
+day's count, colored bar = today's count (blue = increase, red = decrease
+vs. previous day) -- replaces the separate Change + Population graphs
+(VI.E.2) with one chart. This is deliberately Style B's chart (VI.E.3.b)
+with x/y swapped -- same dodge bars, panel borders, strip boxes, and label
+placement -- just turned sideways and stacked in one column instead of
+laid out side by side, so the two styles read as the same design rotated
+rather than two different charts. `warbler_sp` is accepted for call-site
+parity with the other wave-plot functions but unused here -- like Style B,
+warblers already get their own bordered "Warblers" panel from the
+taxonomic grouping, so a separate highlight would be redundant.
+
+```{r}
+plot_day_grouped_horizontal <- function(df_wave, wave_name, day, subset_label, warbler_sp = NULL) {
+  df <- df_wave %>%
+    filter(Wave == wave_name, Day == day, !is.na(Delta), Delta != 0) %>%
+    mutate(Species = droplevels(Species),
+           Is.Uncommon = Species %in% uncommon_sp,
+           Prev = Population - Delta) %>%
+    left_join(taxon_groups, by = "Species") %>%
+    mutate(group_name = factor(group_name, levels = taxon_group_order))
+
+  # label/diamond need to sit over the TODAY bar specifically -- both use
+  # position_nudge(y = today_offset) to match the -0.2 dodge offset
+  # position_dodge(width = 0.8) gives the 2nd ("Previous") group. Previous
+  # is listed 2nd (not 1st, unlike Style B) because for a y-orientation dodge
+  # the 2nd level lands at the HIGHER position -- and Previous (grey) needs
+  # to sit above Today (blue/red) here, whereas Style B's x-orientation dodge
+  # puts the 2nd level to the right, which is already what Style B wants.
+  today_offset <- -0.2
+
+  cap_off <- 1.6   # how far inside the frame edge a capped label/diamond sits
+
+  long <- df %>%
+    transmute(Species, group_name, Delta, Previous = Prev, Today = Population) %>%
+    pivot_longer(cols = c(Previous, Today), names_to = "When", values_to = "Count") %>%
+    mutate(When = factor(When, levels = c("Today", "Previous")),
+           bar_fill = case_when(
+             When == "Previous" ~ "Previous",
+             When == "Today" & Delta > 0 ~ "Increase",
+             When == "Today" & Delta < 0 ~ "Decrease"),
+           # a Today count of 0 draws as literally nothing with geom_col --
+           # give it a hairline right at the axis so a species that dropped
+           # to zero reads as "bottomed out", not blank space. Thin enough
+           # (0.04 of a 0-20 axis) that it overlaps the axis line itself
+           # rather than reading as a short bar of its own.
+           x_draw = ifelse(When == "Today" & Count == 0, 0.04, pmin(Count, count_ylim[2])))
+
+  label_df <- df %>%
+    mutate(Capped = Population >= count_ylim[2],
+           label_text = ifelse(Delta > 0, paste0("+", Delta), as.character(Delta)),
+           # a capped bar's tip is off the visible axis, so the label can't
+           # sit past it the normal way -- it drops onto/inside the bar
+           # itself, near its (invisible) tip, with the true count added on
+           label_text = ifelse(Capped, paste0(label_text, " (", Population, ")"), label_text),
+           label_x = ifelse(Capped, count_ylim[2] - cap_off, pmin(Population, count_ylim[2]) + 0.3),
+           label_col = ifelse(Capped, "white", "black"))
+
+  diamond_df <- df %>% filter(Is.Uncommon, Population > 0) %>%
+    mutate(diamond_x = ifelse(Population >= count_ylim[2], count_ylim[2] - (cap_off + 1.1),
+                              pmin(Population, count_ylim[2]) + 0.9))  # just beyond the label
+
+  p <- ggplot(long, aes(y = Species, x = x_draw, fill = bar_fill, group = When)) +
+    geom_col(position = position_dodge(width = 0.8), width = 0.8, orientation = "y") +
+    geom_text(data = label_df, aes(y = Species, x = label_x, label = label_text, color = label_col),
+              position = position_nudge(y = today_offset),
+              inherit.aes = FALSE, size = 2.9, fontface = "bold", show.legend = FALSE) +
+    scale_color_identity() +
+    geom_point(data = diamond_df, aes(y = Species, x = diamond_x),
+               position = position_nudge(y = today_offset),
+               inherit.aes = FALSE, shape = 18, size = 3, color = "#F5A623") +
+    scale_fill_manual(values = c(Previous = "grey85", Increase = "#2166AC", Decrease = "#B2182B"),
+                       breaks = c("Previous", "Increase", "Decrease"),
+                       labels = c("Previous day", "Increase", "Decrease"), name = NULL) +
+    # first-listed species (top of each group in the CSV/tree order) reads
+    # at the TOP of its panel -- ggplot's default discrete order is bottom-up
+    scale_y_discrete(limits = rev) +
+    scale_x_continuous(breaks = count_breaks, expand = expansion(mult = c(0, 0))) +
+    coord_cartesian(xlim = count_ylim, clip = "off") +
+    # free_y (not free_x) since species -- the faceted variable's
+    # complement -- now lives on y; drops each panel down to just its own
+    # species instead of reserving row-space for every species in every group.
+    # strip.position = "right" (not the default "top") moves the group label
+    # off to the side of its panel instead of a horizontal banner on top --
+    # the text itself stays horizontal (readable) rather than rotating with
+    # it, wrapped at 14 chars/line so the strip doesn't get too wide.
+    facet_wrap2(~group_name, scales = "free_y", ncol = 1, strip.position = "right",
+                labeller = label_wrap_gen(width = 14)) +
+    labs(title = "Previous vs. Today", x = "Population", y = NULL) +
+    theme_light() +
+    theme(plot.title    = element_text(hjust = 0.5, face = "bold", size = 13, margin = margin(b = 4)),
+          legend.position = "top",
+          legend.margin   = margin(t = 0, b = 0),
+          legend.box.spacing = unit(2, "pt"),
+          strip.text.y  = element_text(face = "bold", size = 9, color = "white", angle = 0),
+          strip.background = element_rect(fill = "grey40", color = "grey50", linewidth = 0.6),
+          panel.border  = element_rect(color = "grey50", fill = NA, linewidth = 0.6),
+          axis.text.y   = element_text(size = 8.5),
+          panel.spacing = unit(0, "lines"),
+          panel.grid.minor = element_blank())
+
+  # panel height per group, proportional to species count, so bar thickness
+  # stays consistent instead of a 1-species panel stretching its bar tall --
+  # rows here (not cols) since the facets stack vertically (ncol = 1)
+  panel_species_n <- df %>% distinct(Species, group_name) %>% count(group_name) %>%
+    arrange(match(group_name, levels(df$group_name))) %>% pull(n)
+  p + force_panelsizes(rows = panel_species_n)
+}
+```
+
+```{r, fig.width = 9, fig.height = 8}
+# back near the original pre-grouping height (was 9) -- stacking every
+# taxonomic group as its own bordered panel (ncol = 1) adds a strip header
+# per group on top of the species rows, and that overhead (8 groups' worth
+# of strips) plus the earlier +50% row-spacing request together pushed this
+# to 18, then 13, and both were still too tall to see a whole chart without
+# scrolling. Going back to ~8 means giving up most of that extra breathing
+# room between species -- the boxed/grouped layout itself is kept, but rows
+# are packed closer together again to fit on one screen. If species rows
+# feel too cramped at this height, that's the actual trade-off to revisit
+# (drop back to fewer/no groups, or accept more scrolling) rather than a
+# number to keep nudging.
+for (wave_name in wave_bounds$Wave) {
+  for (d in obs_days_for_wave(wave_name)) {
+    print(plot_day_grouped_horizontal(grid_favorites_nonresident_wave, wave_name, d,
+                                       "Non-Resident Favorites",
+                                       warbler_sp = warbler_sp_in_favorites_nonresident))
+  }
+}
+
+# one saved sample (Wave 1 / day 5) for the story site's "other styles"
+# preview at the bottom of the wave page -- Style D isn't looped/saved for
+# every wave/day like Style C is, just this single representative example
+ggsave(file.path(fig_dir, "StyleD_sample.png"),
+       plot_day_grouped_horizontal(grid_favorites_nonresident_wave, "Wave 1", 5,
+                                    "Non-Resident Favorites",
+                                    warbler_sp = warbler_sp_in_favorites_nonresident),
+       width = 9, height = 8, dpi = 150)
+```
+
+###  VI. E.3.b. Style B: Faceted by Taxonomic Group
+
+Same Previous-vs-Today bars as Style D, but vertical and split into small
+panels by taxonomic group (`data/Taxonomy-ish_Groupings/species_groups_moderate.csv`)
+instead of one long row. Panel width scales with species count per group,
+so bar thickness stays consistent across panels -- needs the `ggh4x`
+package (loaded in Setup).
+
+```{r}
+# taxon_groups / taxon_group_order / taxon_group_colors are defined once,
+# above Style D, and shared by both styles.
+plot_day_faceted_taxon <- function(df_wave, wave_name, day, warbler_sp = NULL) {
+  df <- df_wave %>%
+    filter(Wave == wave_name, Day == day, !is.na(Delta), Delta != 0) %>%
+    mutate(Species = droplevels(Species),
+           Is.Uncommon = Species %in% uncommon_sp,
+           Prev = Population - Delta) %>%
+    left_join(taxon_groups, by = "Species") %>%
+    mutate(group_name = factor(group_name, levels = taxon_group_order))
+
+  # label/diamond need to sit over the TODAY bar specifically -- both use
+  # position_nudge(x = today_offset) to match the +0.2 dodge offset
+  # position_dodge(width = 0.8) gives the 2nd ("Today") group.
+  today_offset <- 0.2
+
+  long <- df %>%
+    transmute(Species, group_name, Delta, Previous = Prev, Today = Population) %>%
+    pivot_longer(cols = c(Previous, Today), names_to = "When", values_to = "Count") %>%
+    mutate(When = factor(When, levels = c("Previous", "Today")),
+           bar_fill = case_when(
+             When == "Previous" ~ "Previous",
+             When == "Today" & Delta > 0 ~ "Increase",
+             When == "Today" & Delta < 0 ~ "Decrease"))
+
+  label_df <- df %>%
+    mutate(label_text = ifelse(Delta > 0, paste0("+", Delta), as.character(Delta)),
+           label_y = pmin(Population, count_ylim[2]) + 0.6)   # close to the bar
+
+  diamond_df <- df %>% filter(Is.Uncommon, Population > 0) %>%
+    mutate(diamond_y = pmin(Population, count_ylim[2]) + 1.5)  # above the label
+
+  p <- ggplot(long, aes(x = Species, y = pmin(Count, count_ylim[2]), fill = bar_fill, group = When)) +
+    geom_col(position = position_dodge(width = 0.8), width = 0.8) +
+    geom_text(data = label_df, aes(x = Species, y = label_y, label = label_text),
+              position = position_nudge(x = today_offset),
+              inherit.aes = FALSE, size = 2.9, fontface = "bold") +
+    geom_point(data = diamond_df, aes(x = Species, y = diamond_y),
+               position = position_nudge(x = today_offset),
+               inherit.aes = FALSE, shape = 18, size = 3, color = "#F5A623") +
+    scale_fill_manual(values = c(Previous = "grey85", Increase = "#2166AC", Decrease = "#B2182B"),
+                       breaks = c("Previous", "Increase", "Decrease"),
+                       labels = c("Previous day", "Increase", "Decrease"), name = NULL) +
+    scale_y_continuous(breaks = count_breaks, expand = expansion(mult = c(0, 0))) +
+    coord_cartesian(ylim = count_ylim, clip = "off") +
+    # label_wrap_gen() wraps each strip title onto ~2 lines instead of
+    # running long names into the neighboring panel
+    facet_wrap2(~group_name, scales = "free_x", nrow = 1,
+                labeller = label_wrap_gen(width = 14)
+                # one strip color per taxonomic group, matching the tree png --
+                # too busy layered on top of the increase/decrease colors, so
+                # back to plain grey for now. Re-enable by uncommenting:
+                # , strip = strip_themed(background_x = elem_list_rect(
+                #     fill = taxon_group_colors[levels(droplevels(df$group_name))]))
+                ) +
+    labs(title = "Previous vs. Today, grouped by taxonomy", x = NULL, y = "Population") +
+    theme_light() +
+    theme(plot.title    = element_text(hjust = 0.5, face = "bold", size = 13),
+          legend.position = "top",
+          strip.text    = element_text(face = "bold", size = 9, color = "white"),
+          strip.background = element_rect(fill = "grey40", color = "grey50", linewidth = 0.6),
+          # bordered strip + panel, so at panel.spacing = 0 you get one clean
+          # dividing line between groups instead of everything visually
+          # blurring together (which is what plain 0-spacing with no border did)
+          panel.border  = element_rect(color = "grey50", fill = NA, linewidth = 0.6),
+          axis.text.x   = element_text(angle = 40, hjust = 1, size = 8),
+          panel.spacing = unit(0, "lines"),
+          panel.grid.minor = element_blank())
+
+  # panel width per group, proportional to species count, so bar thickness
+  # stays consistent instead of a 1-species panel stretching its bar wide
+  panel_species_n <- df %>% distinct(Species, group_name) %>% count(group_name) %>%
+    arrange(match(group_name, levels(df$group_name))) %>% pull(n)
+  p + force_panelsizes(cols = panel_species_n)
+}
+```
+
+```{r, fig.width = 15, fig.height = 6}
+for (wave_name in wave_bounds$Wave) {
+  for (d in obs_days_for_wave(wave_name)) {
+    print(plot_day_faceted_taxon(grid_favorites_nonresident_wave, wave_name, d,
+                                  warbler_sp = warbler_sp_in_favorites_nonresident))
+  }
+}
+
+# one saved sample (Wave 1 / day 5) for the story site's "other styles"
+# preview at the bottom of the wave page -- same idea as Style D's sample
+ggsave(file.path(fig_dir, "StyleB_sample.png"),
+       plot_day_faceted_taxon(grid_favorites_nonresident_wave, "Wave 1", 5,
+                               warbler_sp = warbler_sp_in_favorites_nonresident),
+       width = 15, height = 6, dpi = 150)
+```
+
+###  VI. E.3.c. Style C: Overlapping Bars
+
+A new, separate style rather than another rewrite of Style D -- Style D has
+already been reworked heavily enough (rotated Style B, then retuned several
+times) that folding this in would blur two different ideas together.
+
+Same taxonomy-grouped, boxed-panel layout as Style D (species on the
+y-axis, one bordered panel per taxonomic group, stacked in a column), but
+the bars themselves work differently: instead of two bars side by side
+(dodged), Previous and Today are drawn as ONE overlapping bar, anchored at
+0 -- never summed/stacked. Whichever day had the SMALLER count is drawn on
+top of the larger one, so it fully covers the shared portion; only the
+larger day's excess peeks out beyond it. For an increase (Today > Previous),
+that means grey (Previous, smaller, drawn on top) covers the bar from 0 up
+to Previous, with blue showing from Previous to Today. For a decrease
+(Today < Previous), red (Today, smaller, drawn on top) covers 0 up to
+Today, with grey showing from Today to Previous.
+
+```{r}
+plot_day_overlapping_horizontal <- function(df_wave, wave_name, day, subset_label, warbler_sp = NULL) {
+  df <- df_wave %>%
+    filter(Wave == wave_name, Day == day, !is.na(Delta), Delta != 0) %>%
+    mutate(Species = droplevels(Species),
+           Is.Uncommon = Species %in% uncommon_sp,
+           Prev = Population - Delta) %>%
+    left_join(taxon_groups, by = "Species") %>%
+    mutate(group_name = factor(group_name, levels = taxon_group_order))
+
+  cap_off <- 1.6   # how far inside the frame edge a capped label/diamond sits
+
+  # Independently pmin()-ing Previous and Today to the axis cap can make an
+  # increase or decrease invisible: if BOTH exceed count_ylim[2], they both
+  # clamp to the same drawn width and the smaller (front) bar covers the
+  # larger one completely, erasing the one sliver of color this whole style
+  # depends on. When capping would collide like that, the smaller-value bar
+  # is nudged in from the cap by a hair so the larger one still peeks out.
+  df <- df %>%
+    mutate(Today_draw    = pmin(Population, count_ylim[2]),
+           Previous_draw = pmin(Prev, count_ylim[2]),
+           Today_draw    = ifelse(Delta < 0 & Today_draw >= Previous_draw,
+                                   pmax(Previous_draw - 0.3, 0), Today_draw),
+           Previous_draw = ifelse(Delta > 0 & Previous_draw >= Today_draw,
+                                   pmax(Today_draw - 0.3, 0), Previous_draw))
+
+  # geom_col (position = "identity", no dodge) draws rows in data order,
+  # later rows on top of earlier ones -- arranging each species' pair with
+  # the LARGER count first and the SMALLER count second is what makes the
+  # smaller bar visually cover the larger one instead of the two just
+  # summing/stacking. No today_offset/half_gap nudging needed anywhere
+  # below, unlike Style D -- there's only one bar per species now, not two
+  # dodged lanes, so labels and diamonds sit at the plain Species position.
+  long <- df %>%
+    transmute(Species, group_name, Delta, Previous = Prev, Today = Population,
+              Previous_draw, Today_draw) %>%
+    pivot_longer(cols = c(Previous, Today), names_to = "When", values_to = "Count") %>%
+    mutate(bar_fill = case_when(
+             When == "Previous" ~ "Previous",
+             When == "Today" & Delta > 0 ~ "Increase",
+             When == "Today" & Delta < 0 ~ "Decrease"),
+           x_draw = ifelse(When == "Today", Today_draw, Previous_draw),
+           # a Today count of 0 draws as literally nothing with geom_col --
+           # give it a hairline right at the axis (see Style D) so a species
+           # that dropped to zero reads as "bottomed out", not blank space
+           x_draw = ifelse(When == "Today" & Count == 0, 0.04, x_draw)) %>%
+    arrange(Species, desc(Count))
+
+  label_df <- df %>%
+    mutate(Capped = Population >= count_ylim[2],
+           label_text = ifelse(Delta > 0, paste0("+", Delta), as.character(Delta)),
+           # a capped bar's tip is off the visible axis, so the label can't
+           # sit past it the normal way -- it drops onto/inside the bar
+           # itself, near its (invisible) tip, with the true count added on
+           label_text = ifelse(Capped, paste0(label_text, " (", Population, ")"), label_text),
+           label_x = ifelse(Capped, count_ylim[2] - cap_off, pmin(Population, count_ylim[2]) + 0.3),
+           label_col = ifelse(Capped, "white", "black"))
+
+  diamond_df <- df %>% filter(Is.Uncommon, Population > 0) %>%
+    mutate(diamond_x = ifelse(Population >= count_ylim[2], count_ylim[2] - (cap_off + 1.1),
+                              pmin(Population, count_ylim[2]) + 0.9))  # just beyond the label
+
+  p <- ggplot(long, aes(y = Species, x = x_draw, fill = bar_fill)) +
+    geom_col(position = "identity", width = 0.65) +
+    geom_text(data = label_df, aes(y = Species, x = label_x, label = label_text, color = label_col),
+              inherit.aes = FALSE, size = 2.9, fontface = "bold", show.legend = FALSE) +
+    scale_color_identity() +
+    geom_point(data = diamond_df, aes(y = Species, x = diamond_x),
+               inherit.aes = FALSE, shape = 18, size = 3, color = "#F5A623") +
+    scale_fill_manual(values = c(Previous = "grey85", Increase = "#2166AC", Decrease = "#B2182B"),
+                       breaks = c("Previous", "Increase", "Decrease"),
+                       labels = c("Previous day", "Increase", "Decrease"), name = NULL) +
+    # first-listed species (top of each group in the CSV/tree order) reads
+    # at the TOP of its panel -- ggplot's default discrete order is bottom-up
+    scale_y_discrete(limits = rev) +
+    scale_x_continuous(breaks = count_breaks, expand = expansion(mult = c(0, 0))) +
+    coord_cartesian(xlim = count_ylim, clip = "off") +
+    facet_wrap2(~group_name, scales = "free_y", ncol = 1, strip.position = "right",
+                labeller = label_wrap_gen(width = 14)) +
+    labs(title = "Previous vs. Today (overlapping)", x = "Population", y = NULL) +
+    theme_light() +
+    theme(plot.title    = element_text(hjust = 0.5, face = "bold", size = 13, margin = margin(b = 4)),
+          legend.position = "top",
+          legend.margin   = margin(t = 0, b = 0),
+          legend.box.spacing = unit(2, "pt"),
+          strip.text.y  = element_text(face = "bold", size = 9, color = "white", angle = 0),
+          strip.background = element_rect(fill = "grey40", color = "grey50", linewidth = 0.6),
+          panel.border  = element_rect(color = "grey50", fill = NA, linewidth = 0.6),
+          axis.text.y   = element_text(size = 8.5),
+          panel.spacing = unit(0, "lines"),
+          panel.grid.minor = element_blank())
+
+  panel_species_n <- df %>% distinct(Species, group_name) %>% count(group_name) %>%
+    arrange(match(group_name, levels(df$group_name))) %>% pull(n)
+  p + force_panelsizes(rows = panel_species_n)
+}
+```
+
+```{r, fig.width = 9, fig.height = 8}
+# saves one PNG per wave/day, like VI.E.2's loop does -- these are the
+# images the story site's wave page uses for its Style C figures
+for (wave_name in wave_bounds$Wave) {
+  for (d in obs_days_for_wave(wave_name)) {
+    p <- plot_day_overlapping_horizontal(grid_favorites_nonresident_wave, wave_name, d,
+                                          "Non-Resident Favorites",
+                                          warbler_sp = warbler_sp_in_favorites_nonresident)
+    print(p)
+    ggsave(file.path(fig_dir, sprintf("%s_day%02d_stylec.png", gsub(" ", "", wave_name), d)),
+           p, width = 9, height = 8, dpi = 150)
   }
 }
 ```
