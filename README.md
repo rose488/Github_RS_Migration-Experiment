@@ -1,6 +1,6 @@
-# To View Website
+# View my project
 
-Go to story-site-v2.2 and open `index.html`
+[View the live website](https://rose488.github.io/Github_RS_Migration-Experiment/)
 
 # Spring Migration Experiment (2026)
 
