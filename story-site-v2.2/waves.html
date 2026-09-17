@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Deep dive: wave-by-wave breakdown, from Rose Stewart's spring migration experiment story site v2.2.">
+  <title>Wave by wave | Spring Migration Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="story.js" defer></script>
+</head>
+<body>
+
+  <header class="subnav">
+    <div class="wrap subnav-inner">
+      <a class="subnav-home" href="index.html">&larr; Spring Migration Experiment</a>
+      <nav class="subnav-links" aria-label="Deep dives">
+        <a href="warblers.html">Warblers</a>
+        <a href="favorites.html">Favorite migrants</a>
+        <a href="waves.html" class="is-current">Wave by wave</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+<!--RESULTS: WAVES: PER-WAVE BREAKDOWN-->
+    <section class="waves-section">
+      <div class="wrap">
+        <p class="eyebrow">Wave by wave</p>
+        <h2>Which birds came in each wave?</h2>
+        <p>EDITORIAL NOTE: I need to list which species are excluded</p>
+        <p><strong>Claude filling in, TO EDIT:</strong> These bar charts only cover my "favorites, non-resident" list &mdash; not all 72 species. Starting from the full list, I dropped a handful of very common species (Mourning Dove, Turkey Vulture, Northern Mockingbird, American Goldfinch, Brown-headed Cowbird, Common Grackle, Northern Cardinal, European Starling, American Robin) and two whole groups (cormorants, corvids), then kept only the migrants from what was left &mdash; so any residents that happened to be on the favorites list are excluded here too.</p>
+        <h3>How to read this graph</h3>
+        <p>Top panel: the regional BirdCast migration data. The orange band marks the wave shown below; the black vertical line marks the day I'm reporting on.</p>
+        <p>Bottom panel: what I actually saw that day, one bar per species, compared against my most recent previous outing (not necessarily the day right before -- see caveats).</p>
+        <ul>
+          <li><strong class="key-blue">Blue bar</strong> &mdash; count went up since my last outing (the number is the increase).</li>
+          <li><strong class="key-red">Red bar</strong> &mdash; count went down since my last outing (the number is the decrease).</li>
+          <li><strong class="key-grey">Grey</strong> &mdash; my most recent previous outing: the dashed vertical line in the top panel, the grey bar in the bar chart.</li>
+          <li><strong class="key-orange">Orange diamond &#9670;</strong> &mdash; an "uncommon" species: observed no more than 3 times over the entire month.</li>
+        </ul>
+        <h3>Caveats:</h3>
+        <p>Some "previous" days may not have been on a wave, but the focus here is on composition of the waves. This is because I was interested in new arrivals specifically after waves, and the most representative "change" would be from the most recent observations, regardless of whether it was on a wave day or not. The number of calendar days between the "previous" and "current" observations also varies. This inconsistency is not ideal, and if I could improve this study I would go every single day, and compare every wave to 1 calendar day prior.</p>
+        <h3>Observations</h3>
+        <p>In general, large regional waves corresponded with greater species diversity (wave 4) and higher counts (wave X).</p>
+        <p>But not always. Wave 3 was one of the highest migration nights of the entire month, but I saw dramatically fewer birds that morning compared to the previous wave. Why? The massive movement detected on radar may have been birds PASSING THROUGH or LEAVING, not necessarily birds landing as dawn broke.</p>
+        
+
+        <div class="wave-picker" role="tablist" aria-label="Migration waves">
+          <button class="wave-btn is-active" role="tab" aria-selected="true" data-fig="wave1-day05"
+            data-title="Wave 1 &middot; May 5"
+            data-note="It's still early in the month, so we haven't hit peak migration yet. Yellow-rumped warblers dominate -- these early migrants are numerous and hang out in flocks. Species diversity is also the lowest of the entire month because most species haven't arrived yet.">Wave 1</button>
+          <button class="wave-btn" role="tab" aria-selected="false" data-fig="wave2-day11"
+            data-title="Wave 2 &middot; May 11"
+            data-note="WAVE 2 NOTES HERE.">Wave 2</button>
+          <button class="wave-btn" role="tab" aria-selected="false" data-fig="wave3-day13"
+            data-title="Wave 3 &middot; May 13"
+            data-note="WAVE 3 NOTES HERE">Wave 3</button>
+          <button class="wave-btn" role="tab" aria-selected="false" data-fig="wave4-day18"
+            data-title="Wave 4 &middot; May 18"
+            data-note="WAVE 4A NOTES HERE">Wave 4a</button>
+          <button class="wave-btn" role="tab" aria-selected="false" data-fig="wave4-day19"
+            data-title="Wave 4 &middot; May 19"
+            data-note="WAVE 4B NOTES HERE">Wave 4b</button>
+          <button class="wave-btn" role="tab" aria-selected="false" data-fig="wave5-day26"
+            data-title="Wave 5 &middot; May 26"
+            data-note="WAVE 5A NOTES HERE">Wave 5a</button>
+          <button class="wave-btn" role="tab" aria-selected="false" data-fig="wave5-day27"
+            data-title="Wave 5 &middot; May 27"
+            data-note="WAVE 5B NOTES HERE">Wave 5b</button>
+        </div>
+
+        <figure class="figure wave-figure">
+          <img id="waveImg" src="assets/wave1-day05.png" alt="Regional BirdCast flight-intensity chart, that day's wave highlighted." loading="lazy">
+          <img id="waveCountImg" class="wave-count-img" src="assets/wave1-day05-stylec.png" alt="Bar chart: previous vs. today's count for each species, grouped by taxonomy, shown as overlapping bars." loading="lazy">
+          <figcaption><strong id="waveTitle">Wave 1 &middot; May 5</strong><br><span id="waveNote">texttexttext</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+<!--RESULTS: WAVES: OTHER CHART STYLES CONSIDERED (for reviewer feedback)-->
+    <section class="waves-section">
+      <div class="wrap">
+        <h2>Three other styles </h2>
+        <p>I made a few different versions of the above graph in attempts to make it clear and not too busy, but capture as much information as possible.</p>
+
+        <div class="style-samples">
+          <figure class="figure">
+            <img src="assets/stylea-sample.png" alt="Style A sample: the original two-panel chart, BirdCast flight intensity on top and a per-species change bar chart below it, not grouped by taxonomy." loading="lazy">
+            <figcaption><strong>Style A &middot; Two-panel: Birdcast and Change</strong><br>
+            <p>No taxonomy grouping. This was originally standalone, but I think the absolute counts are important, so I added the companion graph on the right.</p>
+            </figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/wave1-day05-counts.png" alt="Green bar chart: that day's observed population for each species, not grouped by taxonomy, capped bars shown in white with the true count." loading="lazy">
+            <figcaption><strong>Style A companion &middot; Observed population</strong><br>Shows actual population counts. No grouping. </figcaption>
+          </figure>
+           <figure class="figure">
+            <img src="assets/styleb-sample.png" alt="Style B sample: previous vs. today bars, faceted into small panels by taxonomic group, species along the bottom axis." loading="lazy">
+            <figcaption><strong>Style B &middot; Vertical Dodged bars: Observed and Change</strong><br>Previous and today drawn as two separate bars side by side. Has taxonomy(ish) grouping.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/styled-sample.png" alt="Style D sample: previous vs. today bars, dodged side by side, grouped by taxonomy into bordered panels." loading="lazy">
+            <figcaption><strong>Style D &middot; Horizontal Dodged bars: Observed and Change</strong><br>More or less identical to Style B, but vertical bars</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<!--Footer-->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><a href="index.html#conclusion">&larr; Back to the overview &amp; conclusion</a></p>
+      <p class="muted">Spring Migration Experiment 2026 &middot; Analysis and field observations by Rose Stewart</p>
+    </div>
+  </footer>
+</body>
+</html>

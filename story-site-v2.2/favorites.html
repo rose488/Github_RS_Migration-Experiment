@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Deep dive: 18 favorite migrants, from Rose Stewart's spring migration experiment story site v2.2.">
+  <title>Favorite migrants | Spring Migration Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="story.js" defer></script>
+</head>
+<body>
+
+  <header class="subnav">
+    <div class="wrap subnav-inner">
+      <a class="subnav-home" href="index.html">&larr; Spring Migration Experiment</a>
+      <nav class="subnav-links" aria-label="Deep dives">
+        <a href="warblers.html">Warblers</a>
+        <a href="favorites.html" class="is-current">Favorite migrants</a>
+        <a href="waves.html">Wave by wave</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+<!--18 FAVORITE MIGRANTS -->
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">Deep dive</p>
+        <h2>Favorite migrants</h2>
+        <p>A subset of my favorite migrants. Some overlap with the warblers subset.</p>
+        <figure class="figure">
+          <img src="assets/ridges-favorites.png" alt="Ridgeline plot of favorite migrant species through May." loading="lazy">
+          <figcaption>Early migrants towards the top, mid and late in the bottom, massive cedar waxwing take-over in the middle.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+<!--BREEDING STATUS & ARRIVAL TIMING-->
+    <section class="groups-section">
+      <div class="wrap">
+        <p class="eyebrow">Sorted by breeding status &amp; arrival timing</p>
+
+        <div class="group-picker" role="tablist" aria-label="Species groups">
+
+          <button class="group-btn" role="tab" aria-selected="false" data-fig="obsexp-early-passing"
+            data-title="Early passing migrants"
+            data-species="Black-and-white Warbler &middot; Northern Parula &middot; Black-throated Blue Warbler &middot; Yellow-rumped Warbler &middot; Black-throated Green Warbler"
+            data-note="Present at the start and gone by the end. Yellow-rumped Warbler peaks at 22 birds on May 5 and is absent after mid-month &mdash; the clearest passage signal in the data.">Early passing migrants<span class="count">5</span></button>
+
+          <button class="group-btn is-active" role="tab" aria-selected="true" data-fig="obsexp-early-breeders"
+            data-title="Early-arriving breeders"
+            data-species="Pine Warbler &middot; Chimney Swift &middot; Eastern Warbling Vireo &middot; Wood Thrush &middot; Ovenbird &middot; Great Crested Flycatcher &middot; Scarlet Tanager &middot; Northern House Wren &middot; Common Yellowthroat &middot; Northern Yellow Warbler"
+            data-note="These birds arrive, stop, and stay. They show up early, then hang around to nest.">Early breeders <span class="count">10</span></button>
+
+          <button class="group-btn" role="tab" aria-selected="false" data-fig="obsexp-midlate-passing"
+            data-title="Mid/late passing migrants"
+            data-species="American Redstart &middot; Cape May Warbler &middot; Magnolia Warbler &middot; Bay-breasted Warbler &middot; Blackburnian Warbler &middot; Chestnut-sided Warbler &middot; Blackpoll Warbler &middot; Canada Warbler"
+            data-note="Like the early passing migrants, these birds come and go. These migrants, however, don't arrive until mid-May.">Mid/late passing migrants<span class="count">8</span></button>
+
+          <button class="group-btn" role="tab" aria-selected="false" data-fig="obsexp-midlate-breeders"
+            data-title="Mid/late-arriving breeders"
+            data-species="Cedar Waxwing &middot; Eastern Wood-Pewee &middot; Red-eyed Vireo &middot; Indigo Bunting"
+            data-note="These birds arrive in the same waves as the mid/late passing migrants, but they stay to make babies. While the passing migrants form a clear up-and-down peak, these look more like the front side of a hill.">Mid/late breeders <span class="count">4</span></button>
+
+        </div>
+
+        <div class="group-detail">
+          <h3 id="groupTitle">Early-arriving breeders</h3>
+          <p id="groupNote">These birds arrive, stop, and stay. They show up early, then hold a roughly flat line across the whole month</p>
+          <p class="species-list" id="groupSpecies">Pine Warbler &middot; Chimney Swift &middot; Eastern Warbling Vireo &middot; Wood Thrush &middot; Ovenbird &middot; Great Crested Flycatcher &middot; Scarlet Tanager &middot; Northern House Wren &middot; Common Yellowthroat &middot; Northern Yellow Warbler</p>
+        </div>
+
+        <figure class="figure">
+          <img id="groupImg" src="assets/obsexp-early-breeders.png" alt="Small-multiple charts comparing observed counts with expected regional abundance for one species group." loading="lazy">
+          <figcaption>Observed population (green, solid) versus eBird's modeled regional abundance (grey, dashed &mdash; rescaled to overlay cleanly onto my counts; only its shape is meaningful, see below). Grey background = outside the observation window; dotted lines mark each survey day.</figcaption>
+        </figure>
+        <p>NOTE TO SELF: Abundance still seems misleading. I need to make this clearer and explain in more detail why I did it this way, include the formula, and explain why I couldn't just do a double axis.</p>
+        <p><strong>Claude filling in, TO EDIT:</strong> For each species, the expected curve is divided by its own average expected value, then multiplied by that species' own average observed count: <em>rescaled = expected &divide; mean(expected) &times; mean(observed)</em>. That puts it in the same units as my counts, so the two lines share one y-axis per panel &mdash; but only the expected line's <em>shape</em> (where it rises and falls) means anything; its height is manufactured to match mine, not an independent estimate.</p>
+        <p>A double axis wouldn't work here because every panel uses its own y-axis (`scales = "free_y"`, since a species I see 2 of and one I see 30 of can't share a scale). A secondary axis is one shared transform for the whole plot &mdash; it can't be refit per panel the way this rescaling is.</p>
+      </div>
+    </section>
+
+  </main>
+
+<!--Footer-->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><a href="index.html#conclusion">&larr; Back to the overview &amp; conclusion</a></p>
+      <p class="muted">Spring Migration Experiment 2026 &middot; Analysis and field observations by Rose Stewart</p>
+    </div>
+  </footer>
+</body>
+</html>

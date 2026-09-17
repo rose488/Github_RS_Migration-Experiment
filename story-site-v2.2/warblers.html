@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Deep dive: the warblers, from Rose Stewart's spring migration experiment story site v2.2.">
+  <title>The warblers | Spring Migration Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="story.js" defer></script>
+</head>
+<body>
+
+  <header class="subnav">
+    <div class="wrap subnav-inner">
+      <a class="subnav-home" href="index.html">&larr; Spring Migration Experiment</a>
+      <nav class="subnav-links" aria-label="Deep dives">
+        <a href="warblers.html" class="is-current">Warblers</a>
+        <a href="favorites.html">Favorite migrants</a>
+        <a href="waves.html">Wave by wave</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+<!--WARBLERS -->
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">Deep dive</p>
+        <h2>The warblers</h2>
+        <p>Seventeen warbler species were recorded. Almost all going through Boston are on their way to breeding grounds in New Hampshire, Maine, and Canada. Some species breed in Western and Central Massachusetts.</p>
+        <h3>Observations</h3>
+        <p>You can see a very clear arrival-peak-decrease pattern for the Black and White warbler, and Northern Parula</p>
+        <p>I missed the arrival of the yellow-rump warblers, so they start out in large numbers. They are numerous and very social warblers, so it's not uncommon to see huge groups like I did in early May.</p>
+        <p>American Redstart seem to have arrived in two waves (increase-peak-decrease). But take this with a grain of salt because their songs are very weak and ambiguous, so I may have missed quite a few.</p>
+        <p>Multiple pairs of pine warblers were likely breeding at this park. After my survey ended, I observed at least one recently fledged young.</p>
+        <p>The Northern Yellow Warbler is a very common species, but it likes wetlands, which my park does not have. Otherwise its numbers would have been much higher.</p>
+        <p>The chunk of warblers in the middle that I only saw a few times are relatively uncommon, and exciting to see! (Also, they're cute)</p>
+        <p>It was clear when a huge group of Blackpoll warblers came in during the May 18/19th wave -- they were everywhere! They sound like very quiet squeeky wheels and like the tip top of the canopy. These I heard almost exclusively. They were too far away and hidden by leaves to spot.</p>
+        <figure class="figure">
+          <img src="assets/heatmap-warblers.png" alt="Heatmap of 17 warbler species by survey date." loading="lazy">
+          <figcaption>blahblahblah</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/ridges-warblers.png" alt="Ridgeline plot of warbler sightings through May, each species colored to match its real plumage." loading="lazy">
+          <figcaption>Same data as the heatmaps, different visual. Each ridge is one warbler species through the month, colored to match its actual plumage.</figcaption>
+        </figure>
+      
+      </div>
+    </section>
+
+<!--BREEDING STATUS & ARRIVAL TIMING-->
+    <section class="groups-section">
+      <div class="wrap">
+        <p class="eyebrow">Sorted by breeding status &amp; arrival timing</p>
+
+        <div class="group-picker" role="tablist" aria-label="Species groups">
+
+          <button class="group-btn" role="tab" aria-selected="false" data-fig="obsexp-early-passing"
+            data-title="Early passing migrants"
+            data-species="Black-and-white Warbler &middot; Northern Parula &middot; Black-throated Blue Warbler &middot; Yellow-rumped Warbler &middot; Black-throated Green Warbler"
+            data-note="Present at the start and gone by the end. Yellow-rumped Warbler peaks at 22 birds on May 5 and is absent after mid-month &mdash; the clearest passage signal in the data.">Early passing migrants<span class="count">5</span></button>
+
+          <button class="group-btn is-active" role="tab" aria-selected="true" data-fig="obsexp-warblers-early-breeders"
+            data-title="Early-arriving breeders"
+            data-species="Pine Warbler &middot; Ovenbird &middot; Common Yellowthroat &middot; Northern Yellow Warbler"
+            data-note="The only warblers that stop and stay rather than pass through &mdash; they show up early, then hold a roughly flat line across the whole month.">Early breeders <span class="count">4</span></button>
+
+          <button class="group-btn" role="tab" aria-selected="false" data-fig="obsexp-midlate-passing"
+            data-title="Mid/late passing migrants"
+            data-species="American Redstart &middot; Cape May Warbler &middot; Magnolia Warbler &middot; Bay-breasted Warbler &middot; Blackburnian Warbler &middot; Chestnut-sided Warbler &middot; Blackpoll Warbler &middot; Canada Warbler"
+            data-note="Like the early passing migrants, these birds come and go. These migrants, however, don't arrive until mid-May.">Mid/late passing migrants<span class="count">8</span></button>
+
+        </div>
+
+        <div class="group-detail">
+          <h3 id="groupTitle">Early-arriving breeders</h3>
+          <p id="groupNote">The only warblers that stop and stay rather than pass through &mdash; they show up early, then hold a roughly flat line across the whole month.</p>
+          <p class="species-list" id="groupSpecies">Pine Warbler &middot; Ovenbird &middot; Common Yellowthroat &middot; Northern Yellow Warbler</p>
+        </div>
+
+        <p class="muted">No warblers fall into a fourth group, mid/late-arriving breeders &mdash; none of the 17 stop to breed that late in the season.</p>
+
+        <figure class="figure">
+          <img id="groupImg" src="assets/obsexp-warblers-early-breeders.png" alt="Small-multiple charts comparing observed counts with expected regional abundance for one species group." loading="lazy">
+          <figcaption>Observed counts (green, solid) against eBird's modeled regional abundance (grey, dashed &mdash; rescaled to each species' own count axis; only its shape is meaningful). Grey background = outside the observation window; dotted lines mark each survey day.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+<!--Footer-->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><a href="index.html#conclusion">&larr; Back to the overview &amp; conclusion</a></p>
+      <p class="muted">Spring Migration Experiment 2026 &middot; Analysis and field observations by Rose Stewart</p>
+    </div>
+  </footer>
+</body>
+</html>
