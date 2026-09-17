@@ -3,24 +3,24 @@
 # ============================================================
 #
 # WHY THIS EXISTS:
-# Each "Submission.ID" (e.g. "CHK-0011") is a real, public eBird
+# Each "Submission.ID" (e.g. "S000000000") is a real, public eBird
 # Submission ID. Anyone can put it into ebird.org/checklist/<ID> and see
 # the exact GPS location of that outing and the eBird account that
 # submitted it.
 #
 # WHAT THIS SCRIPT DOES:
-# 1. Reads the raw personal export (data/raw/myebirdraw_LTH.csv).
+# 1. Reads the raw personal export from a private folder outside this repo.
 # 2. Builds (or reuses) one master real-ID -> fake-code lookup table.
 # 3. Writes a de-identified copy to data/raw/myebird_raw_deidentified.csv,
 #    with Submission.ID replaced by fake codes (e.g. "CHK-0001"). This is
 #    the file 00-data-prep.Rmd reads -- real IDs never reach that script,
 #    or anything it produces.
-# 4. Saves the real<->fake key to data/PRIVATE_id_key/checklist_id_key.csv.
+# 4. Saves the real<->fake key in that same external private folder.
 #
-# IMPORTANT -- BEFORE YOU PUSH TO GITHUB:
-#   - NEVER commit data/PRIVATE_id_key/        (the real IDs live here)
-#   - NEVER commit data/raw/myebirdraw_LTH.csv (your raw personal export)
-# Both are already listed in the .gitignore template included in this folder.
+# IMPORTANT:
+# Raw IDs and the lookup key live outside the repository by default, in
+# "Migration Experiment_PRIVATE" beside the repository folder. Override that
+# location with the MIGRATION_EXPERIMENT_PRIVATE_DIR environment variable.
 # data/raw/myebird_raw_deidentified.csv is SAFE to commit -- it has no real IDs.
 #
 # Run this once. If you re-run it, it reuses the existing key file so the
@@ -29,9 +29,14 @@
 
 library(dplyr)
 
-raw_path          <- "data/raw/myebirdraw_LTH.csv"
+private_dir <- Sys.getenv(
+  "MIGRATION_EXPERIMENT_PRIVATE_DIR",
+  unset = file.path(dirname(normalizePath("..")), "Migration Experiment_PRIVATE")
+)
+
+raw_path          <- file.path(private_dir, "raw", "myebirdraw_LTH.csv")
 deidentified_path <- "data/raw/myebird_raw_deidentified.csv"
-key_dir           <- "data/PRIVATE_id_key"
+key_dir           <- file.path(private_dir, "PRIVATE_id_key")
 key_path          <- file.path(key_dir, "checklist_id_key.csv")
 
 dir.create(key_dir, showWarnings = FALSE, recursive = TRUE)
