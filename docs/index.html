@@ -79,11 +79,11 @@
         <h3>This is the Birdcast Dashboard View</h3>
         <p>You can select any state or county and watch the numbers update as the birds travel. You can see the number of birds currently in flight, total crossed, average speed and direction (typically ~20-30mph, but can reach 60mph), and altitude (averaging 1000-1500ft, reaching up to 10,000ft). </p>
         <p>You can also see a summary of the movement that has occured so far in the season.</p>
-        <p>The green lines are actual measurements, the grey are historical averages. The averages are not "typical" in the sense that they are much, much smoother than reality. The real measurements are bumpy, even with huge peaks and valleys in the Birds in Flight graph. This is because this noise happens on different days every year, and the historical average smoothes it out.</p>
+        <p>The green lines are actual measurements, the grey are historical averages. The averages are not "typical" in the sense that they are much, much smoother than reality. Real movement is bumpy, especially with day-to-day flight numbers (see "And across the season... Birds in flight (nightly average)"). Averages smooth out this variation, representing a clean mid-point between the highs and lows.</p>
         <figure class="figure">
           <img src="assets/Birdcast_Dashboard_May-18-2026.png" alt="" loading="lazy">
           <figcaption>Dashboard of flight data from May 18, 2026 in Massachusetts. Because I pulled this image well after May 18, it shows data that would not be filled in if I had grabbed it May 18.
-            <br>This is not the same data I pulled for my migration analysis. I used the county where I birded, for more precise estimates. For anonymity I am not revealing my county location.
+            <br>This is not the same data I pulled for my migration analysis. I used the county where I birded, for more precise numbers.
             <br>BirdCast, Migration Dashboard; Massachusetts, May 18, 2026. Cornell Lab of Ornithology. 
           https://birdcast.org/migration-tools/migration-dashboard. Downloaded September 15, 2026.</figcaption>
         </figure>
@@ -96,7 +96,7 @@
         <p class="eyebrow">Regional context</p>
         <h2>This year (2026), migration arrived in five major waves</h2>
         <p>I pulled this data from the Birdcast Dashboard for my county.</p>
-        <p>ADD APPROPRIATE BIRDCAST CITATION. ALSO I NEED TO UNDERSTAND "AVG BIRDS IN FLIGHT BETTER", OR SWITCH TO TOTAL</p>
+        <p>NOTE TO SELF: ADD APPROPRIATE BIRDCAST CITATION. ALSO I NEED TO UNDERSTAND "AVG BIRDS IN FLIGHT BETTER", OR SWITCH TO TOTAL</p>
         <figure class="figure">
           <img src="assets/birdcast-waves.png" alt="Line chart of average birds in flight over Suffolk County during May, with five migration waves shaded in grey." loading="lazy">
           <figcaption>Average birds in flight over Suffolk County each night, with the five wave peaks shaded. The largest, Wave&nbsp;4, peaked on May 17 and maintained a high plateau through the 19th.</figcaption>
@@ -116,7 +116,7 @@
     <section>
           <div class="wrap">
             <p class="eyebrow">Study design</p>
-            <h2>How did I choose the best days to go birding?</h2>
+            <h2>How did I choose the days for my experiment?</h2>
             <div class="methods">
               <article class="method">
                 <h3>Chase the waves</h3>
@@ -133,11 +133,12 @@
               </article>
             </div>
             <p><br>These are the days I went birding. Most of them were chosen the night before when I saw on Birdcast.org that it was going to be a high migration night, with new species likely arriving the next morning. </p>
+            <p>NOTE TO SELF: this graph is ugly and I need to pick a better representation</p>
             <figure class="figure">
               <img src="assets/survey-schedule.png" alt="Twelve dates in May, to watch them come and go" loading="lazy">
               <figcaption>Twelve matched survey dates spread out over the month allows me to get a holistic snapshot of who's arriving and when they're leaving.</figcaption>
             </figure>
-            <p><br> [Testing out explanation for non-science audience] By going twice on the same day, I know I'm dealing with the SAME birds from the SAME wave (or one that were already here). That way I can conclude that any differences between the 6am and 9am checklist were because of the TIME, not mixed up with different batches of birds. In science parlance, I would say I'm "controlling for" day-to-day population differences by "holding date constant" (both timepoints on the same day). This is also "eliminating confounding variables"</p>
+            <p><br> [Testing out explanation for non-science audience] By going twice on the same day, I know I'm dealing with the SAME birds from the SAME wave (or ones that were already here). I can conclude that any differences between the 6am and 9am checklist were because of the TIME, not mixed up between different batches of birds. In science parlance, I would say I'm "controlling for" day-to-day population differences (the groups of birds) by "holding date constant" (both timepoints on the same day). Or eliminating a "confounding variable."</p>
           
           </div>
     </section>
@@ -151,7 +152,15 @@
         <p class="eyebrow">Local observations</p>
         <h2>Heatmap Summary of all observations</h2>
         <h3>Key Definitions</h3>
-        <p><strong>Claude filling in, TO EDIT:</strong> Each checklist logs a "Count" for a species &mdash; how many I tallied on that one outing. Most days I went out twice (6am and 9am), so a day can have two counts for the same species. "Population" is the max of those same-day counts, not the sum: the higher checklist almost certainly saw most or all of the individuals the lower one did, so adding them would double-count the same birds. Population is what every chart in this site plots.</p>
+        <ul class="tiered-list">
+          <li><strong>Count:</strong> The literal number of birds I tallied on a single walk. Because I went twice a day, I might have up to two <strong>counts</strong> per species any given day. This is the number I use in Story 2.</li>
+          <li><strong>Population:</strong> The closest estimate of how many birds were there that day. The max count between the two timepoints the same day. I can never expect to see every bird that is present, but I know that the LARGEST number I saw that day is the closest. This is the number I use throughout Story 1.
+            <ul>
+              <li>Eg. If I saw 3 yellow-rumped warblers at 6am and 5 at 9am, I know there were at least 5 warblers in the park, and I happened to spot more of them on my second walk. This relies on the assumption that movement in/out of the park between 6am and 9am is negligible, or that in = out.</li>
+            </ul>
+          </li>
+        </ul>
+
         <h3>Overview of the data</h3>
         <p><strong>What's a heatmap?</strong></p>
         <p>The graph below is called a heatmap. Each row represents one species, each column is a day of the month (the "map"). The number of birds I saw is represented by a color gradient (the "heat"), from purple as 0 birds to yellow as 100 birds. So, every species for each day has a single square, and the color represents HOW MANY of that species I saw on that day.</p>
