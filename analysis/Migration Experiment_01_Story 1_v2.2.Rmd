@@ -517,7 +517,7 @@ fig_dir        <- "figures"
 # folder, same convention as fig_dir. Used by plot_observed_vs_expected()'s
 # breeder/migrant subgroup charts so they land straight in the site instead
 # of needing a manual export/copy step.
-site_assets_dir <- "../Test Interfaces/story-site-v2.2/assets"
+site_assets_dir <- "../docs/assets"
 
 # ---- SHARED FONT SIZES: one set of numbers for every plot in this doc,
 # instead of each chunk picking its own (8, 10, 12, 16, 18...). Add
